@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVA — Дизайнер</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-float">
+<button class="lang-btn active" data-lang="ru">RU</button>
+<button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+<header class="header">
+<div class="logo">EVA</div>
+<nav class="nav">
+<a href="#about"><span data-ru="01 · Обо мне" data-en="01 · About">01 · Обо мне</span></a>
+<a href="#services"><span data-ru="02 · Услуги" data-en="02 · Services">02 · Услуги</span></a>
+<a href="#gallery"><span data-ru="03 · Мои фото" data-en="03 · My photos">03 · Мои фото</span></a>
+<a href="#contact"><span data-ru="04 · Контакты" data-en="04 · Contact">04 · Контакты</span></a>
+</nav>
+<div class="clock mono" id="clock">00:00:00</div>
+</header>
+
+<section class="hero">
+<div class="hero-photo"><img src="images/photo1.PNG" alt="Eva"></div>
+<div class="hero-text">
+<h1 class="shimmer">EVA</h1>
+<p class="hero-role" data-ru="Дизайнер" data-en="Designer">Дизайнер</p>
+<p class="hero-desc" data-ru="Разрабатываю бренды, сайты и иллюстрации с характером. Дизайн, который выделяет вас среди других." data-en="I create brands, websites and illustrations with character. Design that sets you apart.">Разрабатываю бренды, сайты и иллюстрации с характером. Дизайн, который выделяет вас среди других.</p>
+<a href="#services" class="hero-btn"><span data-ru="Смотреть услуги →" data-en="View services →">Смотреть услуги →</span></a>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container">
+<h2 class="shimmer" data-ru="Обо мне" data-en="About me">Обо мне</h2>
+<div class="about-grid">
+<div class="about-photo"><img src="images/photo3.PNG" alt="Eva"></div>
+<div class="about-text-block">
+<p class="about-lead" data-ru="Дизайн, который выглядит дорого. Потому что он таким и является." data-en="Design that looks expensive. Because it truly is.">Дизайн, который выглядит дорого. Потому что он таким и является.</p>
+<p data-ru="Меня зовут Ева. Я дизайнер, для которого красота — это не украшение, а система. Я не рисую отдельные картинки — я строю визуальные миры, в которых всё работает: цвет, форма, смысл." data-en="My name is Eva. I am a designer for whom beauty is a system, not an ornament. I build visual worlds where everything works: color, form, meaning.">Меня зовут Ева. Я дизайнер, для которого красота — это не украшение, а система. Я не рисую отдельные картинки — я строю визуальные миры, в которых всё работает: цвет, форма, смысл.</p>
+<p data-ru="Мой подход — точность. Каждый элемент на своём месте, ничего лишнего. Именно поэтому мои проекты выглядят дорого — потому что дорогое = выверенное." data-en="My approach is precision. Every element in its place, nothing superfluous. That is why my projects look expensive — because expensive means precise.">Мой подход — точность. Каждый элемент на своём месте, ничего лишнего. Именно поэтому мои проекты выглядят дорого — потому что дорогое = выверенное.</p>
+<p data-ru="Я работаю на стыке дисциплин: от логотипа до упаковки, от сайта до иллюстрации." data-en="I work at the intersection of disciplines: from logo to packaging, from website to illustration.">Я работаю на стыке дисциплин: от логотипа до упаковки, от сайта до иллюстрации.</p>
+<p class="about-signature" data-ru="Аккуратность. Вкус. Красота в каждой детали." data-en="Precision. Taste. Beauty in every detail.">Аккуратность. Вкус. Красота в каждой детали.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<h2 class="shimmer" data-ru="Что я создаю" data-en="What I do">Что я создаю</h2>
+<p class="services-hint" data-ru="Нажмите на направление — раскроется описание" data-en="Click on a service to see details">Нажмите на направление — раскроется описание</p>
+<div class="services-list">
+<div class="service-block"><button class="service-header"><span class="service-num mono">1</span><span class="service-title" data-ru="Графический дизайн" data-en="Graphic design">Графический дизайн</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Плакаты, афиши, обложки, композиции — всё, где важна типографика, ритм и характер. Работаю с печатью и digital." data-en="Posters, covers, compositions — everything where typography, rhythm and character matter.">Плакаты, афиши, обложки, композиции — всё, где важна типографика, ритм и характер. Работаю с печатью и digital.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">2</span><span class="service-title" data-ru="Промышленный дизайн" data-en="Industrial design">Промышленный дизайн</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Форма и функция предметов. Работаю с геометрией, эргономикой, материалами. От эскиза до финального прототипа." data-en="Form and function of objects. Working with geometry, ergonomics, materials.">Форма и функция предметов. Работаю с геометрией, эргономикой, материалами. От эскиза до финального прототипа.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">3</span><span class="service-title" data-ru="Веб-дизайн" data-en="Web design">Веб-дизайн</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Лендинги, портфолио, промо-сайты. Продумываю структуру, визуал, анимации." data-en="Landing pages, portfolios, promo sites. Structure, visuals, animations.">Лендинги, портфолио, промо-сайты. Продумываю структуру, визуал, анимации.</p></div></div><div class="service-block"><button class="service-header"><span class="service-num mono">4</span><span class="service-title" data-ru="UX/UI дизайн" data-en="UX/UI design">UX/UI дизайн</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Интерфейсы для приложений и сайтов. Исследую пользователя, проектирую опыт." data-en="Interfaces for apps and websites. Researching users, designing experience.">Интерфейсы для приложений и сайтов. Исследую пользователя, проектирую опыт.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">5</span><span class="service-title" data-ru="Инфографика" data-en="Infographics">Инфографика</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Превращаю данные в понятные визуальные истории — схемы, диаграммы, карты." data-en="Turning data into clear visual stories — diagrams, charts, maps.">Превращаю данные в понятные визуальные истории — схемы, диаграммы, карты.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">6</span><span class="service-title" data-ru="Полиграфия" data-en="Print design">Полиграфия</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Каталоги, журналы, буклеты. Вёрстка, печать, предпечатная подготовка." data-en="Catalogs, magazines, brochures. Layout, printing, prepress.">Каталоги, журналы, буклеты. Вёрстка, печать, предпечатная подготовка.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">7</span><span class="service-title" data-ru="Фирменный стиль" data-en="Brand identity">Фирменный стиль</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Создаю фирменные стили с нуля: логотип, палитра, типографика, носители." data-en="Creating brand identities from scratch: logo, palette, typography.">Создаю фирменные стили с нуля: логотип, палитра, типографика, носители.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">8</span><span class="service-title" data-ru="Брендинг" data-en="Branding">Брендинг</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Полный цикл: исследование, стратегия, визуал. Помогаю брендам найти свой голос." data-en="Full cycle: research, strategy, visuals. Helping brands find their voice.">Полный цикл: исследование, стратегия, визуал. Помогаю брендам найти свой голос.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">9</span><span class="service-title" data-ru="Логотипы" data-en="Logos">Логотипы</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Знаки и логотипы, которые работают в любом размере и контексте." data-en="Signs and logos that work at any size and context.">Знаки и логотипы, которые работают в любом размере и контексте.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">10</span><span class="service-title" data-ru="Дизайн упаковки" data-en="Packaging design">Дизайн упаковки</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Упаковка, которая продаёт: форма, графика, материалы." data-en="Packaging that sells: shape, graphics, materials.">Упаковка, которая продаёт: форма, графика, материалы.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">11</span><span class="service-title" data-ru="Модная иллюстрация" data-en="Fashion illustration">Модная иллюстрация</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Fashion-скетчи, обложки, эдиториалы в авторском стиле." data-en="Fashion sketches, covers, editorials in a signature style.">Fashion-скетчи, обложки, эдиториалы в авторском стиле.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">12</span><span class="service-title" data-ru="Печать и текстиль" data-en="Print & textile">Печать и текстиль</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="Принты для одежды, текстиль, декоративные паттерны." data-en="Prints for clothing, textiles, decorative patterns.">Принты для одежды, текстиль, декоративные паттерны.</p></div></div>
+<div class="service-block"><button class="service-header"><span class="service-num mono">13</span><span class="service-title" data-ru="Презентации PowerPoint" data-en="PowerPoint presentations">Презентации PowerPoint</span><span class="service-plus">+</span></button><div class="service-body"><p data-ru="PowerPoint-презентации любой сложности — от простых слайдов до сложных питч-деков." data-en="PowerPoint presentations of any complexity — from simple slides to pitch decks.">PowerPoint-презентации любой сложности — от простых слайдов до сложных питч-деков.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="gallery" id="gallery">
+<div class="container">
+<h2 class="shimmer" data-ru="Мои фото" data-en="My photos">Мои фото</h2>
+<p class="gallery-hint" data-ru="Нажмите — узнаете больше обо мне" data-en="Click to learn more about me">Нажмите — узнаете больше обо мне</p>
+
+<div class="moments-list">
+
+<div class="moment-card">
+<div class="moment-photo"><img src="images/photo5.PNG" alt="Eva"></div>
+<div class="moment-info">
+<div class="moment-num mono">1 / 5</div>
+<h3 class="shimmer" data-ru="Принципы" data-en="Principles">Принципы</h3>
+<button class="reveal-btn" data-moment="1"><span data-ru="Узнать обо мне →" data-en="Learn about me →">Узнать обо мне →</span></button>
+</div>
+</div>
+
+<div class="moment-card">
+<div class="moment-photo"><img src="images/photo9.PNG" alt="Eva"></div>
+<div class="moment-info">
+<div class="moment-num mono">2 / 5</div>
+<h3 class="shimmer" data-ru="Опыт" data-en="Experience">Опыт</h3>
+<button class="reveal-btn" data-moment="2"><span data-ru="Узнать обо мне →" data-en="Learn about me →">Узнать обо мне →</span></button>
+</div>
+</div>
+
+<div class="moment-card">
+<div class="moment-photo"><img src="images/photo12.PNG" alt="Eva"></div>
+<div class="moment-info">
+<div class="moment-num mono">3 / 5</div>
+<h3 class="shimmer" data-ru="Изящество" data-en="Elegance">Изящество</h3>
+<button class="reveal-btn" data-moment="3"><span data-ru="Узнать обо мне →" data-en="Learn about me →">Узнать обо мне →</span></button>
+</div>
+</div>
+
+<div class="moment-card">
+<div class="moment-photo"><img src="images/photo13.PNG" alt="Eva"></div>
+<div class="moment-info">
+<div class="moment-num mono">4 / 5</div>
+<h3 class="shimmer" data-ru="Экспертиза" data-en="Expertise">Экспертиза</h3>
+<button class="reveal-btn" data-moment="4"><span data-ru="Узнать обо мне →" data-en="Learn about me →">Узнать обо мне →</span></button>
+</div>
+</div>
+
+<div class="moment-card">
+<div class="moment-photo"><img src="images/photo15.PNG" alt="Eva"></div>
+<div class="moment-info">
+<div class="moment-num mono">5 / 5</div>
+<h3 class="shimmer" data-ru="Сотрудничество" data-en="Collaboration">Сотрудничество</h3>
+<button class="reveal-btn" data-moment="5"><span data-ru="Узнать обо мне →" data-en="Learn about me →">Узнать обо мне →</span></button>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="moment-popup" id="momentPopup">
+<div class="moment-popup-content">
+<button class="moment-close" id="momentClose">×</button>
+<img class="moment-popup-img" id="momentImg" src="" alt="">
+<div class="moment-popup-text">
+<div class="moment-popup-num mono" id="momentNum"></div>
+<h3 id="momentTitle"></h3>
+<p id="momentBody"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<h2 class="shimmer" data-ru="Свяжитесь со мной" data-en="Get in touch">Свяжитесь со мной</h2>
+<p class="contact-sub" data-ru="Открыта для новых проектов" data-en="Open for new projects">Открыта для новых проектов</p>
+<div class="contact-grid">
+<a href="https://t.me/isiiissw" target="_blank" rel="noopener" class="contact-card"><div class="contact-icon mono">TG</div><div class="contact-name">Telegram</div><div class="contact-value mono">@isiiissw</div></a>
+<a href="intent:eva332801@gmail.com#Intent;scheme=mailto;package=com.google.android.gm;end" class="contact-card"><div class="contact-icon mono">@</div><div class="contact-name">Email</div><div class="contact-value mono">eva332801@gmail.com</div></a>
+<a href="https://www.behance.net/640b22da" target="_blank" class="contact-card"><span data-ru="Портфолио на Behance →" data-en="Portfolio on Behance →">Портфолио на Behance →</span></a>
+</div>
+<p class="copyright">© 2026 EVA · <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
+</div>
+</section>
+
+<script src="clock.js"></script>
+<script src="scroll.js"></script>
+<script src="lang.js"></script>
+  
+</body>
+</html>
