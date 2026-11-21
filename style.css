@@ -1347,3 +1347,36 @@ transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 .moment-popup.open .moment-popup-content {
 transform: scale(1) !important;
 }
+/* --- НОВЫЕ ЦВЕТА (Тиффани и Пурпурный) --- */
+:root {
+    --tiffany: #0ABAB5 !important;
+    --purple: #3D2B56 !important;
+}
+
+body {
+    background-color: #F4F8F7 !important; 
+    color: #2C2C2C !important; 
+}
+
+h1, h2, h3, .logo, .service-title {
+    color: #3D2B56 !important;
+}
+
+.btn, .btn:hover {
+    background-color: #0ABAB5 !important;
+    color: #ffffff !important;
+}
+
+nav a:hover, .service-num, .service-plus {
+    color: #0ABAB5 !important;
+}
+
+/* Красим подвал (контакты) в пурпурный */
+footer {
+    background-color: #3D2B56 !important;
+    color: #F4F8F7 !important;
+}
+
+footer p {
+    color: #0ABAB5 !important;
+}
