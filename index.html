@@ -3,102 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA — Дизайнер</title>
+    <title>EVA — Графический дизайнер</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Красивые шрифты: Playfair (для заголовков) и Inter (для текста) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <!-- Шапка -->
+    <header class="fade-in">
         <div class="logo">EVA</div>
         <nav>
-            <a href="#about">01 · Обо мне</a>
-            <a href="#services">02 · Услуги</a>
-            <a href="#gallery">03 · Мои фото</a>
-            <a href="#contacts">04 · Контакты</a>
+            <a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a>
+            <a href="#services" data-ru="Услуги" data-en="Services">Услуги</a>
+            <a href="#gallery" data-ru="Работы" data-en="Works">Работы</a>
+            <a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
         <div class="lang-switch">
-            <button data-lang="ru" class="active">RU</button>
-            <button data-lang="en">EN</button>
+            <button id="lang-ru" class="active">RU</button>
+            <button id="lang-en">EN</button>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <!-- Главный экран -->
+    <section class="hero fade-in">
         <div class="hero-content">
-            <h1>EVA</h1>
-            <p class="subtitle">Дизайнер</p>
-            <p class="desc">Создаю визуальные системы, которые работают на ваш бизнес. От идеи и смысла — до эстетики, в которой нет ничего лишнего.</p>
-            <a href="#services" class="btn">Смотреть услуги →</a>
+            <h1 data-ru="Визуальные системы,<br>которые говорят<br>за вас." data-en="Visual systems<br>that speak<br>for you.">Визуальные системы,<br>которые говорят<br>за вас.</h1>
+            <p data-ru="Создаю бренды, сайты и иллюстрации с характером. Эстетика, смысл и внимание к деталям." data-en="I create brands, websites and illustrations with character. Aesthetics, meaning and attention to detail.">Создаю бренды, сайты и иллюстрации с характером. Эстетика, смысл и внимание к деталям.</p>
+            <a href="#contact" class="btn" data-ru="Обсудить проект" data-en="Discuss a project">Обсудить проект</a>
         </div>
     </section>
 
-    <section id="about">
+    <!-- Обо мне -->
+    <section id="about" class="section fade-in">
         <div class="container">
-            <h2 class="shimmer">Обо мне</h2>
+            <h2 class="section-title" data-ru="Обо мне" data-en="About me">Обо мне</h2>
             <div class="about-text">
-                <p>Меня зовут Ева. Я дизайнер, который верит: эстетика — это продолжение логики.</p>
-                <p>Я не рисую абстрактные картинки. Моя задача — собрать ваш образ в единую систему, где каждый шрифт, цвет и элемент работают на результат. Я умею слушать, задавать правильные вопросы и находить решения, которые выглядят дорого и уместно.</p>
-                <p>Мой подход прост: меньше лишнего, больше смысла и внимания к деталям.</p>
+                <p data-ru="Меня зовут Ева. Я дизайнер, который верит: эстетика — это продолжение логики. Я не рисую абстрактные картинки. Моя задача — собрать ваш образ в единую систему, где каждый шрифт, цвет и элемент работают на результат. Я умею слушать, задавать правильные вопросы и находить решения, которые выглядят дорого и уместно." data-en="My name is Eva. I am a designer who believes that aesthetics is a continuation of logic. I don't draw abstract pictures. My task is to assemble your image into a single system where every font, color and element works for the result. I know how to listen, ask the right questions and find solutions that look expensive and appropriate.">Меня зовут Ева. Я дизайнер, который верит: эстетика — это продолжение логики. Я не рисую абстрактные картинки. Моя задача — собрать ваш образ в единую систему, где каждый шрифт, цвет и элемент работают на результат. Я умею слушать, задавать правильные вопросы и находить решения, которые выглядят дорого и уместно.</p>
             </div>
         </div>
     </section>
 
-    <section class="services" id="services">
+    <!-- Услуги -->
+    <section id="services" class="section fade-in bg-darker">
         <div class="container">
-            <h2 class="shimmer">Что я создаю</h2>
-            <p class="services-hint">Нажмите на направление — раскроется описание</p>
-            <div class="services-list">
-
-                <div class="service-block">
-                    <button class="service-header">
-                        <span class="service-num mono">1</span>
-                        <span class="service-title" data-ru="Брендинг и айдентика" data-en="Branding & Identity">Брендинг и айдентика</span>
-                        <span class="service-plus">+</span>
-                    </button>
-                    <div class="service-body">
-                        <p data-ru="Создаю целостные образы с нуля: от концепции до готового логотипа и всех носителей. Ваш бренд будет узнаваемым и дорогим." data-en="I create holistic images from scratch: from concept to a finished logo and all media. Your brand will be recognizable and premium.">Создаю целостные образы с нуля: от концепции до готового логотипа и всех носителей. Ваш бренд будет узнаваемым и дорогим.</p>
-                    </div>
+            <h2 class="section-title" data-ru="Что я создаю" data-en="What I create">Что я создаю</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 data-ru="Брендинг и айдентика" data-en="Branding & Identity">Брендинг и айдентика</h3>
+                    <p data-ru="Создаю целостные образы с нуля: от концепции до готового логотипа и всех носителей." data-en="I create holistic images from scratch: from concept to a finished logo and all media.">Создаю целостные образы с нуля: от концепции до готового логотипа и всех носителей.</p>
                 </div>
-
-                <div class="service-block">
-                    <button class="service-header">
-                        <span class="service-num mono">2</span>
-                        <span class="service-title" data-ru="Веб-дизайн и интерфейсы" data-en="Web Design & Interfaces">Веб-дизайн и интерфейсы</span>
-                        <span class="service-plus">+</span>
-                    </button>
-                    <div class="service-body">
-                        <p data-ru="Проектирую сайты и приложения, в которых удобно находиться. Продумываю логику, структуру и визуал, чтобы посетители становились клиентами." data-en="I design websites and apps that are comfortable to navigate. I think through logic, structure, and visuals so visitors become clients.">Проектирую сайты и приложения, в которых удобно находиться. Продумываю логику, структуру и визуал, чтобы посетители становились клиентами.</p>
-                    </div>
+                <div class="service-card">
+                    <h3 data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</h3>
+                    <p data-ru="Проектирую сайты и приложения, в которых удобно находиться и приятно возвращаться." data-en="I design websites and apps that are comfortable to navigate and pleasant to return to.">Проектирую сайты и приложения, в которых удобно находиться и приятно возвращаться.</p>
                 </div>
-
-                <div class="service-block">
-                    <button class="service-header">
-                      <span class="service-num mono">3</span>
-                        <span class="service-title" data-ru="Графический и печатный дизайн" data-en="Graphic & Print Design">Графический и печатный дизайн</span>
-                        <span class="service-plus">+</span>
-                    </button>
-                    <div class="service-body">
-                        <p data-ru="Плакаты, каталоги, упаковка, презентации и инфографика. Любая визуальная коммуникация, где важны ритм, смысл и идеальная вёрстка." data-en="Posters, catalogs, packaging, presentations, and infographics. Any visual communication where rhythm, meaning, and perfect layout matter.">Плакаты, каталоги, упаковка, презентации и инфографика. Любая визуальная коммуникация, где важны ритм, смысл и идеальная вёрстка.</p>
-                    </div>
+                <div class="service-card">
+                    <h3 data-ru="Графический дизайн" data-en="Graphic Design">Графический дизайн</h3>
+                    <p data-ru="Плакаты, каталоги, упаковка, презентации и любая визуальная коммуникация." data-en="Posters, catalogs, packaging, presentations and any visual communication.">Плакаты, каталоги, упаковка, презентации и любая визуальная коммуникация.</p>
                 </div>
-
-                <div class="service-block">
-                    <button class="service-header">
-                        <span class="service-num mono">4</span>
-                        <span class="service-title" data-ru="Иллюстрация и спецпроекты" data-en="Illustration & Special Projects">Иллюстрация и спецпроекты</span>
-                        <span class="service-plus">+</span>
-                    </button>
-                    <div class="service-body">
-                        <p data-ru="Авторская графика, fashion-скетчи, паттерны. Уникальный визуальный язык, который выделит ваш проект среди конкурентов." data-en="Original graphics, fashion sketches, patterns. A unique visual language that will make your project stand out from competitors.">Авторская графика, fashion-скетчи, паттерны. Уникальный визуальный язык, который выделит ваш проект среди конкурентов.</p>
-                    </div>
+                <div class="service-card">
+                    <h3 data-ru="Иллюстрация" data-en="Illustration">Иллюстрация</h3>
+                    <p data-ru="Авторская графика, fashion-скетчи, паттерны. Уникальный визуальный язык." data-en="Original graphics, fashion sketches, patterns. Unique visual language.">Авторская графика, fashion-скетчи, паттерны. Уникальный визуальный язык.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
+    <!-- Галерея -->
+    <section id="gallery" class="section fade-in">
         <div class="container">
-            <h2 class="shimmer">Мои работы и фото</h2>
+            <h2 class="section-title" data-ru="Избранные работы" data-en="Selected works">Избранные работы</h2>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="photo1.PNG" alt="Работа 1"></div>
                 <div class="gallery-item"><img src="photo9.PNG" alt="Работа 2"></div>
@@ -110,25 +86,68 @@
         </div>
     </section>
 
-    <footer id="contacts">
+    <!-- Форма заявки и контакты -->
+    <section id="contact" class="section fade-in bg-darker">
         <div class="container">
-            <h2 class="shimmer">Свяжитесь со мной</h2>
-            <p>Открыта для новых проектов</p>
+            <h2 class="section-title" data-ru="Обсудим ваш проект?" data-en="Let's discuss your project?">Обсудим ваш проект?</h2>
+            <p class="contact-sub" data-ru="Заполните форму, и я свяжусь с вами в течение дня." data-en="Fill out the form and I will contact you within a day.">Заполните форму, и я свяжусь с вами в течение дня.</p>
             
-            <div class="contact-links">
-                <!-- Почта -->
-                <a href="mailto:eva332801@gmail.com" class="btn">Написать мне</a>
-                
-                <!-- Телеграм (текст ссылки не показывает юзернейм) -->
-                <a href="https://t.me/isiiissw" target="_blank" class="btn social-btn">Мой Телеграм</a>
-                
-                <!-- Behance -->
-                <a href="https://www.behance.net/640b22da" target="_blank" class="btn social-btn">Портфолио на Behance</a>
+            <form action="https://formspree.io/f/ВАШ_ID" method="POST" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя / Your name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email или Telegram" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Расскажите о проекте / Tell about the project" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-full" data-ru="Отправить заявку" data-en="Send request">Отправить заявку</button>
+            </form>
+
+            <div class="social-links">
+                <a href="mailto:eva332801@gmail.com">Почта</a>
+                <a href="https://t.me/isiiissw" target="_blank">Телеграм</a>
+                <a href="https://www.behance.net/640b22da" target="_blank">Behance</a>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="lang.js"></script>
-    <script src="scroll.js"></script>
+    <!-- СКРИПТЫ -->
+    <script>
+        // Скрипт для плавного появления блоков при прокрутке
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Скрипт для перевода (RU/EN)
+        const langRu = document.getElementById('lang-ru');
+        const langEn = document.getElementById('lang-en');
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-ru]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+            
+            if(lang === 'ru') {
+                langRu.classList.add('active');
+                langEn.classList.remove('active');
+            } else {
+                langEn.classList.add('active');
+                langRu.classList.remove('active');
+            }
+        }
+
+        langRu.addEventListener('click', () => setLanguage('ru'));
+        langEn.addEventListener('click', () => setLanguage('en'));
+    </script>
 </body>
 </html>
