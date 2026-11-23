@@ -4,16 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVA — Дизайн, который продает</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ЦВЕТА: РОЗОВЫЙ, ТЕМНО-СИНИЙ, БЕЛЫЙ --- */
+        :root {
+            --bg: #FFFFFF;          /* Белый */
+            --dark-blue: #0F172A;   /* Темно-синий (почти черный) */
+            --pink: #FF007F;        /* Яркий розовый */
+            --pink-light: #FFE5F1;  /* Нежно-розовый для фона */
+            --text-grey: #475569;   /* Серый для текста */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--dark-blue);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- ШАПКА --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--pink); }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-left: 25px;
+            transition: color 0.3s;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover { color: var(--pink); }
+
+        .nav-btn {
+            background-color: var(--dark-blue);
+            color: #fff !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+        }
+        .nav-btn:hover { background-color: var(--pink); }
+
+        /* --- ГЛАВНЫЙ ЭКРАН --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #fff 0%, var(--pink-light) 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--dark-blue);
+        }
+
+        .hero h1 span { color: var(--pink); font-style: italic; }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-grey);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* --- КНОПКИ --- */
+        .btn-main {
+            display: inline-block;
+            padding: 20px 50px;
+            background-color: var(--pink);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(255, 0, 127, 0.3);
+        }
+
+        .btn-main:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+        }
+
+        /* --- БЕГУЩАЯ СТРОКА --- */
+        .marquee {
+            background: var(--dark-blue);
+            color: #fff;
+            padding: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+        .marquee-content { display: inline-block; animation: marquee 15s linear infinite; }
+        .marquee-content span { margin: 0 30px; color: var(--pink-light); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- СЕКЦИИ --- */
+        .section { padding: 120px 0; }
+        .bg-pink { background-color: var(--pink-light); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 50px; text-align: center; color: var(--dark-blue); }
+
+        /* --- ОБО МНЕ --- */
+        .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .text-block p { margin-bottom: 20px; font-size: 18px; color: var(--text-grey); }
+        .image-block img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
+        .image-block:hover img { transform: scale(1.02); }
+
+        /* --- ПОДХОД --- */
+        .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .approach-card { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--pink); transition: transform 0.3s; }
+        .approach-card:hover { transform: translateY(-10px); }
+        .num { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--pink); display: block; margin-bottom: 20px; opacity: 0.5; }
+        .approach-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--dark-blue); }
+        .approach-card p { color: var(--text-grey); }
+
+        /* --- АККОРДЕОН --- */
+        .services-hint { text-align: center; color: var(--text-grey); margin-bottom: 40px; }
+        .accordion { max-width: 800px; margin: 0 auto; }
+        .accordion-item { background: #fff; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid rgba(15, 23, 42, 0.05); }
+        .accordion-header { width: 100%; padding: 30px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 600; color: var(--dark-blue); cursor: pointer; transition: background 0.3s; }
+        .accordion-header:hover { background: #FAFAFA; }
+        .accordion-header .icon { font-size: 28px; color: var(--pink); transition: transform 0.4s; }
+        .accordion-header.active .icon { transform: rotate(45deg); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; padding: 0 30px; }
+        .accordion-content p { padding-bottom: 30px; color: var(--text-grey); font-size: 17px; }
+
+        /* --- ГАЛЕРЕЯ --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .gallery-item { border-radius: 15px; overflow: hidden; cursor: pointer; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        /* --- ФОРМА --- */
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 25px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 20px; border: 2px solid #EAEAEA; border-radius: 15px; font-family: inherit; font-size: 16px; transition: all 0.3s; background: #FAFAFA; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--pink); background: #fff; box-shadow: 0 10px 20px rgba(255, 0, 127, 0.1); }
+
+        /* --- ЛАЙТБОКС --- */
+        .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); justify-content: center; align-items: center; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        .lightbox .close { position: absolute; top: 30px; right: 50px; color: #fff; font-size: 60px; cursor: pointer; }
+
+        /* --- АНИМАЦИИ ПОЯВЛЕНИЯ --- */
+        .fade-in { opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 50px; }
+            .split-layout { grid-template-columns: 1fr; }
+            header { padding: 15px; flex-direction: column; gap: 15px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav a { margin-left: 0; }
+            .section { padding: 80px 0; }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Кастомный курсор (для ПК) -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
 
     <!-- Шапка -->
     <header class="fade-in">
@@ -29,13 +211,10 @@
 
     <!-- Главный экран -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="reveal-text">СОЗДАЮ<br><span class="accent-text">ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
-            <p class="fade-in">Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
-            <a href="#contact" class="btn-main magnetic">Начать проект</a>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
+        <div class="hero-content fade-in">
+            <h1>СОЗДАЮ<br><span>ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
+            <p>Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
+            <a href="#contact" class="btn-main">Начать проект</a>
         </div>
     </section>
 
@@ -47,11 +226,11 @@
         </div>
     </div>
 
-    <!-- Обо мне (Много текста) -->
+    <!-- Обо мне -->
     <section id="about" class="section fade-in">
         <div class="container split-layout">
             <div class="text-block">
-                <h2 class="section-title">Привет, я Ева.</h2>
+                <h2 class="section-title" style="text-align: left;">Привет, я Ева.</h2>
                 <p>Я дизайнер, для которого эстетика — это продолжение логики. Моя задача — не просто нарисовать красивый логотип, а собрать ваш бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
                 <p>Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма. Я работаю на стыке графического дизайна, веба и иллюстрации, чтобы создавать проекты, которые невозможно забыть.</p>
                 <p>Мой опыт позволяет мне смотреть на задачу шире: я думаю не только о том, как это будет выглядеть на экране, но и о том, какую эмоцию вызовет у вашего клиента.</p>
@@ -62,10 +241,10 @@
         </div>
     </section>
 
-    <!-- Подход (3 принципа с анимацией) -->
-    <section id="approach" class="section bg-dark">
+    <!-- Подход -->
+    <section id="approach" class="section bg-pink">
         <div class="container">
-            <h2 class="section-title text-light fade-in">Мой подход</h2>
+            <h2 class="section-title fade-in">Мой подход</h2>
             <div class="approach-grid">
                 <div class="approach-card fade-in">
                     <span class="num">01</span>
@@ -86,7 +265,7 @@
         </div>
     </section>
 
-    <!-- Услуги (Аккордеон) -->
+    <!-- Услуги -->
     <section id="services" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Что я создаю</h2>
@@ -136,7 +315,7 @@
                 <div class="form-group"><input type="text" name="name" placeholder="Ваше имя" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Email или Telegram" required></div>
                 <div class="form-group"><textarea name="message" rows="4" placeholder="Расскажите о вашем проекте..." required></textarea></div>
-                <button type="submit" class="btn-main magnetic">Отправить заявку</button>
+                <button type="submit" class="btn-main">Отправить заявку</button>
             </form>
         </div>
     </section>
@@ -148,7 +327,7 @@
     </div>
 
     <script>
-        // 1. Плавное появление при скролле
+        // 1. Плавное появление
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -179,49 +358,6 @@
         }
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
-        }
-
-        // 4. Кастомный курсор (только для ПК)
-        if (window.matchMedia("(pointer: fine)").matches) {
-            const cursor = document.querySelector('.cursor');
-            const follower = document.querySelector('.cursor-follower');
-
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                
-                setTimeout(() => {
-                    follower.style.left = e.clientX + 'px';
-                    follower.style.top = e.clientY + 'px';
-                }, 50);
-            });
-
-            // Эффект наведения на кнопки
-            const links = document.querySelectorAll('a, button, .gallery-item');
-            links.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    cursor.classList.add('hover');
-                    follower.classList.add('hover');
-                });
-                link.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('hover');
-                    follower.classList.remove('hover');
-                });
-            });
-
-            // Магнитный эффект для кнопок
-            const magnets = document.querySelectorAll('.magnetic');
-            magnets.forEach(magnet => {
-                magnet.addEventListener('mousemove', function(e) {
-                    const position = this.getBoundingClientRect();
-                    const x = e.pageX - position.left - position.width / 2;
-                    const y = e.pageY - position.top - position.height / 2;
-                    this.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
-                });
-                magnet.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translate(0px, 0px)';
-                });
-            });
         }
     </script>
 </body>
