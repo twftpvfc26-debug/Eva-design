@@ -5,215 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVA — Графический и веб-дизайнер</title>
     
+    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <style>
-        /* --- СТРОГО 4 ЦВЕТА --- */
-        :root {
-            --white: #FFFFFF;
-            --navy: #1A2530;
-            --grey: #F0F0F0;
-            --pink: #FDE8E9;
-            --gold: #C5A059;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--white);
-            color: var(--navy);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* --- РУССКИЕ МУЗЕЙНЫЕ УЗОРЫ НА ФОНЕ (Вензеля) --- */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2;
-            /* Красивый золотой растительный узор (орнамент) */
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 20 80 20 100 50 C80 80 60 80 50 100 C40 80 20 80 0 50 C20 20 40 20 50 0 Z" fill="none" stroke="%23C5A059" stroke-width="0.5" opacity="0.2"/><circle cx="50" cy="50" r="10" fill="none" stroke="%23C5A059" stroke-width="0.3" opacity="0.2"/></svg>');
-            background-size: 100px 100px;
-        }
-
-        /* --- БРИЛЛИАНТЫ СВАРОВСКИ (Падают) --- */
-        .crystal {
-            position: fixed;
-            width: 12px; height: 12px;
-            background: var(--white);
-            transform: rotate(45deg);
-            box-shadow: 0 0 15px 5px rgba(197, 160, 89, 0.8), 0 0 30px 10px rgba(255, 255, 255, 0.6);
-            animation: fall 8s infinite linear, shine 2s infinite alternate;
-            z-index: -1;
-        }
-        .crystal:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .crystal:nth-child(2) { left: 30%; animation-delay: 2s; background: var(--gold); width: 8px; height: 8px; }
-        .crystal:nth-child(3) { left: 50%; animation-delay: 4s; }
-        .crystal:nth-child(4) { left: 70%; animation-delay: 1s; background: var(--gold); width: 10px; height: 10px; }
-        .crystal:nth-child(5) { left: 90%; animation-delay: 3s; }
-
-        @keyframes fall {
-            0% { top: -10%; opacity: 0; transform: rotate(45deg) scale(0.5); }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { top: 110%; opacity: 0; transform: rotate(405deg) scale(1.5); }
-        }
-
-        @keyframes shine {
-            0% { box-shadow: 0 0 10px 2px rgba(255,255,255,0.5); }
-            100% { box-shadow: 0 0 30px 10px rgba(197, 160, 89, 0.9); }
-        }
-
-        /* --- ШАПКА --- */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: var(--white);
-            z-index: 100;
-            border-bottom: 1px solid var(--gold);
-        }
-
-        .logo { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--navy); letter-spacing: 4px; }
-
-        nav a {
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 600;
-            margin-left: 25px;
-            transition: color 0.3s;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        nav a:hover { color: var(--gold); }
-
-        /* --- ГЛАВНЫЙ ЭКРАН --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: var(--grey);
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 80px;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            color: var(--navy);
-        }
-        .hero h1 span { color: var(--gold); font-style: italic; }
-        .hero p { font-size: 20px; color: var(--navy); max-width: 600px; margin: 0 auto 50px; }
-
-        /* --- КНОПКИ --- */
-        .btn-royal {
-            display: inline-block;
-            padding: 18px 50px;
-            background: var(--navy);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid var(--navy);
-            cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.4s ease;
-        }
-        .btn-royal:hover {
-            background: var(--white);
-            color: var(--navy);
-            border-color: var(--gold);
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
-        }
-
-        /* --- ЛЕНТА (Одна) --- */
-        .marquee {
-            background: var(--navy);
-            color: var(--white);
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            border-top: 1px solid var(--gold);
-            border-bottom: 1px solid var(--gold);
-        }
-        .marquee-content { display: inline-block; animation: marqueeLeft 20s linear infinite; }
-        .marquee-content span { margin: 0 30px; }
-
-        @keyframes marqueeLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* --- СЕКЦИИ --- */
-        .section { padding: 120px 0; position: relative; }
-        #about { background-color: var(--white); }
-        #services { background-color: var(--pink); }
-        #gallery { background-color: var(--white); }
-        #contact { background-color: var(--navy); color: var(--white); }
-
-        .section-title { font-family: 'Cinzel', serif; font-size: 48px; margin-bottom: 50px; text-align: center; color: var(--navy); }
-        #contact .section-title { color: var(--gold); }
-
-        /* --- ОБО МНЕ --- */
-        .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .text-block h2 { text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 40px; margin-bottom: 20px; color: var(--navy); }
-        .text-block p { margin-bottom: 20px; font-size: 18px; color: var(--navy); }
-        .image-block img { width: 100%; border: 1px solid var(--gold); padding: 10px; background: var(--white); }
-
-        /* --- АККОРДЕОН --- */
-        .accordion { max-width: 800px; margin: 0 auto; }
-        .accordion-item { background: var(--white); margin-bottom: 15px; border: 1px solid var(--gold); }
-        .accordion-header { width: 100%; padding: 25px; background: none; border: none; display: flex; justify-content: space-between; font-size: 20px; color: var(--navy); cursor: pointer; font-family: 'Cinzel', serif; }
-        .accordion-header .icon { color: var(--gold); transition: transform 0.4s; }
-        .accordion-header.active .icon { transform: rotate(45deg); }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px; }
-        .accordion-content p { padding-bottom: 25px; color: var(--navy); }
-
-        /* --- ГАЛЕРЕЯ --- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .gallery-item { border: 1px solid var(--gold); padding: 5px; background: var(--white); overflow: hidden; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-        .gallery-item:hover img { transform: scale(1.05); }
-
-        /* --- ФОРМА --- */
-        .contact-form { max-width: 600px; margin: 0 auto; }
-        .form-group { margin-bottom: 20px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 18px; border: 1px solid var(--gold); background: rgba(255,255,255,0.1); color: var(--white); font-family: inherit; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--white); }
-
-        /* --- АНИМАЦИИ --- */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: 1s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 46px; }
-            .split-layout { grid-template-columns: 1fr; }
-            header { padding: 15px; flex-direction: column; }
-            nav { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; }
-        }
-    </style>
+    <!-- Подключаем ваш файл стилей -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- БРИЛЛИАНТЫ -->
     <div class="crystal"></div>
     <div class="crystal"></div>
     <div class="crystal"></div>
     <div class="crystal"></div>
     <div class="crystal"></div>
 
+    <!-- Шапка -->
     <header class="fade-in">
         <div class="logo">EVA</div>
         <nav>
@@ -224,6 +33,7 @@
         </nav>
     </header>
 
+    <!-- Главный экран -->
     <section class="hero">
         <div class="hero-content fade-in">
             <h1>СОЗДАЮ<br><span>ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
@@ -240,6 +50,7 @@
         </div>
     </div>
 
+    <!-- Обо мне (Ваше фото) -->
     <section id="about" class="section fade-in">
         <div class="container split-layout">
             <div class="text-block">
@@ -253,6 +64,7 @@
         </div>
     </section>
 
+    <!-- Услуги -->
     <section id="services" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Что я создаю</h2>
@@ -277,6 +89,7 @@
         </div>
     </section>
 
+    <!-- Галерея (Ваши работы) -->
     <section id="gallery" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Избранные работы</h2>
@@ -291,6 +104,7 @@
         </div>
     </section>
 
+    <!-- Форма -->
     <section id="contact" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Давайте создадим что-то крутое</h2>
