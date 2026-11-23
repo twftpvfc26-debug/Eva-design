@@ -1,20 +1,17 @@
-/* --- КОРОЛЕВСКАЯ ПАЛИТРА --- */
+/* --- СТРОГО 4 ЦВЕТА --- */
 :root {
-    --night-sky: #2a2a35;
-    --foxglove: #b9b3b1;
-    --lily-white: #e2e2dA;
+    --white: #FFFFFF;
+    --navy: #1A2530;
+    --grey: #F0F0F0;
+    --pink: #FDE8E9;
     --gold: #C5A059;
-    --dark-accent: #1e1e26;
-    --beige: #F5F5DC;
-    --pink-soft: #FADADD;
-    --grey-soft: #E0E0E0;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--lily-white);
-    color: var(--night-sky);
+    background-color: var(--white);
+    color: var(--navy);
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
@@ -22,33 +19,43 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* --- ФОН С КРИСТАЛЛАМИ --- */
-.royal-bg {
+/* --- РУССКИЕ МУЗЕЙНЫЕ УЗОРЫ НА ФОНЕ (Вензеля) --- */
+body::before {
+    content: "";
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1;
-    background-color: var(--beige);
+    z-index: -2;
+    /* Красивый золотой растительный узор (завитки) */
+    background-image: url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M60 0 C80 20 100 30 120 60 C100 90 80 100 60 120 C40 100 20 90 0 60 C20 30 40 20 60 0 Z" fill="none" stroke="%23C5A059" stroke-width="0.5" opacity="0.15"/><path d="M60 20 C70 40 80 50 100 60 C80 70 70 80 60 100 C50 80 40 70 20 60 C40 50 50 40 60 20 Z" fill="none" stroke="%23C5A059" stroke-width="0.3" opacity="0.1"/></svg>');
+    background-size: 120px 120px;
 }
 
+/* --- БРИЛЛИАНТЫ СВАРОВСКИ (Падают) --- */
 .crystal {
-    position: absolute;
-    width: 15px; height: 15px;
-    background: white;
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--white);
     transform: rotate(45deg);
-    box-shadow: 0 0 20px 5px rgba(197, 160, 89, 0.8), 0 0 40px 10px rgba(255, 255, 255, 0.6);
-    animation: sparkle 4s infinite alternate;
-    opacity: 0.5;
+    box-shadow: 0 0 15px 5px rgba(197, 160, 89, 0.8), 0 0 30px 10px rgba(255, 255, 255, 0.6);
+    animation: fall 8s infinite linear, shine 2s infinite alternate;
+    z-index: -1;
+}
+.crystal:nth-child(1) { left: 10%; animation-delay: 0s; }
+.crystal:nth-child(2) { left: 30%; animation-delay: 2s; background: var(--gold); width: 8px; height: 8px; }
+.crystal:nth-child(3) { left: 50%; animation-delay: 4s; }
+.crystal:nth-child(4) { left: 70%; animation-delay: 1s; background: var(--gold); width: 10px; height: 10px; }
+.crystal:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes fall {
+    0% { top: -10%; opacity: 0; transform: rotate(45deg) scale(0.5); }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { top: 110%; opacity: 0; transform: rotate(405deg) scale(1.5); }
 }
 
-.crystal:nth-child(even) {
-    width: 10px; height: 10px;
-    background: var(--gold);
-    box-shadow: 0 0 15px 3px rgba(197, 160, 89, 0.9);
-}
-
-@keyframes sparkle {
-    0% { transform: rotate(45deg) scale(0.8); opacity: 0.2; }
-    100% { transform: rotate(135deg) scale(1.5); opacity: 1; box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.9); }
+@keyframes shine {
+    0% { box-shadow: 0 0 10px 2px rgba(255,255,255,0.5); }
+    100% { box-shadow: 0 0 30px 10px rgba(197, 160, 89, 0.9); }
 }
 
 /* --- ШАПКА --- */
@@ -60,34 +67,23 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(245, 245, 220, 0.9);
-    backdrop-filter: blur(10px);
+    background: var(--white);
     z-index: 100;
     border-bottom: 1px solid var(--gold);
 }
 
-.logo { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--gold); letter-spacing: 4px; }
+.logo { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--navy); letter-spacing: 4px; }
 
 nav a {
     text-decoration: none;
-    color: var(--dark-accent);
+    color: var(--navy);
     font-weight: 600;
     margin-left: 25px;
     transition: color 0.3s;
     font-size: 14px;
     text-transform: uppercase;
 }
-
 nav a:hover { color: var(--gold); }
-
-.nav-btn {
-    border: 1px solid var(--gold);
-    color: var(--gold) !important;
-    padding: 10px 25px;
-    border-radius: 4px;
-    transition: all 0.4s;
-}
-.nav-btn:hover { background-color: var(--gold); color: var(--lily-white) !important; }
 
 /* --- ГЛАВНЫЙ ЭКРАН --- */
 .hero {
@@ -97,6 +93,7 @@ nav a:hover { color: var(--gold); }
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: var(--grey);
 }
 
 .hero h1 {
@@ -104,55 +101,37 @@ nav a:hover { color: var(--gold); }
     font-size: 80px;
     line-height: 1.1;
     margin-bottom: 30px;
-    color: var(--dark-accent);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    color: var(--navy);
 }
-
 .hero h1 span { color: var(--gold); font-style: italic; }
-
-.hero p {
-    font-size: 20px;
-    color: var(--night-sky);
-    max-width: 600px;
-    margin: 0 auto 50px;
-}
+.hero p { font-size: 20px; color: var(--navy); max-width: 600px; margin: 0 auto 50px; }
 
 /* --- КНОПКИ --- */
 .btn-royal {
     display: inline-block;
     padding: 18px 50px;
-    background: var(--night-sky);
-    color: var(--lily-white);
+    background: var(--navy);
+    color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    border-radius: 2px;
-    transition: all 0.5s ease;
-    border: none;
+    border: 1px solid var(--navy);
     cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+}
+.btn-royal:hover {
+    background: var(--white);
+    color: var(--navy);
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
 }
 
-.btn-royal::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.6s;
-}
-
-.btn-royal:hover::before { left: 100%; }
-.btn-royal:hover { background: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.4); }
-
-/* --- БЕГУЩИЕ СТРОКИ --- */
+/* --- ЛЕНТА (Одна) --- */
 .marquee {
-    background: var(--dark-accent);
-    color: var(--gold);
+    background: var(--navy);
+    color: var(--white);
     padding: 15px 0;
     overflow: hidden;
     white-space: nowrap;
@@ -160,69 +139,56 @@ nav a:hover { color: var(--gold); }
     font-size: 18px;
     border-top: 1px solid var(--gold);
     border-bottom: 1px solid var(--gold);
-    margin-bottom: 2px;
 }
-.marquee-content { display: inline-block; }
-.marquee-left .marquee-content { animation: marqueeLeft 25s linear infinite; }
-.marquee-right .marquee-content { animation: marqueeRight 25s linear infinite; }
-
+.marquee-content { display: inline-block; animation: marqueeLeft 20s linear infinite; }
 .marquee-content span { margin: 0 30px; }
 
 @keyframes marqueeLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-@keyframes marqueeRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 
-/* --- СЕКЦИИ (РАЗНЫЕ ФОНЫ) --- */
+/* --- СЕКЦИИ --- */
 .section { padding: 120px 0; position: relative; }
-#about { background-color: var(--lily-white); }
-#services { background-color: var(--grey-soft); }
-#gallery { background-color: var(--pink-soft); }
-#contact { background-color: var(--night-sky); color: var(--lily-white); }
+#about { background-color: var(--white); }
+#services { background-color: var(--pink); }
+#gallery { background-color: var(--white); }
+#contact { background-color: var(--navy); color: var(--white); }
 
-.section-title { font-family: 'Cinzel', serif; font-size: 48px; margin-bottom: 50px; text-align: center; color: var(--dark-accent); }
+.section-title { font-family: 'Cinzel', serif; font-size: 48px; margin-bottom: 50px; text-align: center; color: var(--navy); }
 #contact .section-title { color: var(--gold); }
 
 /* --- ОБО МНЕ --- */
 .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.text-block h2 { text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 40px; margin-bottom: 20px; color: var(--dark-accent);}
-.text-block p { margin-bottom: 20px; font-size: 18px; color: var(--night-sky); }
-.image-block img { width: 100%; border-radius: 4px; border: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.text-block h2 { text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 40px; margin-bottom: 20px; color: var(--navy); }
+.text-block p { margin-bottom: 20px; font-size: 18px; color: var(--navy); }
+.image-block img { width: 100%; border: 1px solid var(--gold); padding: 10px; background: var(--white); }
 
 /* --- АККОРДЕОН --- */
 .accordion { max-width: 800px; margin: 0 auto; }
-.accordion-item { background: var(--lily-white); margin-bottom: 20px; border: 1px solid var(--gold); }
-.accordion-header { width: 100%; padding: 30px; background: none; border: none; display: flex; justify-content: space-between; font-size: 22px; color: var(--dark-accent); cursor: pointer; font-family: 'Cinzel', serif; }
+.accordion-item { background: var(--white); margin-bottom: 15px; border: 1px solid var(--gold); }
+.accordion-header { width: 100%; padding: 25px; background: none; border: none; display: flex; justify-content: space-between; font-size: 20px; color: var(--navy); cursor: pointer; font-family: 'Cinzel', serif; }
 .accordion-header .icon { color: var(--gold); transition: transform 0.4s; }
 .accordion-header.active .icon { transform: rotate(45deg); }
-.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; padding: 0 30px; }
-.accordion-content p { padding-bottom: 30px; color: var(--night-sky); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px; }
+.accordion-content p { padding-bottom: 25px; color: var(--navy); }
 
 /* --- ГАЛЕРЕЯ --- */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.gallery-item { border: 3px solid var(--gold); overflow: hidden; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.gallery-item { border: 1px solid var(--gold); padding: 5px; background: var(--white); overflow: hidden; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
 .gallery-item:hover img { transform: scale(1.05); }
 
 /* --- ФОРМА --- */
 .contact-form { max-width: 600px; margin: 0 auto; }
-.form-group { margin-bottom: 25px; }
-.form-group input, .form-group textarea { width: 100%; padding: 20px; border: 1px solid var(--gold); background: rgba(255,255,255,0.1); color: var(--lily-white); font-family: inherit; }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.2); }
+.form-group { margin-bottom: 20px; }
+.form-group input, .form-group textarea { width: 100%; padding: 18px; border: 1px solid var(--gold); background: rgba(255,255,255,0.1); color: var(--white); font-family: inherit; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--white); }
 
-/* --- ЛАЙТБОКС --- */
-.lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(30, 30, 38, 0.95); justify-content: center; align-items: center; }
-.lightbox img { max-width: 90%; max-height: 90%; border: 3px solid var(--gold); border-radius: 4px; }
-.lightbox .close { position: absolute; top: 30px; right: 50px; color: var(--gold); font-size: 60px; cursor: pointer; }
-
-/* --- АНИМАЦИИ ПОЯВЛЕНИЯ --- */
-.fade-in { opacity: 0; transform: translateY(40px); transition: 1s ease; }
+/* --- АНИМАЦИИ --- */
+.fade-in { opacity: 0; transform: translateY(30px); transition: 1s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
 @media (max-width: 768px) {
     .hero h1 { font-size: 46px; }
     .split-layout { grid-template-columns: 1fr; }
     header { padding: 15px; flex-direction: column; }
     nav { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; }
-    nav a { margin: 5px 10px; }
-    .section { padding: 80px 0; }
 }
