@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVA — Визуальные смыслы</title>
   
+  <!-- Элегантные шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -13,6 +14,7 @@
 </head>
 <body>
 
+  <!-- Прелоадер (Занавес при загрузке) -->
   <div class="preloader">
     <div class="preloader-content">
       <div class="preloader-line"></div>
@@ -21,18 +23,20 @@
     </div>
   </div>
 
+  <!-- Винтажный узор на фоне -->
   <div class="bg-pattern">
     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="arabesque" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-          <path d="M100 0 C100 50 150 50 150 100 C150 150 100 150 100 200 M0 100 C50 100 50 150 100 150 C150 150 150 100 200 100" stroke="rgba(243, 212, 223, 0.05)" stroke-width="1" fill="none"/>
-          <circle cx="100" cy="100" r="10" stroke="rgba(243, 212, 223, 0.08)" stroke-width="1" fill="none"/>
+          <path d="M100 0 C100 50 150 50 150 100 C150 150 100 150 100 200 M0 100 C50 100 50 150 100 150 C150 150 150 100 200 100" stroke="rgba(244, 195, 212, 0.08)" stroke-width="1" fill="none"/>
+          <circle cx="100" cy="100" r="10" stroke="rgba(244, 195, 212, 0.1)" stroke-width="1" fill="none"/>
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#arabesque)"/>
     </svg>
   </div>
 
+  <!-- Шапка -->
   <header class="header">
     <a href="#" class="logo">EVA</a>
     <nav class="nav">
@@ -51,6 +55,7 @@
   </header>
 
   <main>
+    <!-- Главный экран -->
     <section class="hero">
       <div class="hero-text reveal">
         <p class="eyebrow" data-ru="Искусство визуальной идентичности" data-en="The art of visual identity">Искусство визуальной идентичности</p>
@@ -74,6 +79,7 @@
       </div>
     </section>
 
+    <!-- Раскрывающийся текст (Обо мне) -->
     <section class="about-panel" id="aboutPanel">
       <div class="about-inner">
         <div class="about-decorator"></div>
@@ -89,6 +95,7 @@
       </div>
     </section>
 
+    <!-- Бегущая строка -->
     <div class="marquee-wrapper">
       <div class="marquee">
         <div class="marquee-track" id="marqueeTrack">
@@ -97,142 +104,174 @@
       </div>
     </div>
 
+    <!-- Портфолио (Ваши личные фото) -->
     <section id="portfolio" class="portfolio reveal">
       <div class="portfolio-head">
-        <h2 data-ru="Избранные шедевры" data-en="Selected masterpieces">Избранные шедевры</h2>
-        <a href="https://www.behance.net/640b22da" target="_blank" class="link-elegant" data-ru="Весь архив на Behance →" data-en="Full archive on Behance →">Весь архив на Behance →</a>
+        <h2 data-ru="Мой визуальный мир" data-en="My visual world">Мой визуальный мир</h2>
+        <a href="https://www.behance.net/640b22da" target="_blank" class="link-elegant" data-ru="Мои работы на Behance →" data-en="My works on Behance →">Мои работы на Behance →</a>
       </div>
       
       <div class="portfolio-grid">
-        <!-- Работа 1 -->
+        <!-- Фото 1 -->
         <div class="portfolio-item" onclick="openModal('modal1')">
           <div class="portfolio-img-wrap">
-            <img src="photo3.PNG" alt="Проект 1">
+            <img src="photo3.PNG" alt="Фото 1">
             <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
           <div class="portfolio-info">
-            <h3>Fashion Brand Identity</h3>
-            <p data-ru="Фирменный стиль" data-en="Brand identity">Фирменный стиль</p>
+            <h3 data-ru="Эстетика и стиль" data-en="Aesthetics and style">Эстетика и стиль</h3>
+            <p data-ru="Личный бренд" data-en="Personal brand">Личный бренд</p>
           </div>
         </div>
         
-        <!-- Работа 2 -->
+        <!-- Фото 2 -->
         <div class="portfolio-item" onclick="openModal('modal2')">
           <div class="portfolio-img-wrap">
-            <img src="photo5.PNG" alt="Проект 2">
+            <img src="photo5.PNG" alt="Фото 2">
             <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
           <div class="portfolio-info">
-            <h3 data-ru="Графическая серия" data-en="Graphic series">Графическая серия</h3>
-            <p data-ru="Плакаты и афиши" data-en="Posters and playbills">Плакаты и афиши</p>
+            <h3 data-ru="Современный взгляд" data-en="Modern view">Современный взгляд</h3>
+            <p data-ru="Философия дизайна" data-en="Design philosophy">Философия дизайна</p>
           </div>
         </div>
 
-        <!-- Работа 3 -->
+        <!-- Фото 3 -->
         <div class="portfolio-item" onclick="openModal('modal3')">
           <div class="portfolio-img-wrap">
-            <img src="photo9.PNG" alt="Проект 3">
+            <img src="photo9.PNG" alt="Фото 3">
             <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
           <div class="portfolio-info">
-            <h3 data-ru="Визуальные коммуникации" data-en="Visual communications">Визуальные коммуникации</h3>
-            <p data-ru="Инфографика и упаковка" data-en="Infographics and packaging">Инфографика и упаковка</p>
+            <h3 data-ru="Смысл в деталях" data-en="Meaning in details">Смысл в деталях</h3>
+            <p data-ru="Визуальный язык" data-en="Visual language">Визуальный язык</p>
           </div>
         </div>
 
-        <!-- Работа 4 -->
+        <!-- Фото 4 -->
         <div class="portfolio-item" onclick="openModal('modal4')">
           <div class="portfolio-img-wrap">
-            <img src="photo12.PNG" alt="Проект 4">
+            <img src="photo12.PNG" alt="Фото 4">
             <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
           <div class="portfolio-info">
-            <h3 data-ru="Айдентика" data-en="Identity">Айдентика</h3>
-            <p data-ru="Логотипы и брендинг" data-en="Logos and branding">Логотипы и брендинг</p>
+            <h3 data-ru="Искусство образа" data-en="The art of image">Искусство образа</h3>
+            <p data-ru="Айдентика" data-en="Identity">Айдентика</p>
           </div>
         </div>
 
-        <!-- Работа 5 -->
+        <!-- Фото 5 -->
         <div class="portfolio-item" onclick="openModal('modal5')">
           <div class="portfolio-img-wrap">
-            <img src="photo13.PNG" alt="Проект 5">
+            <img src="photo13.PNG" alt="Фото 5">
             <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
           <div class="portfolio-info">
-            <h3 data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</h3>
-            <p data-ru="Журналы и каталоги" data-en="Magazines and catalogs">Журналы и каталоги</p>
+            <h3 data-ru="Внимание к форме" data-en="Attention to form">Внимание к форме</h3>
+            <p data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</p>
           </div>
         </div>
 
-        <!-- Работа 6 -->
+        <!-- Фото 6 -->
         <div class="portfolio-item" onclick="openModal('modal6')">
           <div class="portfolio-img-wrap">
-            <img src="photo15.PNG" alt="Проект 6">
+            <img src="photo15.PNG" alt="Фото 6">
             <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
           <div class="portfolio-info">
-            <h3 data-ru="Модный дизайн" data-en="Fashion design">Модный дизайн</h3>
-            <p data-ru="Fashion-скетчи" data-en="Fashion sketches">Fashion-скетчи</p>
+            <h3 data-ru="Мода и тренды" data-en="Fashion and trends">Мода и тренды</h3>
+            <p data-ru="Fashion-дизайн" data-en="Fashion design">Fashion-дизайн</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Модальные окна с текстами (скрыты по умолчанию) -->
+    <!-- Модальные окна с текстами про ваш стиль -->
     <div class="modal" id="modal1">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal1')">&times;</span>
-        <img src="photo3.PNG" alt="Проект 1" class="modal-img">
-        <h2>Fashion Brand Identity</h2>
-        <p data-ru="Разработка визуального языка для модного бренда. В основе концепции — баланс между дерзостью и элегантностью. Мы создали логотип, который легко адаптируется под разные носители: от бирок до крупных баннеров." data-en="Development of a visual language for a fashion brand. The concept is based on the balance between audacity and elegance. We created a logo that easily adapts to various media: from tags to large banners.">Разработка визуального языка для модного бренда. В основе концепции — баланс между дерзостью и элегантностью. Мы создали логотип, который легко адаптируется под разные носители: от бирок до крупных баннеров.</p>
+        <div class="modal-layout">
+          <img src="photo3.PNG" alt="Фото 1" class="modal-img">
+          <div class="modal-text">
+            <h2>Эстетика и стиль</h2>
+            <p>Для меня дизайн начинается с визуальной гармонии. Я верю, что стиль — это не просто одежда или картинка, это язык, на котором бренд говорит со своей аудиторией. Моя личная эстетика помогает мне чувствовать тренды и создавать визуальные образы, которые запоминаются.</p>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="modal-btn">Смотреть работы на Behance</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="modal" id="modal2">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <img src="photo5.PNG" alt="Проект 2" class="modal-img">
-        <h2 data-ru="Графическая серия" data-en="Graphic series">Графическая серия</h2>
-        <p data-ru="Серия постеров для культурного мероприятия. Главная задача — привлечь внимание и передать атмосферу. Использована сложная типографика и смелые цветовые решения, которые работают даже на маленьких экранах." data-en="A series of posters for a cultural event. The main task is to attract attention and convey the atmosphere. Complex typography and bold color solutions are used that work even on small screens.">Серия постеров для культурного мероприятия. Главная задача — привлечь внимание и передать атмосферу. Использована сложная типографика и смелые цветовые решения, которые работают даже на маленьких экранах.</p>
+        <div class="modal-layout">
+          <img src="photo5.PNG" alt="Фото 2" class="modal-img">
+          <div class="modal-text">
+            <h2>Современный взгляд</h2>
+            <p>В своих работах я сочетаю смелые решения с выверенной классикой. Это фото отражает мой подход: быть современным, но не терять глубину. Я создаю дизайн, который выглядит дорого и актуально в любое время, будь то фирменный стиль или веб-платформа.</p>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="modal-btn">Смотреть работы на Behance</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="modal" id="modal3">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <img src="photo9.PNG" alt="Проект 3" class="modal-img">
-        <h2 data-ru="Визуальные коммуникации" data-en="Visual communications">Визуальные коммуникации</h2>
-        <p data-ru="Проект по созданию системы инфографики и упаковки для бренда. Моя цель — сделать сложную информацию понятной и визуально привлекательной. Каждый элемент упаковки продуман до мелочей, чтобы вызывать желание купить." data-en="A project to create an infographic and packaging system for a brand. My goal is to make complex information understandable and visually appealing. Every element of the packaging is thought out to the smallest detail to make you want to buy.">Проект по созданию системы инфографики и упаковки для бренда. Моя цель — сделать сложную информацию понятной и визуально привлекательной. Каждый элемент упаковки продуман до мелочей, чтобы вызывать желание купить.</p>
+        <div class="modal-layout">
+          <img src="photo9.PNG" alt="Фото 3" class="modal-img">
+          <div class="modal-text">
+            <h2>Смысл в каждой детали</h2>
+            <p>Я не создаю «просто красивые картинки». Каждый мой проект, будь то упаковка или брендинг, несет в себе смысл. Для меня важно, чтобы визуальная часть работала на бизнес-задачи клиента и вызывала эмоции у зрителя.</p>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="modal-btn">Смотреть работы на Behance</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="modal" id="modal4">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal4')">&times;</span>
-        <img src="photo12.PNG" alt="Проект 4" class="modal-img">
-        <h2 data-ru="Айдентика и брендинг" data-en="Identity and branding">Айдентика и брендинг</h2>
-        <p data-ru="Полный цикл разработки бренда. Здесь важна каждая деталь: от логотипа до тональности общения. Мы создали айдентику, которая выделяет клиента на фоне конкурентов и вызывает доверие у аудитории." data-en="Full brand development cycle. Every detail is important here: from the logo to the tone of communication. We have created an identity that distinguishes the client from competitors and builds trust with the audience.">Полный цикл разработки бренда. Здесь важна каждая деталь: от логотипа до тональности общения. Мы создали айдентику, которая выделяет клиента на фоне конкурентов и вызывает доверие у аудитории.</p>
+        <div class="modal-layout">
+          <img src="photo12.PNG" alt="Фото 4" class="modal-img">
+          <div class="modal-text">
+            <h2>Искусство самовыражения</h2>
+            <p>Дизайнер должен уметь выражать себя. Мой опыт в fashion-съемках и создании образов напрямую влияет на то, как я проектирую айдентику для брендов. Я понимаю, как важно создать правильное впечатление с первого взгляда.</p>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="modal-btn">Смотреть работы на Behance</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="modal" id="modal5">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal5')">&times;</span>
-        <img src="photo13.PNG" alt="Проект 5" class="modal-img">
-        <h2 data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</h2>
-        <p data-ru="Дизайн журналов и каталогов. Работа с сеткой, шрифтами и фотографиями, чтобы создать идеальный ритм чтения. Бумага, краски и переплет — всё подчинено единой эстетике и удобству для читателя." data-en="Magazine and catalog design. Working with grids, fonts, and photos to create the perfect reading rhythm. Paper, inks, and binding — everything is subordinated to a single aesthetic and convenience for the reader.">Дизайн журналов и каталогов. Работа с сеткой, шрифтами и фотографиями, чтобы создать идеальный ритм чтения. Бумага, краски и переплет — всё подчинено единой эстетике и удобству для читателя.</p>
+        <div class="modal-layout">
+          <img src="photo13.PNG" alt="Фото 5" class="modal-img">
+          <div class="modal-text">
+            <h2>Внимание к форме</h2>
+            <p>В полиграфии и печатном дизайне важна каждая мельчайшая деталь — от толщины линии до текстуры бумаги. Мой подход к созданию образов учит меня быть внимательной к формам и пропорциям, что делает мои макеты безупречными.</p>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="modal-btn">Смотреть работы на Behance</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="modal" id="modal6">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal6')">&times;</span>
-        <img src="photo15.PNG" alt="Проект 6" class="modal-img">
-        <h2 data-ru="Модный дизайн" data-en="Fashion design">Модный дизайн</h2>
-        <p data-ru="Fashion-скетчи и принты для одежды. Моя работа — улавливать тренды и создавать уникальные графические решения для текстиля. Каждый принт — это история, которую будет носить человек." data-en="Fashion sketches and clothing prints. My job is to catch trends and create unique graphic solutions for textiles. Every print is a story that a person will wear.">Fashion-скетчи и принты для одежды. Моя работа — улавливать тренды и создавать уникальные графические решения для текстиля. Каждый принт — это история, которую будет носить человек.</p>
+        <div class="modal-layout">
+          <img src="photo15.PNG" alt="Фото 6" class="modal-img">
+          <div class="modal-text">
+            <h2>Мода и визуальные тренды</h2>
+            <p>Я нахожусь в постоянном поиске новых визуальных решений. Мода, фотография и дизайн для меня неразделимы. Это помогает мне создавать уникальные графические концепции, которые выделяют проекты моих клиентов на рынке.</p>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="modal-btn">Смотреть работы на Behance</a>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Философия -->
     <section class="philosophy reveal">
       <div class="philosophy-inner">
         <div class="quote-mark">“</div>
@@ -241,6 +280,7 @@
       </div>
     </section>
 
+    <!-- Услуги -->
     <section id="services" class="services reveal">
       <h2 data-ru="Мои компетенции" data-en="My competencies">Мои компетенции</h2>
       <div class="cards">
@@ -267,7 +307,7 @@
       </div>
     </section>
 
-    <!-- Заявка -->
+    <!-- Заявка (Отправка на почту) -->
     <section id="request" class="request reveal">
       <div class="request-wrapper">
         <div class="request-border"></div>
@@ -311,6 +351,7 @@
     </section>
   </main>
 
+  <!-- Подвал -->
   <footer class="footer">
     <div class="footer-logo">EVA</div>
     <div class="footer-links">
@@ -320,11 +361,14 @@
     <span>© 2026 EVA. <span data-ru="Визуальные смыслы." data-en="Visual meanings.">Визуальные смыслы.</span></span>
   </footer>
 
+  <!-- Скрипты -->
   <script>
+    // 1. Прелоадер
     window.addEventListener('load', () => {
       setTimeout(() => { document.body.classList.add('loaded'); }, 800);
     });
 
+    // 2. Портрет
     const btn = document.getElementById('portraitBtn');
     const panel = document.getElementById('aboutPanel');
     btn.addEventListener('click', () => {
@@ -332,11 +376,13 @@
       if (open) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
     });
 
+    // 3. Появление при скролле
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+    // 4. Бегущая строка
     const track = document.getElementById('marqueeTrack');
     function buildMarquee() {
       if (track) {
@@ -349,7 +395,7 @@
     }
     buildMarquee();
 
-    // Модальные окна
+    // 5. Модальные окна
     function openModal(id) {
       document.getElementById(id).style.display = "flex";
       document.body.style.overflow = "hidden";
@@ -358,7 +404,6 @@
       document.getElementById(id).style.display = "none";
       document.body.style.overflow = "auto";
     }
-    // Закрытие по клику вне окна
     window.onclick = function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.style.display = "none";
@@ -366,6 +411,7 @@
       }
     }
 
+    // 6. Отправка формы
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); 
@@ -381,13 +427,16 @@
         if (response.ok) {
           form.reset(); button.style.display = 'none'; doneMessage.style.display = 'block'; 
         } else {
-          button.textContent = 'Ошибка'; button.disabled = false;
+          button.textContent = document.documentElement.lang === 'en' ? 'Error' : 'Ошибка';
+          button.disabled = false;
         }
       } catch (error) {
-        button.textContent = 'Ошибка сети'; button.disabled = false;
+        button.textContent = document.documentElement.lang === 'en' ? 'Network error' : 'Ошибка сети';
+        button.disabled = false;
       }
     });
 
+    // 7. Переключение языков
     function setLang(lang, event) {
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-ru][data-en]').forEach(el => {
