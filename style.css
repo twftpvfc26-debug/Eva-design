@@ -338,6 +338,75 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   .form-row { grid-template-columns: 1fr; }
   .footer { padding: 40px 24px; }
 }
+:root {
+  --navy: #060b19;
+  --navy-light: #0e1833;
+  --pink: #f3d4df;
+  --pink-bright: #ffdce8;
+  --gold: #c9a263;
+  --white: #fdfbfb;
+  --gray: #8b95b0;
+  --line: rgba(243, 212, 223, 0.15);
+  
+  --font-title: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.8;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ===== Прелоадер ===== */
+.preloader {
+  position: fixed; inset: 0; background: var(--navy); z-index: 9999;
+  display: flex; justify-content: center; align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+body.loaded .preloader { opacity: 0; visibility: hidden; }
+.preloader-content { display: flex; align-items: center; gap: 20px; }
+.preloader-line {
+  width: 50px; height: 1px; background: var(--gold);
+  animation: expandLine 1.5s ease-in-out infinite alternate;
+}
+@keyframes expandLine { from { width: 0; opacity: 0; } to { width: 80px; opacity: 1; } }
+.preloader-logo { font-family: var(--font-title); font-size: 48px; color: var(--pink); letter-spacing: 12px; }
+
+/* ===== Узор ===== */
+.bg-pattern {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(243, 212, 223, 0.05) 0%, transparent 60%);
+}
+.bg-pattern svg { width: 100%; height: 100%; }
+
+/* ===== Шапка ===== */
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 30px 60px; position: sticky; top: 0;
+  background: rgba(6, 11, 25, 0.85); backdrop-filter: blur(15px);
+  z-index: 100; border-bottom: 1px solid var(--line);
+}
+.logo { font-family: var(--font-title); font-size: 28px; letter-spacing: 8px; color: var(--pink); text-shadow: 0 0 20px rgba(243, 212, 223, 0.3); }
+
+.nav { display: flex; gap: 40px; align-items: center; }
+.nav a { font-size: 12px; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
+.nav a:hover { color: var(--pink); }
+.nav-behance { color: var(--gold) !important; }
+.nav-btn {
+  border: 1px solid var(--pink); padding: 12px 30px; color: var(--pink) !important;
+  position: relative; overflow: hidden;
+}
+.n
 
 @media (max-width: 480px) {
   .cards { grid-template-columns: 1fr; }
