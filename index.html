@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA — Дизайнер </title>
+    <title>EVA — Графический и веб-дизайнер</title>
     
     <!-- Королевские шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Подключаем файл стилей -->
-    <link rel="stylesheet" href="royal.css">
+    <!-- Подключаем ваш основной файл стилей -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ФОН С БРИЛЛИАНТАМИ И УЗОРАМИ -->
+    <!-- ФОН С КРИСТАЛЛАМИ -->
     <div class="royal-bg">
         <div class="crystal" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
         <div class="crystal" style="left: 80%; top: 15%; animation-delay: 1s;"></div>
@@ -42,11 +42,11 @@
         <div class="hero-content fade-in">
             <h1>СОЗДАЮ<br><span>ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
             <p>Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
-            <a href="#contact" class="btn-royal magnetic">Начать проект</a>
+            <a href="#contact" class="btn-royal">Начать проект</a>
         </div>
     </section>
 
-    <!-- Первая бегущая строка (влево) -->
+    <!-- Первая бегущая строка -->
     <div class="marquee marquee-left">
         <div class="marquee-content">
             <span>ГРАФИЧЕСКИЙ ДИЗАЙН</span> ✦ <span>ФИРМЕННЫЙ СТИЛЬ</span> ✦ <span>ДИЗАЙН ЛОГОТИПА</span> ✦ <span>МОДНЫЙ ДИЗАЙН</span> ✦ <span>ПРОМЫШЛЕННЫЙ ДИЗАЙН</span> ✦
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <!-- Вторая бегущая строка (вправо) - для эффекта "вау" -->
+    <!-- Вторая бегущая строка (вправо) -->
     <div class="marquee marquee-right">
         <div class="marquee-content">
             <span>РОСКОШЬ</span> ✦ <span>ЭСТЕТИКА</span> ✦ <span>БЕЗУПРЕЧНОСТЬ</span> ✦ <span>ВКУС</span> ✦ <span>ХАРАКТЕР</span> ✦
@@ -124,7 +124,7 @@
                 <div class="form-group"><input type="text" name="name" placeholder="Ваше имя" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Email или Telegram" required></div>
                 <div class="form-group"><textarea name="message" rows="4" placeholder="Расскажите о вашем проекте..." required></textarea></div>
-                <button type="submit" class="btn-royal magnetic" style="width: 100%;">Отправить заявку</button>
+                <button type="submit" class="btn-royal" style="width: 100%;">Отправить заявку</button>
             </form>
         </div>
     </section>
@@ -136,7 +136,6 @@
     </div>
 
     <script>
-        // 1. Плавное появление
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -144,7 +143,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-        // 2. Аккордеон
         const accordions = document.querySelectorAll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
@@ -155,7 +153,6 @@
             });
         });
 
-        // 3. Лайтбокс
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
@@ -163,22 +160,7 @@
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
-
-        // 4. Магнитный эффект для кнопок (для ПК)
-        if (window.matchMedia("(pointer: fine)").matches) {
-            const magnets = document.querySelectorAll('.magnetic');
-            magnets.forEach(magnet => {
-                magnet.addEventListener('mousemove', function(e) {
-                    const position = this.getBoundingClientRect();
-                    const x = e.pageX - position.left - position.width / 2;
-                    const y = e.pageY - position.top - position.height / 2;
-                    this.style.transform = `translate(${x * 0.2}px, ${y * 0.4}px)`;
-                });
-                magnet.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translate(0px, 0px)';
-                });
-            });
-        }
     </script>
 </body>
 </html>
+                    
