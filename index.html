@@ -1,133 +1,140 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA — Визуальный дизайнер</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVA — Визуальные смыслы</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- БРИЛЛИАНТЫ СВАРОВСКИ -->
-    <div class="crystal"></div>
-    <div class="crystal"></div>
-    <div class="crystal"></div>
-    <div class="crystal"></div>
-    <div class="crystal"></div>
-    <div class="crystal"></div>
+  <!-- Винтажные узоры по краям -->
+  <div class="ornament ornament-top"></div>
+  <div class="ornament ornament-bottom"></div>
 
-    <!-- Шапка -->
-    <header class="fade-in">
-        <div class="logo">EVA</div>
-        <nav>
-            <a href="#about">Обо мне</a>
-            <a href="#services">Услуги</a>
-            <a href="#gallery">Работы</a>
-            <a href="https://www.behance.net/640b22da" target="_blank" class="nav-btn">Behance</a>
-        </nav>
-    </header>
+  <!-- Шапка -->
+  <header class="header">
+    <div class="logo">EVA</div>
+    <nav class="nav">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги</a>
+      <a href="#request" class="btn">Заявка</a>
+    </nav>
+  </header>
 
-    <!-- Главный экран (Красивый градиент) -->
-    <section class="hero">
-        <div class="hero-text fade-in">
-            <h1>СОЗДАЮ<br><span>ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
-            <p>Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
-            <a href="#contact" class="btn-royal">Начать проект</a>
-        </div>
-        <div class="hero-image fade-in">
-            <img src="photo12.PNG" alt="Ева">
-        </div>
-    </section>
-
-    <!-- Лента -->
-    <div class="marquee">
-        <div class="marquee-content">
-            <span>ГРАФИЧЕСКИЙ ДИЗАЙН</span> ✦ <span>ФИРМЕННЫЙ СТИЛЬ</span> ✦ <span>ДИЗАЙН ЛОГОТИПА</span> ✦ <span>МОДНЫЙ ДИЗАЙН</span> ✦ <span>ПРОМЫШЛЕННЫЙ ДИЗАЙН</span> ✦
-            <span>ГРАФИЧЕСКИЙ ДИЗАЙН</span> ✦ <span>ФИРМЕННЫЙ СТИЛЬ</span> ✦ <span>ДИЗАЙН ЛОГОТИПА</span> ✦ <span>МОДНЫЙ ДИЗАЙН</span> ✦ <span>ПРОМЫШЛЕННЫЙ ДИЗАЙН</span> ✦
-        </div>
+  <!-- Герой -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>СОЗДАЮ<br>ВИЗУАЛЬНЫЕ<br>СМЫСЛЫ</h1>
+      <p class="hero-sub">Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
+      <a href="#request" class="btn btn-large">Начать проект</a>
     </div>
 
-    <!-- Обо мне -->
-    <section id="about" class="section fade-in">
-        <div class="about-grid">
-            <div class="about-img">
-                <img src="photo3.PNG" alt="Ева">
-            </div>
-            <div class="about-text">
-                <h2>Привет,<br>я Ева.</h2>
-                <p>Я дизайнер, для которого эстетика — это продолжение логики. Я не верю в шаблоны. Моя задача — создать уникальный визуальный язык для вашего бренда.</p>
-                <p>Мой подход — это баланс между искусством и маркетингом. Я делаю так, чтобы было не только красиво, но и работало на результат.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Портрет: клик → раскрывается текст -->
+    <div class="portrait-wrap">
+      <button class="portrait" id="portraitBtn" aria-expanded="false" aria-controls="aboutPanel">
+        <span class="portrait-glow"></span>
+        <span class="portrait-frame">
+          <span class="portrait-initial">E</span>
+        </span>
+        <span class="portrait-hint">Нажмите, чтобы узнать обо мне</span>
+      </button>
 
-    <!-- Услуги -->
-    <section id="services" class="section fade-in bg-grey">
-        <div class="container">
-            <h2 class="section-title">Что я создаю</h2>
-            <div class="services-list">
-                <div class="service-item">
-                    <h3>Брендинг</h3>
-                    <p>Айдентика, логотипы, фирменные стили с нуля.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Графический дизайн</h3>
-                    <p>Плакаты, каталоги, упаковка, полиграфия.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Веб-дизайн</h3>
-                    <p>Сайты и интерфейсы, которые хочется рассматривать.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Иллюстрация</h3>
-                    <p>Fashion-скетчи, авторская графика, паттерны.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="about-panel" id="aboutPanel">
+        <h2>Привет, меня зовут Ева</h2>
+        <p>Я дизайнер, для которого эстетика — это продолжение логики. Моя задача — не просто нарисовать красивый логотип, а собрать ваш бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
+        <p>Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма.</p>
+        <p class="about-accent">Мой процесс: исследование → смысл → форма → система → носители. Каждый проект начинается с вопроса «зачем», а заканчивается готовой визуальной вселенной.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Галерея -->
-    <section id="gallery" class="section fade-in">
-        <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Избранные работы</h2>
-        <div class="gallery-grid">
-            <img src="photo1.PNG" alt="Работа 1">
-            <img src="photo5.PNG" alt="Работа 5">
-            <img src="photo9.PNG" alt="Работа 9">
-            <img src="photo13.PNG" alt="Работа 13">
-            <img src="photo15.PNG" alt="Работа 15">
-            <img src="photo12.PNG" alt="Работа 12">
-        </div>
-    </section>
+  <!-- ОДНА движущаяся лента -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>ГРАФИЧЕСКИЙ ДИЗАЙН ✦ ФИРМЕННЫЙ СТИЛЬ ✦ ДИЗАЙН ЛОГОТИПА ✦ МОДНЫЙ ДИЗАЙН ✦ ПРОМЫШЛЕННЫЙ ДИЗАЙН ✦ </span>
+      <span>ГРАФИЧЕСКИЙ ДИЗАЙН ✦ ФИРМЕННЫЙ СТИЛЬ ✦ ДИЗАЙН ЛОГОТИПА ✦ МОДНЫЙ ДИЗАЙН ✦ ПРОМЫШЛЕННЫЙ ДИЗАЙН ✦ </span>
+    </div>
+  </div>
+  <!-- Услуги -->
+  <section id="services" class="services reveal">
+    <h2>Что я создаю</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Фирменный стиль</h3>
+        <p>Создаю фирменные стили с нуля. Логотип, палитра, типографика, носители.</p>
+      </div>
+      <div class="card">
+        <h3>Веб-дизайн</h3>
+        <p>Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру и визуал.</p>
+      </div>
+      <div class="card">
+        <h3>Полиграфия</h3>
+        <p>Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка и предпечатная подготовка.</p>
+      </div>
+      <div class="card">
+        <h3>Модный дизайн</h3>
+        <p>Fashion-скетчи, обложки, эдиториалы, принты для одежды.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ФОРМА ЗАЯВКИ (Красивая) -->
-    <section id="contact" class="section contact-section fade-in">
-        <div class="contact-wrapper">
-            <div class="contact-text">
-                <h2>Давайте<br>создадим<br>красоту.</h2>
-                <p>Оставьте заявку, и я свяжусь с вами в течение дня.</p>
-            </div>
-            <form action="https://formspree.io/f/xdegpeke" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="email" name="email" placeholder="Email или Telegram" required>
-                <textarea name="message" rows="3" placeholder="Расскажите о вашем проекте..." required></textarea>
-                <button type="submit" class="btn-royal btn-full">Отправить заявку</button>
-            </form>
-        </div>
-    </section>
+  <!-- Заявка на создание проекта -->
+  <section id="request" class="request reveal">
+    <div class="request-inner">
+      <h2>Заявка на создание проекта</h2>
+      <p>Расскажите о вашей идее — я помогу превратить её в сильный визуальный образ.</p>
 
-    <script>
-        // Анимация появления
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-    </script>
+      <form class="request-form" onsubmit="event.preventDefault(); this.classList.add('sent');">
+        <div class="field">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="project">Тип проекта</label>
+          <select id="project" name="project">
+            <option>Фирменный стиль</option>
+            <option>Веб-дизайн</option>
+            <option>Полиграфия</option>
+            <option>Модный дизайн</option>
+          </select>
+        </div>
+        <div class="field field-full">
+          <label for="message">О проекте</label>
+          <textarea id="message" name="message" rows="4" placeholder="Пара слов о вашей идее..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-large btn-submit">Отправить заявку</button>
+        <p class="form-done">Спасибо! Заявка отправлена — я свяжусь с вами.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <p>© 2026 EVA. Визуальные смыслы.</p>
+  </footer>
+
+  <script>
+    // Клик по портрету — раскрыть/скрыть текст
+    const btn = document.getElementById('portraitBtn');
+    const panel = document.getElementById('aboutPanel');
+    btn.addEventListener('click', () => {
+      const open = panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.classList.toggle('active', open);
+    });
+
+    // Появление секций при скролле
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
