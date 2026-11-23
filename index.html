@@ -3,30 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA — Дизайн, который продает</title>
-    <!-- Подключаем шрифты -->
+    <title>EVA — Дизайн Высшего Общества</title>
+    <!-- Королевские шрифты: Cinzel для заголовков и Montserrat для текста -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- ЦВЕТА: РОЗОВЫЙ, ТЕМНО-СИНИЙ, БЕЛЫЙ --- */
+        /* --- ВАША ПАЛИТРА --- */
         :root {
-            --bg: #FFFFFF;          /* Белый */
-            --dark-blue: #0F172A;   /* Темно-синий (почти черный) */
-            --pink: #FF007F;        /* Яркий розовый */
-            --pink-light: #FFE5F1;  /* Нежно-розовый для фона */
-            --text-grey: #475569;   /* Серый для текста */
+            --night-sky: #2a2a35;   /* Темно-синий/графит */
+            --foxglove: #b9b3b1;    /* Пыльно-розовый/серый */
+            --lily-white: #e2e2dA;  /* Сливочный белый */
+            --gold: #C5A059;        /* Золотой акцент для роскоши */
+            --dark-accent: #1e1e26; /* Еще более темный для фона */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg);
-            color: var(--dark-blue);
+            background-color: var(--night-sky);
+            color: var(--lily-white);
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* --- МЕРЦАЮЩИЕ КРИСТАЛЛЫ НА ФОНЕ --- */
+        .crystal-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(197, 160, 89, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(185, 179, 177, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(197, 160, 89, 0.05) 0%, transparent 40%);
+            animation: pulseBg 10s infinite alternate;
+        }
+        @keyframes pulseBg {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -40,33 +57,40 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(42, 42, 53, 0.9);
             backdrop-filter: blur(10px);
             z-index: 100;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
 
-        .logo { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--pink); }
+        /* Убрали точку из EVA */
+        .logo { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--gold); letter-spacing: 4px; }
 
         nav a {
             text-decoration: none;
-            color: var(--dark-blue);
-            font-weight: 600;
+            color: var(--lily-white);
+            font-weight: 400;
             margin-left: 25px;
             transition: color 0.3s;
             font-size: 14px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        nav a:hover { color: var(--pink); }
+        nav a:hover { color: var(--gold); }
 
         .nav-btn {
-            background-color: var(--dark-blue);
-            color: #fff !important;
+            border: 1px solid var(--gold);
+            color: var(--gold) !important;
             padding: 10px 25px;
-            border-radius: 30px;
+            border-radius: 4px; /* Более строгая форма */
+            transition: all 0.4s;
         }
-        .nav-btn:hover { background-color: var(--pink); }
+        .nav-btn:hover {
+            background-color: var(--gold);
+            color: var(--night-sky) !important;
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+        }
 
         /* --- ГЛАВНЫЙ ЭКРАН --- */
         .hero {
@@ -76,130 +100,181 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #fff 0%, var(--pink-light) 100%);
+            position: relative;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
             font-size: 80px;
             line-height: 1.1;
             margin-bottom: 30px;
-            color: var(--dark-blue);
+            color: var(--lily-white);
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-
-        .hero h1 span { color: var(--pink); font-style: italic; }
+        .hero h1 span { color: var(--foxglove); font-style: italic; }
 
         .hero p {
             font-size: 20px;
-            color: var(--text-grey);
+            color: var(--foxglove);
             max-width: 600px;
             margin: 0 auto 50px;
         }
 
-        /* --- КНОПКИ --- */
-        .btn-main {
+        /* --- ДОРОГАЯ КНОПКА (БРИЛЛИАНТ) --- */
+        .btn-royal {
             display: inline-block;
-            padding: 20px 50px;
-            background-color: var(--pink);
-            color: #fff;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--gold), #e0c796);
+            color: var(--night-sky);
             text-decoration: none;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: all 0.4s ease;
+            font-weight: 600;
+            border-radius: 2px; /* Острые углы для строгости */
+            transition: all 0.5s ease;
             border: none;
             cursor: pointer;
             font-size: 16px;
             text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(255, 0, 127, 0.3);
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .btn-main:hover {
-            background-color: var(--dark-blue);
+        /* Эффект блика на кнопке */
+        .btn-royal::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-royal:hover::before { left: 100%; }
+        .btn-royal:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4);
         }
 
         /* --- БЕГУЩАЯ СТРОКА --- */
         .marquee {
-            background: var(--dark-blue);
-            color: #fff;
+            background: var(--dark-accent);
+            color: var(--lily-white);
             padding: 20px 0;
             overflow: hidden;
             white-space: nowrap;
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
-        .marquee-content { display: inline-block; animation: marquee 15s linear infinite; }
-        .marquee-content span { margin: 0 30px; color: var(--pink-light); }
+        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
+        .marquee-content span { margin: 0 30px; color: var(--foxglove); }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* --- СЕКЦИИ --- */
         .section { padding: 120px 0; }
-        .bg-pink { background-color: var(--pink-light); }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 50px; text-align: center; color: var(--dark-blue); }
+        .section-title { font-family: 'Cinzel', serif; font-size: 48px; margin-bottom: 50px; text-align: center; color: var(--gold); }
 
-        /* --- ОБО МНЕ --- */
+        /* --- ОБО МНЕ С ЭФФЕКТОМ ПАРАЛЛАКСА --- */
         .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .text-block p { margin-bottom: 20px; font-size: 18px; color: var(--text-grey); }
-        .image-block img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
-        .image-block:hover img { transform: scale(1.02); }
+        .text-block p { margin-bottom: 20px; font-size: 18px; color: var(--foxglove); }
+        
+        .image-block { overflow: hidden; border-radius: 4px; border: 1px solid var(--gold); }
+        .image-block img { 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease; 
+            filter: sepia(20%) contrast(110%); /* Легкий винтажный фильтр */
+        }
+        .image-block:hover img { transform: scale(1.05); }
 
-        /* --- ПОДХОД --- */
+        /* --- ПОДХОД (КАРТОЧКИ СТЕКЛА) --- */
         .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .approach-card { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--pink); transition: transform 0.3s; }
-        .approach-card:hover { transform: translateY(-10px); }
-        .num { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--pink); display: block; margin-bottom: 20px; opacity: 0.5; }
-        .approach-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--dark-blue); }
-        .approach-card p { color: var(--text-grey); }
+        .approach-card { 
+            background: rgba(226, 226, 218, 0.05); /* Эффект стекла */
+            backdrop-filter: blur(5px);
+            padding: 40px; 
+            border-radius: 4px; 
+            border: 1px solid rgba(197, 160, 89, 0.3); 
+            transition: all 0.4s; 
+        }
+        .approach-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .num { font-family: 'Cinzel', serif; font-size: 60px; color: var(--gold); display: block; margin-bottom: 20px; opacity: 0.6; }
+        .approach-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--lily-white); }
+        .approach-card p { color: var(--foxglove); }
 
         /* --- АККОРДЕОН --- */
-        .services-hint { text-align: center; color: var(--text-grey); margin-bottom: 40px; }
         .accordion { max-width: 800px; margin: 0 auto; }
-        .accordion-item { background: #fff; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid rgba(15, 23, 42, 0.05); }
-        .accordion-header { width: 100%; padding: 30px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 600; color: var(--dark-blue); cursor: pointer; transition: background 0.3s; }
-        .accordion-header:hover { background: #FAFAFA; }
-        .accordion-header .icon { font-size: 28px; color: var(--pink); transition: transform 0.4s; }
+        .accordion-item { background: rgba(226, 226, 218, 0.05); border-radius: 4px; margin-bottom: 20px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.1); }
+        .accordion-header { width: 100%; padding: 30px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 600; color: var(--lily-white); cursor: pointer; transition: background 0.3s; font-family: 'Cinzel', serif;}
+        .accordion-header:hover { background: rgba(197, 160, 89, 0.1); }
+        .accordion-header .icon { font-size: 28px; color: var(--gold); transition: transform 0.4s; }
         .accordion-header.active .icon { transform: rotate(45deg); }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; padding: 0 30px; }
-        .accordion-content p { padding-bottom: 30px; color: var(--text-grey); font-size: 17px; }
+        .accordion-content p { padding-bottom: 30px; color: var(--foxglove); font-size: 17px; }
 
         /* --- ГАЛЕРЕЯ --- */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .gallery-item { border-radius: 15px; overflow: hidden; cursor: pointer; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-item { border-radius: 4px; overflow: hidden; cursor: pointer; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; filter: grayscale(30%); }
+        .gallery-item:hover img { transform: scale(1.08); filter: grayscale(0%); }
 
         /* --- ФОРМА --- */
         .contact-form { max-width: 600px; margin: 0 auto; }
         .form-group { margin-bottom: 25px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 20px; border: 2px solid #EAEAEA; border-radius: 15px; font-family: inherit; font-size: 16px; transition: all 0.3s; background: #FAFAFA; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--pink); background: #fff; box-shadow: 0 10px 20px rgba(255, 0, 127, 0.1); }
+        .form-group input, .form-group textarea { width: 100%; padding: 20px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 4px; font-family: inherit; font-size: 16px; transition: all 0.3s; background: rgba(226, 226, 218, 0.05); color: var(--lily-white); }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); background: rgba(226, 226, 218, 0.1); box-shadow: 0 0 15px rgba(197, 160, 89, 0.2); }
 
         /* --- ЛАЙТБОКС --- */
-        .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); justify-content: center; align-items: center; }
-        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
-        .lightbox .close { position: absolute; top: 30px; right: 50px; color: #fff; font-size: 60px; cursor: pointer; }
+        .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(42, 42, 53, 0.95); justify-content: center; align-items: center; }
+        .lightbox img { max-width: 90%; max-height: 90%; border: 2px solid var(--gold); border-radius: 4px; }
+        .lightbox .close { position: absolute; top: 30px; right: 50px; color: var(--gold); font-size: 60px; cursor: pointer; }
 
         /* --- АНИМАЦИИ ПОЯВЛЕНИЯ --- */
         .fade-in { opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+        /* --- УДИВЛЯЮЩИЙ ЭЛЕМЕНТ (ПАРАЛЛАКС ЗВЕЗДЫ) --- */
+        .floating-element {
+            position: absolute;
+            right: 10%;
+            top: 30%;
+            font-size: 100px;
+            color: var(--gold);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(15deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
         /* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 50px; }
+            .hero h1 { font-size: 46px; }
             .split-layout { grid-template-columns: 1fr; }
             header { padding: 15px; flex-direction: column; gap: 15px; }
             nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
             nav a { margin-left: 0; }
             .section { padding: 80px 0; }
+            .floating-element { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Фоновые мерцающие кристаллы -->
+    <div class="crystal-bg"></div>
+
+    <!-- Удивительный парящий элемент -->
+    <div class="floating-element">✦</div>
+
     <!-- Шапка -->
     <header class="fade-in">
-        <div class="logo">EVA.</div>
+        <div class="logo">EVA</div> <!-- Убрали точку -->
         <nav>
             <a href="#about">Обо мне</a>
             <a href="#approach">Подход</a>
@@ -214,19 +289,19 @@
         <div class="hero-content fade-in">
             <h1>СОЗДАЮ<br><span>ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
             <p>Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
-            <a href="#contact" class="btn-main">Начать проект</a>
+            <a href="#contact" class="btn-royal">Начать проект</a>
         </div>
     </section>
 
-    <!-- Бегущая строка -->
+    <!-- Бегущая строка с вашим текстом -->
     <div class="marquee">
         <div class="marquee-content">
-            <span>БРЕНДИНГ</span> • <span>ВЕБ-ДИЗАЙН</span> • <span>ИЛЛЮСТРАЦИЯ</span> • <span>УПАКОВКА</span> • <span>АРТ-ДИРЕКШН</span> • 
-            <span>БРЕНДИНГ</span> • <span>ВЕБ-ДИЗАЙН</span> • <span>ИЛЛЮСТРАЦИЯ</span> • <span>УПАКОВКА</span> • <span>АРТ-ДИРЕКШН</span> •
+            <span>ГРАФИЧЕСКИЙ ДИЗАЙН</span> • <span>ФИРМЕННЫЙ СТИЛЬ</span> • <span>ДИЗАЙН ЛОГОТИПА</span> • <span>МОДНЫЙ ДИЗАЙН</span> • <span>ПРОМЫШЛЕННЫЙ ДИЗАЙН</span> • 
+            <span>ГРАФИЧЕСКИЙ ДИЗАЙН</span> • <span>ФИРМЕННЫЙ СТИЛЬ</span> • <span>ДИЗАЙН ЛОГОТИПА</span> • <span>МОДНЫЙ ДИЗАЙН</span> • <span>ПРОМЫШЛЕННЫЙ ДИЗАЙН</span> •
         </div>
     </div>
 
-    <!-- Обо мне -->
+    <!-- Обо мне (с параллаксом) -->
     <section id="about" class="section fade-in">
         <div class="container split-layout">
             <div class="text-block">
@@ -235,14 +310,14 @@
                 <p>Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма. Я работаю на стыке графического дизайна, веба и иллюстрации, чтобы создавать проекты, которые невозможно забыть.</p>
                 <p>Мой опыт позволяет мне смотреть на задачу шире: я думаю не только о том, как это будет выглядеть на экране, но и о том, какую эмоцию вызовет у вашего клиента.</p>
             </div>
-            <div class="image-block parallax-img">
+            <div class="image-block">
                 <img src="photo12.PNG" alt="Ева дизайнер">
             </div>
         </div>
     </section>
 
-    <!-- Подход -->
-    <section id="approach" class="section bg-pink">
+    <!-- Подход (эффект стекла) -->
+    <section id="approach" class="section" style="background: var(--dark-accent);">
         <div class="container">
             <h2 class="section-title fade-in">Мой подход</h2>
             <div class="approach-grid">
@@ -269,7 +344,7 @@
     <section id="services" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Что я создаю</h2>
-            <p class="services-hint">Нажмите, чтобы раскрыть подробности</p>
+            <p style="text-align: center; color: var(--foxglove); margin-bottom: 40px;">Нажмите, чтобы раскрыть подробности</p>
             <div class="accordion">
                 <div class="accordion-item">
                     <button class="accordion-header"><span>Брендинг и айдентика</span><span class="icon">+</span></button>
@@ -292,7 +367,7 @@
     </section>
 
     <!-- Галерея -->
-    <section id="gallery" class="section bg-pink fade-in">
+    <section id="gallery" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Избранные работы</h2>
             <div class="gallery-grid">
@@ -307,15 +382,15 @@
     </section>
 
     <!-- Форма -->
-    <section id="contact" class="section fade-in">
+    <section id="contact" class="section fade-in" style="background: var(--dark-accent);">
         <div class="container">
             <h2 class="section-title">Давайте создадим что-то крутое</h2>
-            <p class="contact-sub">Оставьте заявку, и я свяжусь с вами в течение дня.</p>
+            <p style="text-align: center; color: var(--foxglove); margin-bottom: 40px;">Оставьте заявку, и я свяжусь с вами в течение дня.</p>
             <form action="https://formspree.io/f/xdegpeke" method="POST" class="contact-form">
                 <div class="form-group"><input type="text" name="name" placeholder="Ваше имя" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Email или Telegram" required></div>
                 <div class="form-group"><textarea name="message" rows="4" placeholder="Расскажите о вашем проекте..." required></textarea></div>
-                <button type="submit" class="btn-main">Отправить заявку</button>
+                <button type="submit" class="btn-royal" style="width: 100%;">Отправить заявку</button>
             </form>
         </div>
     </section>
