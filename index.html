@@ -3,147 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA — Графический дизайнер</title>
+    <title>EVA — Дизайн, который продает</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Современные шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Кастомный курсор (для ПК) -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <!-- Шапка -->
     <header class="fade-in">
-        <div class="logo">EVA</div>
+        <div class="logo">EVA.</div>
         <nav>
             <a href="#about">Обо мне</a>
+            <a href="#approach">Подход</a>
             <a href="#services">Услуги</a>
-            <a href="#gallery">Портфолио</a>
+            <a href="#gallery">Работы</a>
             <a href="https://www.behance.net/640b22da" target="_blank" class="nav-btn">Behance</a>
         </nav>
     </header>
 
-    <!-- Главный экран с анимированным фоном -->
+    <!-- Главный экран -->
     <section class="hero">
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+        <div class="hero-content">
+            <h1 class="reveal-text">СОЗДАЮ<br><span class="accent-text">ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
+            <p class="fade-in">Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
+            <a href="#contact" class="btn-main magnetic">Начать проект</a>
         </div>
-        <div class="hero-content fade-in">
-            <h1>Дизайн,<br>который<br>вдохновляет.</h1>
-            <p>Создаю визуальные системы для брендов, которые хотят выделяться. Эстетика, смысл и внимание к деталям.</p>
-            <a href="#contact" class="btn-main">Обсудить проект</a>
+        <div class="scroll-indicator">
+            <span></span>
         </div>
     </section>
 
-    <!-- Обо мне (Расширенный текст) -->
+    <!-- Бегущая строка -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>БРЕНДИНГ</span> • <span>ВЕБ-ДИЗАЙН</span> • <span>ИЛЛЮСТРАЦИЯ</span> • <span>УПАКОВКА</span> • <span>АРТ-ДИРЕКШН</span> • 
+            <span>БРЕНДИНГ</span> • <span>ВЕБ-ДИЗАЙН</span> • <span>ИЛЛЮСТРАЦИЯ</span> • <span>УПАКОВКА</span> • <span>АРТ-ДИРЕКШН</span> •
+        </div>
+    </div>
+
+    <!-- Обо мне (Много текста) -->
     <section id="about" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title">Обо мне</h2>
-            <div class="about-text">
-                <p>Привет! Я Ева. Я графический и веб-дизайнер. Мой подход — это баланс между эстетикой и функциональностью.</p>
-                <p>Я не просто рисую красивые картинки. Я создаю системы, которые помогают бизнесу расти. Я умею слушать, задавать правильные вопросы и находить решения, которые выглядят дорого и работают на результат.</p>
-                <p>Мне важно, чтобы каждый проект отражал характер бренда. От первого эскиза до финального результата я рядом и контролирую каждую деталь.</p>
+        <div class="container split-layout">
+            <div class="text-block">
+                <h2 class="section-title">Привет, я Ева.</h2>
+                <p>Я дизайнер, для которого эстетика — это продолжение логики. Моя задача — не просто нарисовать красивый логотип, а собрать ваш бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
+                <p>Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма. Я работаю на стыке графического дизайна, веба и иллюстрации, чтобы создавать проекты, которые невозможно забыть.</p>
+                <p>Мой опыт позволяет мне смотреть на задачу шире: я думаю не только о том, как это будет выглядеть на экране, но и о том, какую эмоцию вызовет у вашего клиента.</p>
+            </div>
+            <div class="image-block parallax-img">
+                <img src="photo12.PNG" alt="Ева дизайнер">
             </div>
         </div>
     </section>
 
-    <!-- Услуги (Аккордеон: нажимаешь - раскрывается) -->
-    <section id="services" class="section fade-in bg-light">
+    <!-- Подход (3 принципа с анимацией) -->
+    <section id="approach" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title text-light fade-in">Мой подход</h2>
+            <div class="approach-grid">
+                <div class="approach-card fade-in">
+                    <span class="num">01</span>
+                    <h3>Исследование</h3>
+                    <p>Я не начинаю рисовать, пока не пойму ваш бизнес. Анализирую конкурентов, целевую аудиторию и смыслы, которые нужно донести.</p>
+                </div>
+                <div class="approach-card fade-in" style="transition-delay: 0.2s;">
+                    <span class="num">02</span>
+                    <h3>Концепция</h3>
+                    <p>Создаю визуальный язык. Подбираю типографику, палитру и графические элементы, которые будут отражать характер вашего бренда.</p>
+                </div>
+                <div class="approach-card fade-in" style="transition-delay: 0.4s;">
+                    <span class="num">03</span>
+                    <h3>Реализация</h3>
+                    <p>Довожу до идеала. Каждый пиксель, каждый отступ и каждая анимация настраиваются так, чтобы вызывать восхищение.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги (Аккордеон) -->
+    <section id="services" class="section fade-in">
         <div class="container">
             <h2 class="section-title">Что я создаю</h2>
-            <p class="services-hint">Нажмите на направление, чтобы узнать подробности</p>
-            
+            <p class="services-hint">Нажмите, чтобы раскрыть подробности</p>
             <div class="accordion">
-                <!-- Услуга 1 -->
                 <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Брендинг и айдентика</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Создаю фирменные стили с нуля: логотип, палитра, типографика, носители. Разрабатываю айдентику, которая выделит вас среди конкурентов и запомнится клиентам.</p>
-                    </div>
+                    <button class="accordion-header"><span>Брендинг и айдентика</span><span class="icon">+</span></button>
+                    <div class="accordion-content"><p>Создаю фирменные стили с нуля. Логотип, палитра, типографика, носители. Разрабатываю айдентику, которая выделит вас среди конкурентов и запомнится клиентам на долгие годы.</p></div>
                 </div>
-                <!-- Услуга 2 -->
                 <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Веб-дизайн и интерфейсы</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру, визуал и анимации, чтобы посетители становились клиентами. Делаю UX/UI дизайн для приложений.</p>
-                    </div>
+                    <button class="accordion-header"><span>Веб-дизайн и интерфейсы</span><span class="icon">+</span></button>
+                    <div class="accordion-content"><p>Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру, визуал и сложные анимации, чтобы посетители становились клиентами. Делаю UX/UI дизайн для мобильных приложений.</p></div>
                 </div>
-                <!-- Услуга 3 -->
                 <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Графический и печатный дизайн</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка, предпечатная подготовка. Работаю с типографикой, ритмом и характером.</p>
-                    </div>
+                    <button class="accordion-header"><span>Графический и печатный дизайн</span><span class="icon">+</span></button>
+                    <div class="accordion-content"><p>Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка и предпечатная подготовка. Работаю с типографикой, ритмом и характером, чтобы ваша печатная продукция выглядела дорого.</p></div>
                 </div>
-                <!-- Услуга 4 -->
                 <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Иллюстрация и спецпроекты</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Fashion-скетчи, обложки, эдиториалы, принты для одежды. Создаю уникальный визуальный язык, который выделит ваш проект.</p>
-                    </div>
+                    <button class="accordion-header"><span>Иллюстрация и спецпроекты</span><span class="icon">+</span></button>
+                    <div class="accordion-content"><p>Fashion-скетчи, обложки, эдиториалы, принты для одежды. Создаю уникальный визуальный язык, который выделит ваш проект и добавит ему индивидуальности.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Галерея с лайтбоксом (нажимаешь - фото открывается) -->
-    <section id="gallery" class="section fade-in">
+    <!-- Галерея -->
+    <section id="gallery" class="section bg-pink fade-in">
         <div class="container">
-            <h2 class="section-title">Мои работы</h2>
+            <h2 class="section-title">Избранные работы</h2>
             <div class="gallery-grid">
-                <!-- Фотографии (нажмите, чтобы открыть) -->
                 <div class="gallery-item"><img src="photo1.PNG" alt="Работа 1" onclick="openLightbox(this.src)"></div>
                 <div class="gallery-item"><img src="photo3.PNG" alt="Работа 3" onclick="openLightbox(this.src)"></div>
                 <div class="gallery-item"><img src="photo5.PNG" alt="Работа 5" onclick="openLightbox(this.src)"></div>
                 <div class="gallery-item"><img src="photo9.PNG" alt="Работа 9" onclick="openLightbox(this.src)"></div>
-                <div class="gallery-item"><img src="photo12.PNG" alt="Работа 12" onclick="openLightbox(this.src)"></div>
                 <div class="gallery-item"><img src="photo13.PNG" alt="Работа 13" onclick="openLightbox(this.src)"></div>
                 <div class="gallery-item"><img src="photo15.PNG" alt="Работа 15" onclick="openLightbox(this.src)"></div>
             </div>
         </div>
     </section>
 
-    <!-- Заявка -->
-    <section id="contact" class="section fade-in bg-light">
+    <!-- Форма -->
+    <section id="contact" class="section fade-in">
         <div class="container">
-            <h2 class="section-title">Обсудим ваш проект?</h2>
+            <h2 class="section-title">Давайте создадим что-то крутое</h2>
+            <p class="contact-sub">Оставьте заявку, и я свяжусь с вами в течение дня.</p>
             <form action="https://formspree.io/f/xdegpeke" method="POST" class="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email или Telegram" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" rows="4" placeholder="Расскажите о проекте..." required></textarea>
-                </div>
-                <button type="submit" class="btn-main">Отправить заявку</button>
+                <div class="form-group"><input type="text" name="name" placeholder="Ваше имя" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email или Telegram" required></div>
+                <div class="form-group"><textarea name="message" rows="4" placeholder="Расскажите о вашем проекте..." required></textarea></div>
+                <button type="submit" class="btn-main magnetic">Отправить заявку</button>
             </form>
         </div>
     </section>
 
-    <!-- Лайтбокс для просмотра фото на весь экран -->
+    <!-- Лайтбокс -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="close">&times;</span>
         <img id="lightbox-img" src="" alt="Увеличенное фото">
     </div>
 
     <script>
-        // 1. Анимация появления при прокрутке
+        // 1. Плавное появление при скролле
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -153,7 +158,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-        // 2. Аккордеон для услуг
+        // 2. Аккордеон
         const accordions = document.querySelectorAll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
@@ -167,13 +172,56 @@
             });
         });
 
-        // 3. Лайтбокс для фото (открытие на весь экран)
+        // 3. Лайтбокс
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
         }
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // 4. Кастомный курсор (только для ПК)
+        if (window.matchMedia("(pointer: fine)").matches) {
+            const cursor = document.querySelector('.cursor');
+            const follower = document.querySelector('.cursor-follower');
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                setTimeout(() => {
+                    follower.style.left = e.clientX + 'px';
+                    follower.style.top = e.clientY + 'px';
+                }, 50);
+            });
+
+            // Эффект наведения на кнопки
+            const links = document.querySelectorAll('a, button, .gallery-item');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hover');
+                    follower.classList.add('hover');
+                });
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hover');
+                    follower.classList.remove('hover');
+                });
+            });
+
+            // Магнитный эффект для кнопок
+            const magnets = document.querySelectorAll('.magnetic');
+            magnets.forEach(magnet => {
+                magnet.addEventListener('mousemove', function(e) {
+                    const position = this.getBoundingClientRect();
+                    const x = e.pageX - position.left - position.width / 2;
+                    const y = e.pageY - position.top - position.height / 2;
+                    this.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+                });
+                magnet.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translate(0px, 0px)';
+                });
+            });
         }
     </script>
 </body>
