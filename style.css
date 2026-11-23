@@ -1,28 +1,93 @@
 :root {
-    --bg: #1A1215;         /* Глубокий, почти черный с бордовым отливом */
-    --text: #F2E4D4;       /* Oat Silk (сливочный) */
-    --accent: #C19A6B;     /* Медное золото */
-    --card-bg: #261A1E;    /* Фон карточек */
+    --bg-main: #FFFFFF;      /* Белый фон */
+    --bg-alt: #F0F4F8;       /* Нежно-голубой для секций */
+    --text-dark: #1C2A38;    /* Глубокий синий (почти черный) */
+    --text-light: #556B7D;   /* Светло-синий для описаний */
+    --accent-blue: #4A90E2;  /* Яркий синий для кнопок */
+    --accent-pink: #F4A261;  /* Нежно-розовый/персиковый */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: 'Manrope', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* --- АНИМИРОВАННЫЙ ФОН (пятна) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-shapes {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 10s infinite ease-in-out alternate;
+}
+.shape-1 { width: 400px; height: 400px; background: #4A90E2; top: -100px; left: -100px; }
+.shape-2 { width: 300px; height: 300px; background: #F4A261; bottom: 0; right: -50px; animation-delay: -5s; }
+.shape-3 { width: 250px; height: 250px; background: #90E0EF; top: 40%; left: 50%; animation-duration: 15s; }
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
+}
+
+/* --- ЗАГОЛОВКИ И ШРИФТЫ --- */
+h1, h2, h3 { font-family: 'Unbounded', sans-serif; }
+
+.hero h1 {
+    font-size: 80px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* --- КНОПКИ --- */
+.btn-main {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: var(--accent-blue);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px; /* Круглые кнопки */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-main:hover {
+    background-color: #357ABD;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
 }
 
 /* --- ШАПКА --- */
@@ -30,169 +95,89 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
+    padding: 20px 40px;
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(26, 18, 21, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     z-index: 100;
 }
 
-.logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    color: var(--accent);
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
+.logo { font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: 2px; }
 
 nav a {
-    color: var(--text);
     text-decoration: none;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-left: 25px;
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: var(--accent);
-}
+nav a:hover { color: var(--accent-blue); }
 
 .nav-btn {
-    border: 1px solid var(--accent);
+    background-color: var(--accent-blue);
+    color: #fff !important;
     padding: 10px 20px;
     border-radius: 30px;
-    color: var(--accent) !important;
-    transition: all 0.3s;
 }
 
-.nav-btn:hover {
-    background: var(--accent);
-    color: var(--bg) !important;
-}
+/* --- АККОРДЕОН (УСЛУГИ) --- */
+.section { padding: 100px 0; }
+.bg-light { background-color: var(--bg-alt); }
 
-/* --- ГЛАВНЫЙ ЭКРАН (АНИМАЦИЯ) --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.section-title {
+    font-size: 40px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 90px;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 30px;
-}
+.services-hint { text-align: center; color: var(--text-light); margin-bottom: 40px; }
 
-.hero p {
-    font-size: 18px;
-    color: #A89C94;
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
+.accordion { max-width: 800px; margin: 0 auto; }
 
-/* --- КНОПКИ С ЭФФЕКТОМ СВЕЧЕНИЯ --- */
-.btn-glow {
-    display: inline-block;
-    padding: 18px 50px;
-    background: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    position: relative;
+.accordion-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     overflow: hidden;
 }
 
-.btn-glow:hover {
-    background: var(--accent);
-    color: var(--bg);
-    box-shadow: 0 0 20px rgba(193, 154, 107, 0.6); /* Эффект свечения */
-    transform: translateY(-3px);
-}
-
-.btn-full {
+.accordion-header {
     width: 100%;
-}
-
-/* --- СЕКЦИИ --- */
-.section {
-    padding: 120px 0;
-}
-
-.bg-darker {
-    background-color: var(--card-bg);
-}
-
-.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 400;
-    margin-bottom: 60px;
-    text-align: center;
-    color: var(--accent);
-}
-
-/* --- ОБО МНЕ --- */
-.about-text {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    padding: 20px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 20px;
-    font-weight: 300;
-    color: #A89C94;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* --- УСЛУГИ (АНИМАЦИЯ ПРИ НАВЕДЕНИИ) --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.accordion-header:hover { background: #f9f9f9; }
+.accordion-header .icon { font-size: 24px; transition: transform 0.3s; }
+.accordion-header.active .icon { transform: rotate(45deg); color: var(--accent-blue); }
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding: 0 20px;
+    background: #fff;
 }
 
-.service-card {
-    background: var(--bg);
-    padding: 40px 30px;
-    border-radius: 4px;
-    border: 1px solid rgba(193, 154, 107, 0.1);
-    transition: all 0.4s ease;
+.accordion-content p {
+    padding-bottom: 20px;
+    color: var(--text-light);
 }
 
-.service-card:hover {
-    transform: translateY(-10px) scale(1.02); /* Карточка всплывает */
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.service-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: var(--text);
-}
-
-.service-card p {
-    color: #A89C94;
-    font-size: 15px;
-}
-
-/* --- ГАЛЕРЕЯ (КЛИКАБЕЛЬНЫЕ ФОТО) --- */
+/* --- ГАЛЕРЕЯ --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -200,68 +185,79 @@ nav a:hover {
 }
 
 .gallery-item {
-    display: block;
-    border-radius: 4px;
+    border-radius: 15px;
     overflow: hidden;
-    position: relative;
-    aspect-ratio: 3/4;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease, filter 0.6s ease;
+    transition: transform 0.4s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.08); /* Фото увеличивается при наведении */
-    filter: brightness(0.7); /* Затемняется для эффекта */
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* --- ЛАЙТБОКС (Полноэкранный просмотр фото) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px; right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 /* --- ФОРМА --- */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
+.contact-form { max-width: 500px; margin: 0 auto; }
+.form-group { margin-bottom: 20px; }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 18px;
-    background: var(--bg);
-    border: 1px solid rgba(193, 154, 107, 0.3);
-    color: var(--text);
-    border-radius: 4px;
+    padding: 15px;
+    border: 2px solid #E1E8ED;
+    border-radius: 10px;
     font-family: inherit;
     font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s;
 }
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 10px rgba(193, 154, 107, 0.2);
+    border-color: var(--accent-blue);
 }
 
-/* --- АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ ПРОКРУТКЕ --- */
+/* --- АНИМАЦИЯ ПОЯВЛЕНИЯ --- */
 .fade-in {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* --- АДАПТИВ --- */
+/* --- ТЕЛЕФОНЫ --- */
 @media (max-width: 768px) {
-    header { padding: 15px; flex-direction: column; gap: 15px; }
-    nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .hero h1 { font-size: 50px; }
-    .section { padding: 80px 0; }
+    .hero h1 { font-size: 46px; }
+    header { padding: 15px; }
+    nav a { margin-left: 10px; font-size: 14px; }
+    .section { padding: 60px 0; }
 }
