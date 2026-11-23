@@ -5,189 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVA — Визуальные смыслы</title>
   
-  <!-- Шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   
-  <!-- Стили -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Прелоадер (Занавес при входе) -->
   <div class="preloader">
-    <div class="preloader-logo">EVA</div>
+    <div class="preloader-content">
+      <div class="preloader-line"></div>
+      <div class="preloader-logo">EVA</div>
+      <div class="preloader-line"></div>
+    </div>
   </div>
 
-  <!-- Винтажный узор на фоне -->
-  <div class="bg-pattern"></div>
+  <div class="bg-pattern">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="arabesque" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+          <path d="M100 0 C100 50 150 50 150 100 C150 150 100 150 100 200 M0 100 C50 100 50 150 100 150 C150 150 150 100 200 100" stroke="rgba(243, 212, 223, 0.05)" stroke-width="1" fill="none"/>
+          <circle cx="100" cy="100" r="10" stroke="rgba(243, 212, 223, 0.08)" stroke-width="1" fill="none"/>
+          <circle cx="100" cy="100" r="30" stroke="rgba(243, 212, 223, 0.03)" stroke-width="1" fill="none"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arabesque)"/>
+    </svg>
+  </div>
 
-  <!-- Шапка -->
   <header class="header">
     <a href="#" class="logo">EVA</a>
     <nav class="nav">
-      <a href="#portfolio">Портфолио</a>
-      <a href="#services">Услуги</a>
+      <a href="#portfolio" data-ru="Шедевры" data-en="Masterpieces">Шедевры</a>
+      <a href="#services" data-ru="Услуги" data-en="Services">Услуги</a>
       <a href="https://www.behance.net/640b22da" target="_blank" class="nav-behance">Behance</a>
-      <a href="#request" class="nav-btn">Заявка</a>
+      
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('ru', event)">RU</button>
+        <span>/</span>
+        <button class="lang-btn" onclick="setLang('en', event)">EN</button>
+      </div>
+
+      <a href="#request" class="nav-btn" data-ru="Заказать проект" data-en="Start a project">Заказать проект</a>
     </nav>
   </header>
 
   <main>
-    <!-- Главный экран -->
     <section class="hero">
       <div class="hero-text reveal">
-        <p class="eyebrow">СОЗДАЮ</p>
-        <h1>ВИЗУАЛЬНЫЕ<br>СМЫСЛЫ</h1>
-        <p class="lead">Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
+        <p class="eyebrow" data-ru="Искусство визуальной идентичности" data-en="The art of visual identity">Искусство визуальной идентичности</p>
+        <h1 data-ru="СОЗДАЮ<br>ВИЗУАЛЬНЫЕ<br><span class='text-glow'>СМЫСЛЫ</span>" data-en="CREATING<br>VISUAL<br><span class='text-glow'>MEANINGS</span>">СОЗДАЮ<br>ВИЗУАЛЬНЫЕ<br><span class="text-glow">СМЫСЛЫ</span></h1>
+        <p class="lead" data-ru="Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться." data-en="Design is not just a pretty picture. It is a tool that makes the heart beat faster and clients return.">Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
         <div class="hero-buttons">
-          <a href="#request" class="btn-glow">Начать проект</a>
+          <a href="#request" class="btn-primary" data-ru="Начать путешествие" data-en="Begin the journey">Начать путешествие</a>
         </div>
       </div>
 
       <div class="hero-portrait reveal">
-        <button class="portrait" id="portraitBtn" aria-expanded="false" aria-controls="aboutPanel">
-          <span class="portrait-shine"></span>
-          <span class="portrait-frame">
-            <!-- ВАШЕ ФОТО ДЛЯ ПОРТРЕТА -->
+        <div class="portrait-container" id="portraitBtn">
+          <div class="portrait-glow"></div>
+          <div class="portrait-arch">
             <img src="photo1.PNG" alt="Ева">
-          </span>
-        </button>
-        <p class="portrait-caption">Нажмите, чтобы узнать обо мне</p>
+          </div>
+          <div class="portrait-decoration top-left"></div>
+          <div class="portrait-decoration bottom-right"></div>
+        </div>
+        <p class="portrait-caption" data-ru="Нажмите на портрет, чтобы открыть историю" data-en="Click the portrait to open the story">Нажмите на портрет, чтобы открыть историю</p>
       </div>
     </section>
 
-    <!-- Раскрывающийся текст (скрыт по умолчанию) -->
     <section class="about-panel" id="aboutPanel">
       <div class="about-inner">
-        <h2>Привет, меня зовут Ева</h2>
-        <p>Я дизайнер, для которого эстетика — продолжение логики. Моя задача — не просто нарисовать логотип, а собрать бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
-        <p>Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма.</p>
+        <div class="about-decorator"></div>
+        <h2 data-ru="Привет, меня зовут Ева" data-en="Hello, my name is Eva">Привет, меня зовут Ева</h2>
+        <p data-ru="Я дизайнер, для которого эстетика — продолжение логики. Моя задача — не просто нарисовать логотип, а собрать бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат." data-en="I am a designer for whom aesthetics is a continuation of logic. My task is not just to draw a logo, but to assemble a business into a single visual system where every font, color, and margin works for the result.">Я дизайнер, для которого эстетика — продолжение логики. Моя задача — не просто нарисовать логотип, а собрать бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
+        <p data-ru="Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма." data-en="I believe that expensive design is, first of all, verified design. Nothing superfluous, only meaning and flawless form.">Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма.</p>
         
         <div class="process">
-          <div class="process-step">01 <span>Исследование</span></div>
-          <div class="process-step">02 <span>Смысл</span></div>
-          <div class="process-step">03 <span>Форма</span></div>
-          <div class="process-step">04 <span>Система</span></div>
+          <div class="process-step"><span class="num">I</span> <span class="name" data-ru="Исследование" data-en="Research">Исследование</span></div>
+          <div class="process-step"><span class="num">II</span> <span class="name" data-ru="Смысл" data-en="Meaning">Смысл</span></div>
+          <div class="process-step"><span class="num">III</span> <span class="name" data-ru="Форма" data-en="Form">Форма</span></div>
+          <div class="process-step"><span class="num">IV</span> <span class="name" data-ru="Система" data-en="System">Система</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Одна бегущая строка -->
-    <div class="marquee">
-      <div class="marquee-track" id="marqueeTrack">
-        <span>ГРАФИЧЕСКИЙ ДИЗАЙН ✦ ФИРМЕННЫЙ СТИЛЬ ✦ ЛОГОТИП ✦ МОДНЫЙ ДИЗАЙН ✦ ИНФОГРАФИКА ✦ </span>
+    <div class="marquee-wrapper">
+      <div class="marquee">
+        <div class="marquee-track" id="marqueeTrack">
+          <span data-ru="ГРАФИЧЕСКИЙ ДИЗАЙН <span class='star'>✦</span> ФИРМЕННЫЙ СТИЛЬ <span class='star'>✦</span> ЛОГОТИП <span class='star'>✦</span> МОДНЫЙ ДИЗАЙН <span class='star'>✦</span> ИНФОГРАФИКА <span class='star'>✦</span> " data-en="GRAPHIC DESIGN <span class='star'>✦</span> BRAND IDENTITY <span class='star'>✦</span> LOGO <span class='star'>✦</span> FASHION DESIGN <span class='star'>✦</span> INFOGRAPHICS <span class='star'>✦</span> ">ГРАФИЧЕСКИЙ ДИЗАЙН <span class="star">✦</span> ФИРМЕННЫЙ СТИЛЬ <span class="star">✦</span> ЛОГОТИП <span class="star">✦</span> МОДНЫЙ ДИЗАЙН <span class="star">✦</span> ИНФОГРАФИКА <span class="star">✦</span> </span>
+        </div>
       </div>
     </div>
 
-    <!-- Портфолио с вашими фото -->
     <section id="portfolio" class="portfolio reveal">
       <div class="portfolio-head">
-        <h2>Избранные работы</h2>
-        <a href="https://www.behance.net/640b22da" target="_blank" class="link-pink">Все проекты на Behance →</a>
+        <h2 data-ru="Избранные шедевры" data-en="Selected masterpieces">Избранные шедевры</h2>
+        <a href="https://www.behance.net/640b22da" target="_blank" class="link-elegant" data-ru="Весь архив на Behance →" data-en="Full archive on Behance →">Весь архив на Behance →</a>
       </div>
       
       <div class="portfolio-grid">
         <a href="https://www.behance.net/640b22da" target="_blank" class="portfolio-item">
           <div class="portfolio-img-wrap">
             <img src="photo3.PNG" alt="Проект 1">
-            <div class="portfolio-overlay"><span>Смотреть</span></div>
+            <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
-          <h3>Fashion Brand Identity</h3>
-          <p>Фирменный стиль</p>
+          <div class="portfolio-info">
+            <h3>Fashion Brand Identity</h3>
+            <p data-ru="Фирменный стиль" data-en="Brand identity">Фирменный стиль</p>
+          </div>
         </a>
         
         <a href="https://www.behance.net/640b22da" target="_blank" class="portfolio-item">
           <div class="portfolio-img-wrap">
             <img src="photo5.PNG" alt="Проект 2">
-            <div class="portfolio-overlay"><span>Смотреть</span></div>
+            <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
-          <h3>Графическая серия</h3>
-          <p>Плакаты и афиши</p>
+          <div class="portfolio-info">
+            <h3 data-ru="Графическая серия" data-en="Graphic series">Графическая серия</h3>
+            <p data-ru="Плакаты и афиши" data-en="Posters and playbills">Плакаты и афиши</p>
+          </div>
         </a>
 
         <a href="https://www.behance.net/640b22da" target="_blank" class="portfolio-item">
           <div class="portfolio-img-wrap">
             <img src="photo9.PNG" alt="Проект 3">
-            <div class="portfolio-overlay"><span>Смотреть</span></div>
+            <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
-          <h3>Визуальные коммуникации</h3>
-          <p>Инфографика и упаковка</p>
+          <div class="portfolio-info">
+            <h3 data-ru="Визуальные коммуникации" data-en="Visual communications">Визуальные коммуникации</h3>
+            <p data-ru="Инфографика и упаковка" data-en="Infographics and packaging">Инфографика и упаковка</p>
+          </div>
         </a>
 
         <a href="https://www.behance.net/640b22da" target="_blank" class="portfolio-item">
           <div class="portfolio-img-wrap">
             <img src="photo12.PNG" alt="Проект 4">
-            <div class="portfolio-overlay"><span>Смотреть</span></div>
+            <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
-          <h3>Айдентика</h3>
-          <p>Логотипы и брендинг</p>
+          <div class="portfolio-info">
+            <h3 data-ru="Айдентика" data-en="Identity">Айдентика</h3>
+            <p data-ru="Логотипы и брендинг" data-en="Logos and branding">Логотипы и брендинг</p>
+          </div>
         </a>
 
         <a href="https://www.behance.net/640b22da" target="_blank" class="portfolio-item">
           <div class="portfolio-img-wrap">
             <img src="photo13.PNG" alt="Проект 5">
-            <div class="portfolio-overlay"><span>Смотреть</span></div>
+            <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
-          <h3>Полиграфия</h3>
-          <p>Журналы и каталоги</p>
+          <div class="portfolio-info">
+            <h3 data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</h3>
+            <p data-ru="Журналы и каталоги" data-en="Magazines and catalogs">Журналы и каталоги</p>
+          </div>
         </a>
 
         <a href="https://www.behance.net/640b22da" target="_blank" class="portfolio-item">
           <div class="portfolio-img-wrap">
             <img src="photo15.PNG" alt="Проект 6">
-            <div class="portfolio-overlay"><span>Смотреть</span></div>
+            <div class="portfolio-overlay"><span data-ru="Исследовать" data-en="Explore">Исследовать</span></div>
           </div>
-          <h3>Модный дизайн</h3>
-          <p>Fashion-скетчи</p>
+          <div class="portfolio-info">
+            <h3 data-ru="Модный дизайн" data-en="Fashion design">Модный дизайн</h3>
+            <p data-ru="Fashion-скетчи" data-en="Fashion sketches">Fashion-скетчи</p>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- Блок Философия -->
     <section class="philosophy reveal">
       <div class="philosophy-inner">
-        <p class="eyebrow">ФИЛОСОФИЯ</p>
-        <h2 class="quote">«Дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма.»</h2>
+        <div class="quote-mark">“</div>
+        <h2 class="quote" data-ru="Дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма." data-en="Expensive design is, first of all, verified design. Nothing superfluous, only meaning and flawless form.">Дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма.</h2>
+        <p class="quote-author">— EVA</p>
       </div>
     </section>
 
-    <!-- Услуги -->
     <section id="services" class="services reveal">
-      <h2>Что я создаю</h2>
+      <h2 data-ru="Мои компетенции" data-en="My competencies">Мои компетенции</h2>
       <div class="cards">
         <article class="card">
-          <h3>Фирменный стиль</h3>
-          <p>Создаю фирменные стили с нуля. Логотип, палитра, типографика, носители.</p>
+          <div class="card-icon">✦</div>
+          <h3 data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</h3>
+          <p data-ru="Создаю фирменные стили с нуля. Логотип, палитра, типографика, носители." data-en="I create brand identities from scratch. Logo, palette, typography, media.">Создаю фирменные стили с нуля. Логотип, палитра, типографика, носители.</p>
         </article>
         <article class="card">
-          <h3>Веб-дизайн</h3>
-          <p>Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру и визуал.</p>
+          <div class="card-icon">✦</div>
+          <h3 data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</h3>
+          <p data-ru="Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру и визуал." data-en="I design landing pages, portfolios, and promo sites. I think through the structure and visuals.">Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру и визуал.</p>
         </article>
         <article class="card">
-          <h3>Полиграфия</h3>
-          <p>Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка и предпечатная подготовка.</p>
+          <div class="card-icon">✦</div>
+          <h3 data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</h3>
+          <p data-ru="Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка и предпечатная подготовка." data-en="Posters, playbills, catalogs, magazines, packaging. Layout and prepress.">Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка и предпечатная подготовка.</p>
         </article>
         <article class="card">
-          <h3>Модный дизайн</h3>
-          <p>Fashion-скетчи, обложки, эдиториалы, принты для одежды.</p>
+          <div class="card-icon">✦</div>
+          <h3 data-ru="Модный дизайн" data-en="Fashion Design">Модный дизайн</h3>
+          <p data-ru="Fashion-скетчи, обложки, эдиториалы, принты для одежды." data-en="Fashion sketches, covers, editorials, clothing prints.">Fashion-скетчи, обложки, эдиториалы, принты для одежды.</p>
         </article>
       </div>
     </section>
 
-    <!-- Заявка (ФОРМА ОТПРАВЛЯЕТСЯ НА ВАШУ ПОЧТУ ЧЕРЕЗ FORMSPREE) -->
     <section id="request" class="request reveal">
       <div class="request-wrapper">
-        <h2>Заявка на создание проекта</h2>
-        <p class="lead">Расскажите о вашей идее — я помогу превратить её в сильный визуальный образ.</p>
+        <div class="request-border"></div>
+        <h2 data-ru="Заявка на создание проекта" data-en="Project Request">Заявка на создание проекта</h2>
+        <p class="lead" data-ru="Расскажите о вашей идее — я помогу превратить её в сильный визуальный образ." data-en="Tell me about your idea — I will help turn it into a strong visual image.">Расскажите о вашей идее — я помогу превратить её в сильный визуальный образ.</p>
 
-        <!-- Ваша ссылка Formspree -->
         <form class="request-form" id="contactForm" action="https://formspree.io/f/xdegpeke" method="POST">
-          
           <div class="form-row">
             <div class="field">
-              <label for="name">Ваше имя</label>
+              <label for="name" data-ru="Ваше имя" data-en="Your name">Ваше имя</label>
               <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
             </div>
             <div class="field">
@@ -197,114 +227,110 @@
           </div>
           
           <div class="field">
-            <label for="project">Тип проекта</label>
+            <label for="project" data-ru="Тип проекта" data-en="Project type">Тип проекта</label>
             <div class="select-wrapper">
               <select id="project" name="project">
-                <option value="branding">Фирменный стиль</option>
-                <option value="logo">Дизайн логотипов</option>
-                <option value="graphic">Графический дизайн</option>
-                <option value="web">Веб-дизайн</option>
-                <option value="infographic">Инфографика</option>
-                <option value="industrial">Промышленный дизайн</option>
-                <option value="polygraphy">Полиграфия</option>
-                <option value="fashion">Модный дизайн</option>
+                <option value="branding" data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</option>
+                <option value="logo" data-ru="Дизайн логотипов" data-en="Logo Design">Дизайн логотипов</option>
+                <option value="graphic" data-ru="Графический дизайн" data-en="Graphic Design">Графический дизайн</option>
+                <option value="web" data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</option>
+                <option value="infographic" data-ru="Инфографика" data-en="Infographics">Инфографика</option>
+                <option value="industrial" data-ru="Промышленный дизайн" data-en="Industrial Design">Промышленный дизайн</option>
+                <option value="polygraphy" data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</option>
+                <option value="fashion" data-ru="Модный дизайн" data-en="Fashion Design">Модный дизайн</option>
               </select>
             </div>
           </div>
 
           <div class="field">
-            <label for="message">О проекте</label>
+            <label for="message" data-ru="О проекте" data-en="About the project">О проекте</label>
             <textarea id="message" name="message" rows="4" placeholder="Пара слов о вашей идее..." required></textarea>
           </div>
 
-          <button type="submit" class="btn-submit">Отправить заявку</button>
-          
-          <!-- Сообщение об успешной отправке -->
-          <p class="form-done">Спасибо! Заявка отправлена — я свяжусь с вами.</p>
+          <button type="submit" class="btn-submit" data-ru="Отправить заявку" data-en="Send request">Отправить заявку</button>
+          <p class="form-done" data-ru="Спасибо! Заявка отправлена — я свяжусь с вами." data-en="Thank you! The request has been sent — I will contact you.">Спасибо! Заявка отправлена — я свяжусь с вами.</p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Подвал -->
   <footer class="footer">
     <div class="footer-logo">EVA</div>
     <div class="footer-links">
       <a href="https://www.behance.net/640b22da" target="_blank">Behance</a>
       <a href="mailto:eva332801@gmail.com">Email</a>
     </div>
-    <span>© 2026 EVA. Визуальные смыслы.</span>
+    <span>© 2026 EVA. <span data-ru="Визуальные смыслы." data-en="Visual meanings.">Визуальные смыслы.</span></span>
   </footer>
 
-  <!-- Скрипты -->
   <script>
-    // 1. Убираем прелоадер после загрузки
     window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.body.classList.add('loaded');
-      }, 400);
+      setTimeout(() => { document.body.classList.add('loaded'); }, 800);
     });
 
-    // 2. Клик по портрету (раскрытие текста)
     const btn = document.getElementById('portraitBtn');
     const panel = document.getElementById('aboutPanel');
     btn.addEventListener('click', () => {
       const open = panel.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-      btn.classList.toggle('active', open);
-      if (open) {
-        setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
-      }
+      if (open) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
     });
 
-    // 3. Анимация появления секций при скролле
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // 4. Скрипт для создания бесшовной бегущей строки (клонирует текст)
     const track = document.getElementById('marqueeTrack');
-    if (track) {
-      const content = track.innerHTML;
-      track.innerHTML = content + content + content + content; 
+    function buildMarquee() {
+      if (track) {
+        const firstSpan = track.querySelector('span');
+        if (firstSpan) {
+          const content = firstSpan.outerHTML;
+          track.innerHTML = content + content + content + content; 
+        }
+      }
     }
+    buildMarquee();
 
-    // 5. Асинхронная отправка формы (без перезагрузки страницы)
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); 
-      
       const button = form.querySelector('.btn-submit');
       const doneMessage = form.querySelector('.form-done');
-      
-      button.textContent = 'Отправка...';
+      button.textContent = document.documentElement.lang === 'en' ? 'Sending...' : 'Отправка...';
       button.disabled = true;
-
       const formData = new FormData(form);
-
       try {
         const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+          method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
         });
-
         if (response.ok) {
-          form.reset(); 
-          button.style.display = 'none'; 
-          doneMessage.style.display = 'block'; 
+          form.reset(); button.style.display = 'none'; doneMessage.style.display = 'block'; 
         } else {
-          button.textContent = 'Ошибка. Попробуйте еще раз';
+          button.textContent = document.documentElement.lang === 'en' ? 'Error' : 'Ошибка';
           button.disabled = false;
         }
       } catch (error) {
-        button.textContent = 'Ошибка сети';
+        button.textContent = document.documentElement.lang === 'en' ? 'Network error' : 'Ошибка сети';
         button.disabled = false;
       }
     });
+
+    function setLang(lang, event) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-ru][data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      const nameInput = document.getElementById('name');
+      const messageInput = document.getElementById('message');
+      if (nameInput && messageInput) {
+        nameInput.placeholder = lang === 'en' ? "How should I address you?" : "Как к вам обращаться?";
+        messageInput.placeholder = lang === 'en' ? "A few words about your idea..." : "Пара слов о вашей идее...";
+      }
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      if (event && event.target) event.target.classList.add('active');
+      buildMarquee();
+    }
   </script>
 </body>
 </html>
