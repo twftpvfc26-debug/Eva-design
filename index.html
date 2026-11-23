@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA — Графический и веб-дизайнер</title>
+    <title>EVA — Визуальный дизайнер</title>
     
-    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Подключаем ваш файл стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- БРИЛЛИАНТЫ -->
+    <!-- БРИЛЛИАНТЫ СВАРОВСКИ -->
+    <div class="crystal"></div>
     <div class="crystal"></div>
     <div class="crystal"></div>
     <div class="crystal"></div>
@@ -29,20 +28,23 @@
             <a href="#about">Обо мне</a>
             <a href="#services">Услуги</a>
             <a href="#gallery">Работы</a>
-            <a href="https://www.behance.net/640b22da" target="_blank" class="nav-btn" style="padding: 10px 20px; border: 1px solid var(--gold); color: var(--gold);">Behance</a>
+            <a href="https://www.behance.net/640b22da" target="_blank" class="nav-btn">Behance</a>
         </nav>
     </header>
 
-    <!-- Главный экран -->
+    <!-- Главный экран (Красивый градиент) -->
     <section class="hero">
-        <div class="hero-content fade-in">
+        <div class="hero-text fade-in">
             <h1>СОЗДАЮ<br><span>ВИЗУАЛЬНЫЕ</span><br>СМЫСЛЫ</h1>
             <p>Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
             <a href="#contact" class="btn-royal">Начать проект</a>
         </div>
+        <div class="hero-image fade-in">
+            <img src="photo12.PNG" alt="Ева">
+        </div>
     </section>
 
-    <!-- ЕДИНСТВЕННАЯ ЛЕНТА -->
+    <!-- Лента -->
     <div class="marquee">
         <div class="marquee-content">
             <span>ГРАФИЧЕСКИЙ ДИЗАЙН</span> ✦ <span>ФИРМЕННЫЙ СТИЛЬ</span> ✦ <span>ДИЗАЙН ЛОГОТИПА</span> ✦ <span>МОДНЫЙ ДИЗАЙН</span> ✦ <span>ПРОМЫШЛЕННЫЙ ДИЗАЙН</span> ✦
@@ -50,90 +52,82 @@
         </div>
     </div>
 
-    <!-- Обо мне (Ваше фото) -->
+    <!-- Обо мне -->
     <section id="about" class="section fade-in">
-        <div class="container split-layout">
-            <div class="text-block">
-                <h2>Привет, меня зовут Ева</h2>
-                <p>Я дизайнер, для которого эстетика — это продолжение логики. Моя задача — не просто нарисовать красивый логотип, а собрать ваш бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
-                <p>Я верю, что дорогой дизайн — это в первую очередь выверенный дизайн. Ничего лишнего, только смысл и безупречная форма.</p>
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="photo3.PNG" alt="Ева">
             </div>
-            <div class="image-block">
-                <img src="photo12.PNG" alt="Ева дизайнер">
+            <div class="about-text">
+                <h2>Привет,<br>я Ева.</h2>
+                <p>Я дизайнер, для которого эстетика — это продолжение логики. Я не верю в шаблоны. Моя задача — создать уникальный визуальный язык для вашего бренда.</p>
+                <p>Мой подход — это баланс между искусством и маркетингом. Я делаю так, чтобы было не только красиво, но и работало на результат.</p>
             </div>
         </div>
     </section>
 
     <!-- Услуги -->
-    <section id="services" class="section fade-in">
+    <section id="services" class="section fade-in bg-grey">
         <div class="container">
             <h2 class="section-title">Что я создаю</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header"><span>Брендинг и айдентика</span><span class="icon">+</span></button>
-                    <div class="accordion-content"><p>Создаю фирменные стили с нуля. Логотип, палитра, типографика, носители.</p></div>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Брендинг</h3>
+                    <p>Айдентика, логотипы, фирменные стили с нуля.</p>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header"><span>Веб-дизайн и интерфейсы</span><span class="icon">+</span></button>
-                    <div class="accordion-content"><p>Проектирую лендинги, портфолио и промо-сайты. Продумываю структуру и визуал.</p></div>
+                <div class="service-item">
+                    <h3>Графический дизайн</h3>
+                    <p>Плакаты, каталоги, упаковка, полиграфия.</p>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header"><span>Графический и печатный дизайн</span><span class="icon">+</span></button>
-                    <div class="accordion-content"><p>Плакаты, афиши, каталоги, журналы, упаковка. Вёрстка и предпечатная подготовка.</p></div>
+                <div class="service-item">
+                    <h3>Веб-дизайн</h3>
+                    <p>Сайты и интерфейсы, которые хочется рассматривать.</p>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header"><span>Иллюстрация и спецпроекты</span><span class="icon">+</span></button>
-                    <div class="accordion-content"><p>Fashion-скетчи, обложки, эдиториалы, принты для одежды.</p></div>
+                <div class="service-item">
+                    <h3>Иллюстрация</h3>
+                    <p>Fashion-скетчи, авторская графика, паттерны.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Галерея (Ваши работы) -->
+    <!-- Галерея -->
     <section id="gallery" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title">Избранные работы</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="photo1.PNG" alt="Работа 1"></div>
-                <div class="gallery-item"><img src="photo3.PNG" alt="Работа 3"></div>
-                <div class="gallery-item"><img src="photo5.PNG" alt="Работа 5"></div>
-                <div class="gallery-item"><img src="photo9.PNG" alt="Работа 9"></div>
-                <div class="gallery-item"><img src="photo13.PNG" alt="Работа 13"></div>
-                <div class="gallery-item"><img src="photo15.PNG" alt="Работа 15"></div>
-            </div>
+        <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Избранные работы</h2>
+        <div class="gallery-grid">
+            <img src="photo1.PNG" alt="Работа 1">
+            <img src="photo5.PNG" alt="Работа 5">
+            <img src="photo9.PNG" alt="Работа 9">
+            <img src="photo13.PNG" alt="Работа 13">
+            <img src="photo15.PNG" alt="Работа 15">
+            <img src="photo12.PNG" alt="Работа 12">
         </div>
     </section>
 
-    <!-- Форма -->
-    <section id="contact" class="section fade-in">
-        <div class="container">
-            <h2 class="section-title">Давайте создадим что-то крутое</h2>
+    <!-- ФОРМА ЗАЯВКИ (Красивая) -->
+    <section id="contact" class="section contact-section fade-in">
+        <div class="contact-wrapper">
+            <div class="contact-text">
+                <h2>Давайте<br>создадим<br>красоту.</h2>
+                <p>Оставьте заявку, и я свяжусь с вами в течение дня.</p>
+            </div>
             <form action="https://formspree.io/f/xdegpeke" method="POST" class="contact-form">
-                <div class="form-group"><input type="text" name="name" placeholder="Ваше имя" required></div>
-                <div class="form-group"><input type="email" name="email" placeholder="Email или Telegram" required></div>
-                <div class="form-group"><textarea name="message" rows="4" placeholder="Расскажите о проекте..." required></textarea></div>
-                <button type="submit" class="btn-royal" style="width: 100%;">Отправить заявку</button>
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Email или Telegram" required>
+                <textarea name="message" rows="3" placeholder="Расскажите о вашем проекте..." required></textarea>
+                <button type="submit" class="btn-royal btn-full">Отправить заявку</button>
             </form>
         </div>
     </section>
 
     <script>
+        // Анимация появления
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-
-        const accordions = document.querySelectorAll('.accordion-header');
-        accordions.forEach(acc => {
-            acc.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const content = this.nextElementSibling;
-                if (content.style.maxHeight) content.style.maxHeight = null;
-                else content.style.maxHeight = content.scrollHeight + "px";
-            });
-        });
     </script>
 </body>
 </html>
