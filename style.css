@@ -569,3 +569,67 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     font-size: 15px;
   }
 }
+/* ===== ПЛАНШЕТЫ (от 769px до 1024px) ===== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .header { padding: 20px 30px; }
+  .nav { gap: 20px; }
+  .nav a { font-size: 11px; }
+  .menu-toggle { display: none; }
+}
+
+/* ===== ТЕЛЕФОНЫ (до 768px) ===== */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Прячем меню по умолчанию */
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 21, 51, 0.98);
+    padding: 20px;
+    border-bottom: 1px solid var(--pink);
+    gap: 15px;
+    align-items: center;
+    z-index: 99;
+  }
+
+  /* Показываем меню при клике */
+  .nav.active { display: flex; }
+
+  /* Кнопка-бургер */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--pink);
+    transition: 0.3s;
+  }
+  
+  /* Превращение в крестик при открытии */
+  .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.active span:nth-child(2) { opacity: 0; }
+  .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* На компьютерах кнопка-бургер не нужна */
+@media (min-width: 769px) {
+  .menu-toggle { display: none; }
+}
