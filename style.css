@@ -1,11 +1,11 @@
 :root {
-  --navy: #0b1533; /* Глубокий темно-синий */
-  --navy-light: #15224d; /* Чуть светлее для карточек */
-  --pink: #f4c3d4; /* Нежно-розовый */
-  --pink-bright: #ffbcd6; /* Яркий розовый для акцентов */
+  --navy: #0b1533;
+  --navy-light: #15224d;
+  --pink: #f4c3d4;
+  --pink-bright: #ffbcd6;
   --white: #ffffff;
   --gray: #a0a8c0;
-  --line: rgba(244, 195, 212, 0.2); /* Розовые линии */
+  --line: rgba(244, 195, 212, 0.2);
   
   --font-title: 'Cinzel', serif;
   --font-serif: 'Cormorant Garamond', serif;
@@ -350,23 +350,31 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   .hero-buttons { justify-content: center; }
   .portrait-arch { width: 260px; height: 380px; }
   .portrait-glow { inset: -15px; }
-  .about-inner { padding: 40px 24px; }
-  .process { grid-template-columns: 1fr 1fr; gap: 40px; }
+  
+  /* ИСПРАВЛЕНИЕ ОТСТУПОВ НА МОБИЛЬНЫХ */
+  .about-inner { padding: 40px 24px 80px; } 
+  .marquee-wrapper { margin-top: 20px; } /* Отталкиваем ленту от блока "Обо мне" */
+  
+  .process { grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
   .portfolio, .services, .request { padding: 80px 24px; }
   .philosophy { padding: 80px 24px; }
   .request-wrapper { padding: 40px 24px; }
   .form-row { grid-template-columns: 1fr; }
   .footer { padding: 40px 24px; }
-  .modal-layout { grid-template-columns: 1fr; }
+  
+  /* Исправление модального окна */
+  .modal-layout { grid-template-columns: 1fr; gap: 20px; }
   .modal-img { max-height: 250px; }
   .modal-content { padding: 30px 20px; }
+  
+  /* Чуть уменьшаем шрифт заголовка на телефоне */
+  .about-inner h2 { font-size: 32px; }
 }
 
 @media (max-width: 480px) {
   .cards { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 40px; }
-  .about-inner h2 { font-size: 36px; }
   .request h2 { font-size: 32px; }
   .process { grid-template-columns: 1fr; }
 }
