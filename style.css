@@ -616,8 +616,14 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   .philosophy .quote { font-size: 22px !important; }
 
   /* ЗАЯВКА (отодвигаем от краев) */
-  .request { padding: 60px 25px !important; }
-  .request-wrapper { padding: 30px 20px !important; }
+  .request { 
+    padding: 60px 20px !important; 
+    max-width: 95% !important; 
+    margin: 0 auto !important; 
+  }
+  .request-wrapper { 
+    padding: 40px 30px !important; 
+  }
   .request h2 { font-size: 24px !important; }
   .form-row { grid-template-columns: 1fr !important; gap: 20px !important; }
   .field input, .field select, .field textarea { padding: 12px !important; font-size: 14px !important; }
@@ -635,12 +641,16 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   }
   .modal-img { 
     width: 100% !important; 
-    height: auto !important; /* Убираем жесткую высоту, чтобы фото не сплющивалось */
-    max-height: none !important; /* Позволяем фото быть в полный рост */
-    aspect-ratio: 3 / 4 !important; /* Задаем красивые пропорции (как у портрета) */
-    object-fit: cover !important; 
-    object-position: center !important; /* Центрируем фото */
+    height: auto !important; 
+    max-height: none !important; 
+    object-fit: contain !important; /* Фото влезает целиком */
     border-radius: 4px !important;
+    
+    /* Убираем белый фон, делаем темно-синий */
+    background-color: var(--navy-light) !important; 
+    
+    /* Добавляем аккуратную рамку */
+    border: 1px solid var(--line) !important; 
   }
   .modal-text h2 { font-size: 22px !important; margin-bottom: 10px !important; }
   .modal-text p { font-size: 15px !important; margin-bottom: 20px !important; }
