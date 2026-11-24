@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVA — Визуальные смыслы</title>
   
-  <!-- Элегантные шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -14,7 +13,7 @@
 </head>
 <body>
 
-  <!-- Прелоадер (Занавес при загрузке) -->
+  <!-- Прелоадер -->
   <div class="preloader">
     <div class="preloader-content">
       <div class="preloader-line"></div>
@@ -62,7 +61,7 @@
         <h1 data-ru="СОЗДАЮ<br>ВИЗУАЛЬНЫЕ<br><span class='text-glow'>СМЫСЛЫ</span>" data-en="CREATING<br>VISUAL<br><span class='text-glow'>MEANINGS</span>">СОЗДАЮ<br>ВИЗУАЛЬНЫЕ<br><span class="text-glow">СМЫСЛЫ</span></h1>
         <p class="lead" data-ru="Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться." data-en="Design is not just a pretty picture. It is a tool that makes the heart beat faster and clients return.">Дизайн — это не просто красивая картинка. Это инструмент, который заставляет сердце биться чаще, а клиентов — возвращаться.</p>
         <div class="hero-buttons">
-          <a href="#request" class="btn-primary" data-ru="Начать путешествие" data-en="Begin the journey">Начать путешествие</a>
+          <a href="#request" class="btn-primary" data-ru="Создать проект" data-en="Create a project">Создать проект</a>
         </div>
       </div>
 
@@ -99,12 +98,12 @@
     <div class="marquee-wrapper">
       <div class="marquee">
         <div class="marquee-track" id="marqueeTrack">
-          <span data-ru="ГРАФИЧЕСКИЙ ДИЗАЙН <span class='star'>✦</span> ФИРМЕННЫЙ СТИЛЬ <span class='star'>✦</span> ЛОГОТИП <span class='star'>✦</span> МОДНЫЙ ДИЗАЙН <span class='star'>✦</span> ИНФОГРАФИКА <span class='star'>✦</span> " data-en="GRAPHIC DESIGN <span class='star'>✦</span> BRAND IDENTITY <span class='star'>✦</span> LOGO <span class='star'>✦</span> FASHION DESIGN <span class='star'>✦</span> INFOGRAPHICS <span class='star'>✦</span> ">ГРАФИЧЕСКИЙ ДИЗАЙН <span class="star">✦</span> ФИРМЕННЫЙ СТИЛЬ <span class="star">✦</span> ЛОГОТИП <span class="star">✦</span> МОДНЫЙ ДИЗАЙН <span class="star">✦</span> ИНФОГРАФИКА <span class="star">✦</span> </span>
+          <span data-ru="ГРАФИЧЕСКИЙ ДИЗАЙН <span class='star'>✦</span> ФИРМЕННЫЙ СТИЛЬ <span class='star'>✦</span> ЛОГОТИП <span class='star'>✦</span> МОДНЫЙ ДИЗАЙН <span class='star'>✦</span> ИНФОГРАФИКА <span class='star'>✦</span> ПРЕЗЕНТАЦИИ <span class='star'>✦</span> " data-en="GRAPHIC DESIGN <span class='star'>✦</span> BRAND IDENTITY <span class='star'>✦</span> LOGO <span class='star'>✦</span> FASHION DESIGN <span class='star'>✦</span> INFOGRAPHICS <span class='star'>✦</span> PRESENTATIONS <span class='star'>✦</span> ">ГРАФИЧЕСКИЙ ДИЗАЙН <span class="star">✦</span> ФИРМЕННЫЙ СТИЛЬ <span class="star">✦</span> ЛОГОТИП <span class="star">✦</span> МОДНЫЙ ДИЗАЙН <span class="star">✦</span> ИНФОГРАФИКА <span class="star">✦</span> ПРЕЗЕНТАЦИИ <span class="star">✦</span> </span>
         </div>
       </div>
     </div>
 
-    <!-- Портфолио (Ваши личные фото) -->
+    <!-- Портфолио -->
     <section id="portfolio" class="portfolio reveal">
       <div class="portfolio-head">
         <h2 data-ru="Мой визуальный мир" data-en="My visual world">Мой визуальный мир</h2>
@@ -112,7 +111,6 @@
       </div>
       
       <div class="portfolio-grid">
-        <!-- Фото 1 -->
         <div class="portfolio-item" onclick="openModal('modal1')">
           <div class="portfolio-img-wrap">
             <img src="photo3.PNG" alt="Фото 1">
@@ -124,7 +122,6 @@
           </div>
         </div>
         
-        <!-- Фото 2 -->
         <div class="portfolio-item" onclick="openModal('modal2')">
           <div class="portfolio-img-wrap">
             <img src="photo5.PNG" alt="Фото 2">
@@ -135,8 +132,6 @@
             <p data-ru="Философия дизайна" data-en="Design philosophy">Философия дизайна</p>
           </div>
         </div>
-
-        <!-- Фото 3 -->
         <div class="portfolio-item" onclick="openModal('modal3')">
           <div class="portfolio-img-wrap">
             <img src="photo9.PNG" alt="Фото 3">
@@ -148,7 +143,6 @@
           </div>
         </div>
 
-        <!-- Фото 4 -->
         <div class="portfolio-item" onclick="openModal('modal4')">
           <div class="portfolio-img-wrap">
             <img src="photo12.PNG" alt="Фото 4">
@@ -160,7 +154,6 @@
           </div>
         </div>
 
-        <!-- Фото 5 -->
         <div class="portfolio-item" onclick="openModal('modal5')">
           <div class="portfolio-img-wrap">
             <img src="photo13.PNG" alt="Фото 5">
@@ -172,7 +165,6 @@
           </div>
         </div>
 
-        <!-- Фото 6 -->
         <div class="portfolio-item" onclick="openModal('modal6')">
           <div class="portfolio-img-wrap">
             <img src="photo15.PNG" alt="Фото 6">
@@ -186,7 +178,7 @@
       </div>
     </section>
 
-    <!-- Модальные окна с текстами про ваш стиль -->
+    <!-- Модальные окна с текстами -->
     <div class="modal" id="modal1">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal1')">&times;</span>
@@ -301,13 +293,13 @@
         </article>
         <article class="card">
           <div class="card-icon">✦</div>
-          <h3 data-ru="Модный дизайн" data-en="Fashion Design">Модный дизайн</h3>
-          <p data-ru="Fashion-скетчи, обложки, эдиториалы, принты для одежды." data-en="Fashion sketches, covers, editorials, clothing prints.">Fashion-скетчи, обложки, эдиториалы, принты для одежды.</p>
+          <h3 data-ru="Презентации" data-en="Presentations">Презентации</h3>
+          <p data-ru="Создаю стильные презентации в PowerPoint. Структура, инфографика и визуальный контент, который убеждает." data-en="I create stylish PowerPoint presentations. Structure, infographics, and visual content that convinces.">Создаю стильные презентации в PowerPoint. Структура, инфографика и визуальный контент, который убеждает.</p>
         </article>
       </div>
     </section>
 
-    <!-- Заявка (Отправка на почту) -->
+    <!-- Заявка -->
     <section id="request" class="request reveal">
       <div class="request-wrapper">
         <div class="request-border"></div>
@@ -334,6 +326,10 @@
                 <option value="logo" data-ru="Дизайн логотипов" data-en="Logo Design">Дизайн логотипов</option>
                 <option value="graphic" data-ru="Графический дизайн" data-en="Graphic Design">Графический дизайн</option>
                 <option value="web" data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</option>
+                <option value="infographic" data-ru="Инфографика" data-en="Infographics">Инфографика</option>
+                <option value="polygraphy" data-ru="Полиграфия" data-en="Polygraphy">Полиграфия</option>
+                <option value="industrial" data-ru="Промышленный дизайн" data-en="Industrial Design">Промышленный дизайн</option>
+                <option value="presentation" data-ru="Презентации (PowerPoint)" data-en="Presentations (PowerPoint)">Презентации (PowerPoint)</option>
                 <option value="fashion" data-ru="Модный дизайн" data-en="Fashion Design">Модный дизайн</option>
               </select>
             </div>
@@ -363,12 +359,10 @@
 
   <!-- Скрипты -->
   <script>
-    // 1. Прелоадер
     window.addEventListener('load', () => {
       setTimeout(() => { document.body.classList.add('loaded'); }, 800);
     });
 
-    // 2. Портрет
     const btn = document.getElementById('portraitBtn');
     const panel = document.getElementById('aboutPanel');
     btn.addEventListener('click', () => {
@@ -376,13 +370,11 @@
       if (open) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
     });
 
-    // 3. Появление при скролле
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // 4. Бегущая строка
     const track = document.getElementById('marqueeTrack');
     function buildMarquee() {
       if (track) {
@@ -395,7 +387,6 @@
     }
     buildMarquee();
 
-    // 5. Модальные окна
     function openModal(id) {
       document.getElementById(id).style.display = "flex";
       document.body.style.overflow = "hidden";
@@ -411,7 +402,6 @@
       }
     }
 
-    // 6. Отправка формы
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); 
@@ -436,7 +426,6 @@
       }
     });
 
-    // 7. Переключение языков
     function setLang(lang, event) {
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-ru][data-en]').forEach(el => {
