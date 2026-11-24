@@ -685,25 +685,28 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     margin: 0 !important;
   }
 }
-/* ========================================= */
-/* ЖЕЛЕЗОБЕТОННЫЙ ФИКС ОТСТУПОВ ДЛЯ ТЕЛЕФОНОВ */
-/* ========================================= */
-@media (max-width: 768px) {
-  /* 1. Отталкиваем заголовок "Мой визуальный мир" от бегущей строки */
-  #portfolio {
-    padding-top: 120px !important; /* Увеличиваем отступ сверху */
+/* ========================================================= */
+/* СПАСАТЕЛЬНЫЙ КОД (ВОЗВРАЩАЕМ ТО, ЧТО УДАЛИЛИ) */
+/* ========================================================= */
+
+/* 1. Жестко фиксируем отступ у бегущей строки */
+.marquee-wrapper {
+  margin-bottom: 60px !important; /* Вот этот отступ, скорее всего, вы и удалили */
+}
+
+/* 2. Настройки для телефонов */
+@media screen and (max-width: 768px) {
+  /* Увеличиваем отступ у портфолио */
+  section#portfolio {
+    padding-top: 100px !important; 
   }
   
-  /* 2. На всякий случай добавляем отступ снизу самой ленте */
-  .marquee-wrapper {
-    margin-bottom: 50px !important; 
-  }
-
-  /* 3. Чтобы заголовок и ссылка на Behance не наезжали друг на друга */
-  .portfolio-head {
+  /* Ставим заголовок "Мой визуальный мир" и ссылку на Behance в колонку */
+  section#portfolio .portfolio-head {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 20px !important;
+    gap: 15px !important; /* Отступ между заголовком и ссылкой */
+    margin-bottom: 40px !important;
   }
 }
