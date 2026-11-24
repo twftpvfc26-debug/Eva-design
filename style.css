@@ -549,3 +549,23 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); } /* Плавно всплывают вверх */
 }
+/* Фикс для модальных окон на телефоне (чтобы фото не было гигантским) */
+@media (max-width: 768px) {
+  .modal-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .modal-img {
+    width: 100%;
+    max-height: 250px; /* Ограничиваем высоту фото в окне */
+    object-fit: cover;
+    object-position: top center; /* Показываем лицо, а не туфли */
+  }
+  .modal-text h2 {
+    font-size: 24px;
+  }
+  .modal-text p {
+    font-size: 15px;
+  }
+}
