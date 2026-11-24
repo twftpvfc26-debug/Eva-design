@@ -35,23 +35,32 @@
     </svg>
   </div>
 
-  <!-- Шапка -->
-  <header class="header">
-    <a href="#" class="logo">EVA</a>
-    <nav class="nav">
-      <a href="#portfolio" data-ru="Шедевры" data-en="Masterpieces">Шедевры</a>
-      <a href="#services" data-ru="Услуги" data-en="Services">Услуги</a>
-      <a href="https://www.behance.net/640b22da" target="_blank" class="nav-behance">Behance</a>
-      
-      <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLang('ru', event)">RU</button>
-        <span>/</span>
-        <button class="lang-btn" onclick="setLang('en', event)">EN</button>
-      </div>
+    <!-- Шапка -->
+<header class="header">
+  <a href="#" class="logo">EVA</a>
+  
+  <!-- Кнопка для телефона (бургер) -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-      <a href="#request" class="nav-btn" data-ru="Заказать проект" data-en="Start a project">Заказать проект</a>
-    </nav>
-  </header>
+  <nav class="nav" id="navMenu">
+    <a href="#portfolio" data-ru="Шедевры" data-en="Masterpieces">Шедевры</a>
+    <a href="#services" data-ru="Услуги" data-en="Services">Услуги</a>
+    <a href="https://www.behance.net/640b22da" target="_blank" class="nav-behance">Behance</a>
+    
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('ru', event)">RU</button>
+      <span>/</span>
+      <button class="lang-btn" onclick="setLang('en', event)">EN</button>
+    </div>
+
+    <a href="#request" class="nav-btn" data-ru="Заказать проект" data-en="Start a project">Заказать проект</a>
+  </nav>
+</header>
+
 
   <main>
     <!-- Главный экран -->
@@ -81,7 +90,7 @@
     <!-- Раскрывающийся текст (Обо мне) -->
     <section class="about-panel" id="aboutPanel">
       <div class="about-inner">
-        y<div class="about-decorator"></div>
+        <div class="about-decorator"></div>
         <h2 data-ru="Привет, меня зовут Ева" data-en="Hello, my name is Eva">Привет, меня зовут Ева</h2>
         <p data-ru="Я дизайнер, для которого эстетика — продолжение логики. Моя задача — не просто нарисовать логотип, а собрать бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат." data-en="I am a designer for whom aesthetics is a continuation of logic. My task is not just to draw a logo, but to assemble a business into a single visual system where every font, color, and margin works for the result.">Я дизайнер, для которого эстетика — продолжение логики. Моя задача — не просто нарисовать логотип, а собрать бизнес в единую визуальную систему, где каждый шрифт, цвет и отступ работают на результат.</p>
         
@@ -440,6 +449,16 @@
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
       if (event && event.target) event.target.classList.add('active');
       buildMarquee();
+    }
+    // Скрипт для мобильного меню (бургер)
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
     }
   </script>
 </body>
