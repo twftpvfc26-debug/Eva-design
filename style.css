@@ -421,6 +421,7 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   box-shadow: 0 25px 50px rgba(0,0,0,0.5) !important;
   transition: transform 0.5s ease !important;
 }
+
 /* ===== АВТОМАТИЧЕСКОЕ 3D ДЛЯ ТЕЛЕФОНОВ ===== */
 @media (max-width: 768px) {
   /* Покачивание портрета */
@@ -447,4 +448,38 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
 @keyframes floatTiltCard {
   0%, 100% { transform: perspective(800px) rotateY(0deg) rotateX(0deg); }
   50% { transform: perspective(800px) rotateY(-4deg) rotateX(4deg); }
+}
+/* ===== УМЕНЬШАЕМ САЙТ НА ТЕЛЕФОНЕ ===== */
+@media (max-width: 768px) {
+  .header { padding: 15px 20px; }
+  .hero, .about-inner, .portfolio, .services, .request, .philosophy { padding-left: 20px; padding-right: 20px; }
+  
+  .hero h1 { font-size: 34px; line-height: 1.2; }
+  .lead { font-size: 15px; margin-bottom: 30px; }
+  .eyebrow { font-size: 10px; letter-spacing: 4px; }
+  
+  .portrait-arch { width: 200px; height: 280px; }
+  .portrait-glow { inset: -10px; }
+  
+  .about-inner h2 { font-size: 28px; }
+  .about-inner p { font-size: 16px; }
+  .process { grid-template-columns: 1fr 1fr; gap: 20px; }
+  
+  .marquee-wrapper { padding: 15px 0; background: var(--navy); }
+  .marquee-track span { font-size: 12px; letter-spacing: 2px; padding-right: 15px; }
+  
+  .portfolio-head h2 { font-size: 30px; }
+  .portfolio-grid { grid-template-columns: 1fr; gap: 30px; }
+  .portfolio-info h3 { font-size: 18px; }
+  
+  .services h2 { font-size: 30px; margin-bottom: 40px; }
+  .cards { grid-template-columns: 1fr; gap: 20px; }
+  .card { padding: 30px 20px; }
+  .card h3 { font-size: 18px; }
+  .card p { font-size: 15px; }
+  
+  .request-wrapper { padding: 30px 20px; }
+  .request h2 { font-size: 26px; }
+  .form-row { grid-template-columns: 1fr; }
+  .field input, .field select, .field textarea { padding: 14px; font-size: 14px; }
 }
