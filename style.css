@@ -580,56 +580,96 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
 /* ===== ТЕЛЕФОНЫ (до 768px) ===== */
 @media (max-width: 768px) {
   .header {
-    padding: 15px 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px 20px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
   }
 
   /* Прячем меню по умолчанию */
   .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(11, 21, 51, 0.98);
-    padding: 20px;
-    border-bottom: 1px solid var(--pink);
-    gap: 15px;
-    align-items: center;
-    z-index: 99;
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(11, 21, 51, 0.98) !important;
+    padding: 20px !important;
+    border-bottom: 1px solid var(--pink) !important;
+    gap: 15px !important;
+    align-items: center !important;
+    z-index: 99 !important;
   }
 
   /* Показываем меню при клике */
-  .nav.active { display: flex; }
+  .nav.active { 
+    display: flex !important; 
+  }
 
   /* Кнопка-бургер */
   .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 5px !important;
+    z-index: 100 !important;
   }
+  
   .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--pink);
-    transition: 0.3s;
+    display: block !important;
+    width: 28px !important;
+    height: 2px !important;
+    background-color: var(--pink) !important;
+    transition: 0.3s ease-in-out !important;
   }
   
   /* Превращение в крестик при открытии */
-  .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .menu-toggle.active span:nth-child(2) { opacity: 0; }
-  .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg) !important; }
+  .menu-toggle.active span:nth-child(2) { opacity: 0 !important; }
+  .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg) !important; }
+
+  /* УМЕНЬШАЕМ САЙТ (чтобы не был близко) */
+  .hero { grid-template-columns: 1fr !important; text-align: center !important; padding-top: 60px !important; padding-bottom: 40px !important; }
+  .hero h1 { font-size: 34px !important; }
+  .portrait-arch { width: 200px !important; height: 280px !important; }
+  .portrait-glow { inset: -10px !important; }
+  .about-inner { padding: 40px 24px 60px !important; }
+  .about-inner h2 { font-size: 28px !important; }
+  .about-inner p { font-size: 16px !important; }
+  
+  .marquee-wrapper { padding: 15px 0 !important; background: var(--navy) !important; margin-top: 0 !important; }
+  .marquee-track span { font-size: 13px !important; letter-spacing: 2px !important; padding-right: 15px !important; }
+  
+  .portfolio, .services, .request, .philosophy { padding: 60px 20px !important; }
+  .portfolio-grid, .cards { grid-template-columns: 1fr !important; gap: 20px !important; }
+  
+  .modal-layout { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+  .modal-img { width: 100% !important; max-height: 250px !important; object-fit: cover !important; object-position: top center !important; }
+  .modal-text h2 { font-size: 24px !important; }
+  .modal-text p { font-size: 15px !important; }
+  
+  .form-row { grid-template-columns: 1fr !important; }
+
+  /* 3D Анимации для телефона */
+  .portrait-arch.tilt-effect { animation: floatTiltPortrait 6s ease-in-out infinite !important; }
+  .card.tilt-effect { animation: floatTiltCard 6s ease-in-out infinite !important; }
+}
+
+@keyframes floatTiltPortrait {
+  0%, 100% { transform: perspective(800px) rotateY(0deg) rotateX(0deg); }
+  25% { transform: perspective(800px) rotateY(6deg) rotateX(3deg); }
+  75% { transform: perspective(800px) rotateY(-6deg) rotateX(-3deg); }
+}
+@keyframes floatTiltCard {
+  0%, 100% { transform: perspective(800px) rotateY(0deg) rotateX(0deg); }
+  50% { transform: perspective(800px) rotateY(-4deg) rotateX(4deg); }
 }
 
 /* На компьютерах кнопка-бургер не нужна */
 @media (min-width: 769px) {
-  .menu-toggle { display: none; }
+  .menu-toggle { display: none !important; }
 }
