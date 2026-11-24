@@ -581,97 +581,83 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
 
 /* ===== ТЕЛЕФОНЫ (до 768px) ===== */
 @media (max-width: 768px) {
-  .header {
-    padding: 15px 20px !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-
-  /* Прячем меню по умолчанию */
-  .nav {
-    display: none !important;
-    flex-direction: column !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    width: 100% !important;
-    background: rgba(11, 21, 51, 0.98) !important;
-    padding: 20px !important;
-    border-bottom: 1px solid var(--pink) !important;
-    gap: 15px !important;
-    align-items: center !important;
-    z-index: 99 !important;
-  }
-
-  /* Показываем меню при клике */
-  .nav.active { 
-    display: flex !important; 
-  }
-
-  /* Кнопка-бургер */
-  .menu-toggle {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 6px !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-    padding: 5px !important;
-    z-index: 100 !important;
-  }
+  /* Уменьшаем общий масштаб сайта */
+  .header { padding: 15px 20px !important; }
+  .hero { padding-top: 60px !important; padding-bottom: 40px !important; }
+  .hero h1 { font-size: 32px !important; line-height: 1.2 !important; }
+  .lead { font-size: 15px !important; }
   
-  .menu-toggle span {
-    display: block !important;
-    width: 28px !important;
-    height: 2px !important;
-    background-color: var(--pink) !important;
-    transition: 0.3s ease-in-out !important;
-  }
-  
-  /* Превращение в крестик при открытии */
-  .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg) !important; }
-  .menu-toggle.active span:nth-child(2) { opacity: 0 !important; }
-  .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg) !important; }
-
-  /* УМЕНЬШАЕМ САЙТ (чтобы не был близко) */
-  .hero { grid-template-columns: 1fr !important; text-align: center !important; padding-top: 60px !important; padding-bottom: 40px !important; }
-  .hero h1 { font-size: 34px !important; }
-  .portrait-arch { width: 200px !important; height: 280px !important; }
+  /* Портрет на главной делаем аккуратным */
+  .portrait-arch { width: 180px !important; height: 250px !important; }
   .portrait-glow { inset: -10px !important; }
-  .about-inner { padding: 40px 24px 60px !important; }
-  .about-inner h2 { font-size: 28px !important; }
-  .about-inner p { font-size: 16px !important; }
   
-  .marquee-wrapper { padding: 15px 0 !important; background: var(--navy) !important; margin-top: 0 !important; }
-  .marquee-track span { font-size: 13px !important; letter-spacing: 2px !important; padding-right: 15px !important; }
+  /* Блок "Обо мне" */
+  .about-inner { padding: 40px 20px 60px !important; }
+  .about-inner h2 { font-size: 26px !important; }
+  .about-inner p { font-size: 15px !important; }
+  .process { grid-template-columns: 1fr 1fr !important; gap: 20px !important; margin-top: 30px !important; }
   
-  .portfolio, .services, .request, .philosophy { padding: 60px 20px !important; }
-  .portfolio-grid, .cards { grid-template-columns: 1fr !important; gap: 20px !important; }
+  /* Портфолио (сетка) */
+  .portfolio { padding: 60px 20px !important; }
+  .portfolio-head h2 { font-size: 28px !important; }
+  .portfolio-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
   
-  .modal-layout { display: flex !important; flex-direction: column !important; gap: 20px !important; }
-  .modal-img { width: 100% !important; max-height: 250px !important; object-fit: cover !important; object-position: top center !important; }
-  .modal-text h2 { font-size: 24px !important; }
-  .modal-text p { font-size: 15px !important; }
-  
-  .form-row { grid-template-columns: 1fr !important; }
+  /* Услуги */
+  .services { padding: 60px 20px !important; }
+  .services h2 { font-size: 28px !important; margin-bottom: 30px !important; }
+  .cards { grid-template-columns: 1fr !important; gap: 15px !important; }
+  .card { padding: 30px 20px !important; }
+  .card h3 { font-size: 18px !important; }
+  .card p { font-size: 15px !important; }
 
-  /* 3D Анимации для телефона */
-  .portrait-arch.tilt-effect { animation: floatTiltPortrait 6s ease-in-out infinite !important; }
-  .card.tilt-effect { animation: floatTiltCard 6s ease-in-out infinite !important; }
+  /* Философия */
+  .philosophy { padding: 60px 20px !important; }
+  .quote-mark { font-size: 60px !important; }
+  .philosophy .quote { font-size: 22px !important; }
+
+  /* ЗАЯВКА (отодвигаем от краев) */
+  .request { padding: 60px 25px !important; }
+  .request-wrapper { padding: 30px 20px !important; }
+  .request h2 { font-size: 24px !important; }
+  .form-row { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .field input, .field select, .field textarea { padding: 12px !important; font-size: 14px !important; }
+
+  /* ===== МОДАЛЬНОЕ ОКНО (ФОТО В ПОЛНЫЙ РОСТ) ===== */
+  .modal-content { 
+    padding: 20px !important; 
+    max-height: 95vh !important; 
+    overflow-y: auto !important; 
+  }
+  .modal-layout { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 15px !important; 
+  }
+  .modal-img { 
+    width: 100% !important; 
+    height: auto !important; /* Убираем жесткую высоту, чтобы фото не сплющивалось */
+    max-height: none !important; /* Позволяем фото быть в полный рост */
+    aspect-ratio: 3 / 4 !important; /* Задаем красивые пропорции (как у портрета) */
+    object-fit: cover !important; 
+    object-position: center !important; /* Центрируем фото */
+    border-radius: 4px !important;
+  }
+  .modal-text h2 { font-size: 22px !important; margin-bottom: 10px !important; }
+  .modal-text p { font-size: 15px !important; margin-bottom: 20px !important; }
+  .modal-btn { padding: 10px 20px !important; font-size: 12px !important; }
+
+  /* Мобильное меню (бургер) */
+  .header { flex-direction: row !important; justify-content: space-between !important; align-items: center !important; }
+  .nav { display: none !important; flex-direction: column !important; position: absolute !important; top: 100% !important; left: 0 !important; width: 100% !important; background: rgba(11, 21, 51, 0.98) !important; padding: 20px !important; border-bottom: 1px solid var(--pink) !important; gap: 15px !important; align-items: center !important; z-index: 99 !important; }
+  .nav.active { display: flex !important; }
+  .menu-toggle { display: flex !important; flex-direction: column !important; gap: 5px !important; background: transparent !important; border: none !important; cursor: pointer !important; z-index: 100 !important; }
+  .menu-toggle span { display: block !important; width: 25px !important; height: 2px !important; background-color: var(--pink) !important; transition: 0.3s !important; }
+  .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
+  .menu-toggle.active span:nth-child(2) { opacity: 0 !important; }
+  .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
 }
 
-@keyframes floatTiltPortrait {
-  0%, 100% { transform: perspective(800px) rotateY(0deg) rotateX(0deg); }
-  25% { transform: perspective(800px) rotateY(6deg) rotateX(3deg); }
-  75% { transform: perspective(800px) rotateY(-6deg) rotateX(-3deg); }
-}
-@keyframes floatTiltCard {
-  0%, 100% { transform: perspective(800px) rotateY(0deg) rotateX(0deg); }
-  50% { transform: perspective(800px) rotateY(-4deg) rotateX(4deg); }
-}
-
-/* На компьютерах кнопка-бургер не нужна */
+/* На ПК и планшетах бургер скрыт */
 @media (min-width: 769px) {
   .menu-toggle { display: none !important; }
 }
