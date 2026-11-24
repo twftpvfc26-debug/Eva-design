@@ -616,10 +616,11 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   .philosophy .quote { font-size: 22px !important; }
 
   /* ЗАЯВКА (отодвигаем от краев) */
-  .request { 
-    padding: 60px 20px !important; 
-    max-width: 95% !important; 
-    margin: 0 auto !important; 
+  .request {
+    padding: 60px 15px !important; 
+    width: 90% !important;         
+    max-width: 90% !important;     
+    margin: 0 auto !important;     
   }
   .request-wrapper { 
     padding: 40px 30px !important; 
@@ -670,4 +671,17 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
 /* На ПК и планшетах бургер скрыт */
 @media (min-width: 769px) {
   .menu-toggle { display: none !important; }
+}
+/* Финальный фикс ленты и отступов на телефоне */
+@media (max-width: 768px) {
+  .marquee-wrapper {
+    margin: 0 !important;       /* Убираем внешние отступы */
+    padding: 15px 0 !important; /* Оставляем только внутренние */
+    border-top: 1px solid var(--line) !important;
+    border-bottom: 1px solid var(--line) !important;
+    width: 100% !important;
+  }
+  .marquee {
+    margin: 0 !important;
+  }
 }
