@@ -301,7 +301,20 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   border-color: var(--pink); background: rgba(11, 21, 51, 0.9);
 }
 .field select { appearance: none; cursor: pointer; min-height: 54px; font-size: 15px; }
-.field select option { background-color: var(--navy-light); color: var(--white); }
+/* Стили для выпадающего меню (чтобы не было белого) */
+.field select option {
+  background-color: var(--navy); /* Темно-синий фон */
+  color: var(--pink); /* Нежно-розовый текст */
+  padding: 10px;
+}
+
+/* При наведении на пункт в меню */
+.field select option:hover,
+.field select option:focus,
+.field select option:checked {
+  background-color: var(--navy-light); /* Чуть светлее синий */
+  color: var(--pink-bright); /* Яркий розовый */
+}
 
 .select-wrapper { position: relative; }
 .select-wrapper::after {
