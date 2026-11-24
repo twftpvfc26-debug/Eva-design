@@ -685,23 +685,3 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     margin: 0 !important;
   }
 }
-/* ===== ЖЕСТКИЙ ФИКС ОТСТУПА ПЕРЕД ЛЕНТОЙ ===== */
-@media (max-width: 768px) {
-  /* Убираем все отступы снизу у блока "Обо мне" */
-  .about-panel {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  
-  /* Убираем отступы у сетки с цифрами */
-  .process {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Прижимаем ленту вплотную */
-  .marquee-wrapper {
-    margin-top: 0 !important;
-    padding-top: 15px !important; 
-  }
-}
