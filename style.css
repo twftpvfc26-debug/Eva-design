@@ -816,3 +816,33 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     max-height: 450px !important; 
   }
 }
+/* ===== ИСПРАВЛЕНИЕ МОДАЛЬНОГО ОКНА НА ПК ===== */
+@media (min-width: 769px) {
+  .modal-layout {
+    /* Делаем колонку с фото чуть уже, а с текстом — шире */
+    grid-template-columns: 0.8fr 1.2fr !important; 
+    gap: 20px !important; 
+  }
+
+  .modal-img {
+    object-fit: cover !important; /* Фото заполняет всё без пустых полос */
+    object-position: top center !important; /* Прижимаем к верху, чтобы лицо не обрезалось */
+    height: 500px !important; /* Задаем высоту фото */
+    width: 100% !important;
+  }
+}
+/* ===== ФИКС ФОТО В ПОРТФОЛИО НА ТЕЛЕФОНЕ ===== */
+@media (max-width: 768px) {
+  .portfolio-img-wrap {
+    aspect-ratio: auto !important; /* Убираем жесткую рамку */
+    height: auto !important; 
+    max-height: 480px !important; /* Ограничиваем максимальную высоту */
+    background-color: transparent !important;
+  }
+
+  .portfolio-img-wrap img {
+    object-fit: contain !important; /* Показываем фото целиком, не обрезая туфли */
+    width: 100% !important;
+    height: auto !important;
+  }
+}
