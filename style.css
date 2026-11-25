@@ -793,3 +793,26 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     max-height: 450px !important; /* Уменьшаем на телефоне */
   }
 }
+/* ===== УБИРАЕМ ПУСТЫЕ ПОЛЯ ВОКРУГ ФОТО ===== */
+
+/* Настройки для ПК */
+.portfolio-img-wrap {
+  aspect-ratio: 4/5 !important; /* Делаем карточку чуть более вытянутой */
+  max-height: 550px !important;
+  background-color: var(--navy-light); /* Фон карточки, если фото не дотянется */
+}
+
+.portfolio-img-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* ФОТО ЗАПОЛНЯЕТ ВСЮ КАРТОЧКУ БЕЗ ПОЛЕЙ */
+  object-position: top center !important; /* Прижимаем к верху, чтобы не обрезать лицо */
+}
+
+/* Настройки для телефонов */
+@media (max-width: 768px) {
+  .portfolio-img-wrap {
+    aspect-ratio: 4/5 !important; 
+    max-height: 450px !important; 
+  }
+}
