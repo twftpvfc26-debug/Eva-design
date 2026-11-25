@@ -846,3 +846,26 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     height: auto !important;
   }
 }
+/* ===== КРАСИВЫЕ ФОТО ПО ЦЕНТРУ НА ТЕЛЕФОНЕ ===== */
+@media (max-width: 768px) {
+  /* 1. Убираем жесткую высоту, чтобы фото не обрезались */
+  .portfolio-img-wrap {
+    aspect-ratio: auto !important; 
+    height: auto !important;
+    max-height: none !important; 
+    padding: 15px !important; /* Добавляем отступы, чтобы фото не прилипало к краям */
+    background-color: transparent !important; 
+    display: flex !important;
+    justify-content: center !important; /* Ставим по центру */
+    align-items: center !important;
+  }
+
+  /* 2. Делаем фото аккуратнее и вписываем целиком */
+  .portfolio-img-wrap img {
+    object-fit: contain !important; /* Фото не обрезается */
+    width: 100% !important;
+    max-height: 380px !important; /* Уменьшаем максимальную высоту (было больше) */
+    margin: 0 auto !important; /* Центрируем */
+    display: block !important;
+  }
+}
