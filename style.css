@@ -869,3 +869,40 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     display: block !important;
   }
 }
+/* ========================================================= */
+/* УБИРАЕМ ПУСТОТУ И УМЕНЬШАЕМ ФОТО (ПК + ТЕЛЕФОН) */
+/* ========================================================= */
+
+/* 1. НАСТРОЙКИ ДЛЯ ПК И ПЛАНШЕТОВ */
+.portfolio-grid {
+  align-items: start !important; /* Выравниваем карточки по верхнему краю */
+}
+
+.portfolio-img-wrap {
+  aspect-ratio: auto !important; /* Убираем жесткие пропорции */
+  height: auto !important;        /* Рамка подстраивается под фото */
+  max-height: 600px !important;   /* Ограничиваем максимальную высоту */
+  padding: 0 !important;
+  background: transparent !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.portfolio-img-wrap img {
+  width: 100% !important;
+  height: auto !important;        /* Фото не растягивается и не обрезается */
+  max-height: 600px !important;   /* Уменьшаем фото на ПК (было больше) */
+  object-fit: contain !important; /* Фото видно целиком */
+  margin: 0 auto !important;
+}
+
+/* 2. НАСТРОЙКИ ДЛЯ ТЕЛЕФОНОВ */
+@media (max-width: 768px) {
+  .portfolio-img-wrap {
+    max-height: 400px !important; /* Ограничиваем высоту на телефоне */
+  }
+
+  .portfolio-img-wrap img {
+    max-height: 400px !important; /* Уменьшаем фото на телефоне */
+  }
+}
