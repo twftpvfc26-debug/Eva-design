@@ -725,3 +725,24 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     padding-top: 100px !important; 
   }
 }
+/* ===== ФИНАЛЬНЫЕ ШТРИХИ ===== */
+@media (max-width: 768px) {
+  /* 1. Делаем так, чтобы фото на телефоне не обрезалось */
+  .portfolio-img-wrap {
+    aspect-ratio: auto !important; /* Убираем жесткую рамку */
+    height: auto !important; /* Позволяем фото быть любой высоты */
+    max-height: none !important;
+  }
+  
+  .portfolio-img-wrap img {
+    object-fit: contain !important; /* Показываем фото целиком */
+    width: 100% !important;
+    height: auto !important;
+    background-color: var(--navy-light); /* Темный фон для пустых полей (если будут) */
+  }
+
+  /* 2. Возвращаем линию над лентой */
+  .marquee-wrapper {
+    border-top: 1px solid var(--line) !important; /* Возвращаем линию */
+  }
+}
