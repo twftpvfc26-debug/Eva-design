@@ -921,3 +921,26 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     padding: 15px !important; 
   }
 }
+@media (max-width: 768px) {
+  /* Убираем боковые пустоты в ленте */
+  .portfolio-img-wrap {
+    padding: 0 !important; /* Убираем любые отступы внутри рамки */
+    background: transparent !important; /* Убираем фон самой рамки */
+  }
+
+  /* Растягиваем фото на всю ширину */
+  .portfolio-img-wrap img {
+    width: 100% !important; /* Фото занимает 100% ширины */
+    height: auto !important; /* Высота подстраивается пропорционально */
+    object-fit: contain !important; 
+    display: block !important;
+  }
+
+  /* Убираем боковые пустоты в модальном окне (когда нажимаете) */
+  .modal-img {
+    background: transparent !important; /* Убираем темный фон */
+    width: 100% !important;
+    max-height: 60vh !important;
+    object-fit: contain !important;
+  }
+}
