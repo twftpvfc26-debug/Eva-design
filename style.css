@@ -906,3 +906,18 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     max-height: 400px !important; /* Уменьшаем фото на телефоне */
   }
 }
+/* ===== УМЕНЬШАЕМ ФОТО В МОДАЛЬНОМ ОКНЕ НА ТЕЛЕФОНЕ ===== */
+@media (max-width: 768px) {
+  .modal-img {
+    max-height: 50vh !important; /* Фото займет не больше половины экрана по высоте */
+    object-fit: contain !important; /* Фото показывается целиком, без обрезки */
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4px !important;
+  }
+  
+  /* Уменьшаем немного отступы в самом окне, чтобы текста было больше видно */
+  .modal-content {
+    padding: 15px !important; 
+  }
+}
