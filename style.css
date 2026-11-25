@@ -726,20 +726,6 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
   }
 }
 /* ===== ФИНАЛЬНЫЕ ШТРИХИ ===== */
-@media (max-width: 768px) {
-  /* 1. Делаем так, чтобы фото на телефоне не обрезалось */
-  .portfolio-img-wrap {
-    aspect-ratio: auto !important; /* Убираем жесткую рамку */
-    height: auto !important; /* Позволяем фото быть любой высоты */
-    max-height: none !important;
-  }
-  
-  .portfolio-img-wrap img {
-    object-fit: contain !important; /* Показываем фото целиком */
-    width: 100% !important;
-    height: auto !important;
-    background-color: var(--navy-light); /* Темный фон для пустых полей (если будут) */
-  }
 
   /* 2. Возвращаем линию над лентой */
   .marquee-wrapper {
@@ -783,5 +769,27 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     object-fit: cover !important; /* Заполняет рамку, чтобы не было пустых полос */
     width: 100% !important;
     height: 100% !important;
+  }
+}
+/* ===== ИДЕАЛЬНЫЙ РАЗМЕР БЕЗ ОБРЕЗКИ ===== */
+
+/* Настройки для ПК и планшетов */
+.portfolio-img-wrap {
+  aspect-ratio: 3/4 !important; /* Форма карточки (вертикальная) */
+  max-height: 550px !important; /* Максимальная высота */
+  background-color: transparent !important; 
+}
+
+.portfolio-img-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important; /* ФОТО ЦЕЛИКОМ, БЕЗ ОБРЕЗКИ */
+}
+
+/* Настройки для телефонов */
+@media (max-width: 768px) {
+  .portfolio-img-wrap {
+    aspect-ratio: 3/4 !important; 
+    max-height: 450px !important; /* Уменьшаем на телефоне */
   }
 }
