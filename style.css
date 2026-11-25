@@ -746,3 +746,42 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     border-top: 1px solid var(--line) !important; /* Возвращаем линию */
   }
 }
+/* ======================================================= */
+/* ФИНАЛЬНЫЕ ПРАВКИ: ЛИНИЯ НА ТЕЛЕФОНЕ И РАЗМЕР ФОТО ВЕЗДЕ */
+/* ======================================================= */
+
+/* 1. УМЕНЬШАЕМ ФОТО НА ПК И ПЛАНШЕТАХ */
+.portfolio-grid {
+  /* Делаем так, чтобы на ПК было не 3 огромные колонки, а 4 поменьше (или оставляем 3, но с отступами) */
+  gap: 30px !important; 
+}
+
+.portfolio-img-wrap {
+  max-height: 500px !important; /* Ограничиваем высоту фото на ПК */
+}
+
+@media (max-width: 1024px) {
+  .portfolio-img-wrap {
+    max-height: 400px !important; /* На планшетах чуть меньше */
+  }
+}
+
+/* 2. НАСТРОЙКИ ДЛЯ ТЕЛЕФОНОВ */
+@media (max-width: 768px) {
+  /* Возвращаем линию над бегущей строкой */
+  .marquee-wrapper {
+    border-top: 1px solid var(--line) !important; 
+  }
+
+  /* Уменьшаем фото на телефоне */
+  .portfolio-img-wrap {
+    aspect-ratio: 4/5 !important; /* Пропорции как в Инстаграме */
+    max-height: 380px !important; /* Высота фото на телефоне (было 450, стало 380) */
+  }
+  
+  .portfolio-img-wrap img {
+    object-fit: cover !important; /* Заполняет рамку, чтобы не было пустых полос */
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
