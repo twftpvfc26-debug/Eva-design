@@ -783,3 +783,50 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     background: var(--navy-light) !important;
   }
 }
+/* ========================================================= */
+/* ФИНАЛЬНЫЙ КОД ДЛЯ ТЕЛЕФОНА (ЛЕНТА + ОКНА) */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+  
+  /* ========================================== */
+  /* 1. ФОТО В ЛЕНТЕ (ЧТОБЫ БЫЛИ МЕНЬШЕ И БЕЗ ОБРЕЗКИ) */
+  /* ========================================== */
+  .portfolio-img-wrap {
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;
+    padding: 15px 0 !important; 
+    background: transparent !important;
+    border: none !important; 
+  }
+
+  .portfolio-img-wrap img {
+    width: 85% !important; /* Размер фото в ленте (85% ширины) */
+    height: auto !important; 
+    object-fit: contain !important; /* Без обрезки */
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* ========================================== */
+  /* 2. ФОТО В ОКНАХ (ЧТОБЫ БЫЛИ ОДИНАКОВЫЕ И ПО ЦЕНТРУ) */
+  /* ========================================== */
+  .modal-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+  }
+
+  .modal-img {
+    width: 100% !important; /* Ширина окна */
+    height: 350px !important; /* ОДИНАКОВАЯ ВЫСОТА ДЛЯ ВСЕХ ФОТО */
+    object-fit: cover !important; 
+    object-position: center top !important; 
+    border-radius: 4px !important;
+    border: none !important;
+    background-color: transparent !important;
+    margin: 0 auto 20px auto !important; 
+    display: block !important;
+  }
+}
