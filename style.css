@@ -944,3 +944,19 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     object-fit: contain !important;
   }
 }
+/* ===== УМЕНЬШАЕМ ФОТО В ОКНЕ И УБИРАЕМ ПУСТОТЫ (ТОЛЬКО ТЕЛЕФОН) ===== */
+@media (max-width: 768px) {
+  .modal-img {
+    max-height: 45vh !important; /* Фото станет меньше (45% от высоты экрана) */
+    width: 100% !important;
+    object-fit: cover !important; /* Фото заполняет всё пространство, убирая пустоты по бокам */
+    object-position: top center !important; /* Прижимаем к верху, чтобы лицо не обрезалось */
+    background-color: transparent !important; /* Убираем темный фон */
+    border: none !important; /* Убираем лишнюю рамку */
+  }
+  
+  /* Делаем отступы внутри окна поменьше, чтобы всё выглядело компактно */
+  .modal-content {
+    padding: 20px 15px !important; 
+  }
+}
