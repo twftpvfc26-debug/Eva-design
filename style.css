@@ -732,231 +732,35 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     border-top: 1px solid var(--line) !important; /* Возвращаем линию */
   }
 }
-/* ======================================================= */
-/* ФИНАЛЬНЫЕ ПРАВКИ: ЛИНИЯ НА ТЕЛЕФОНЕ И РАЗМЕР ФОТО ВЕЗДЕ */
-/* ======================================================= */
-
-/* 1. УМЕНЬШАЕМ ФОТО НА ПК И ПЛАНШЕТАХ */
-.portfolio-grid {
-  /* Делаем так, чтобы на ПК было не 3 огромные колонки, а 4 поменьше (или оставляем 3, но с отступами) */
-  gap: 30px !important; 
-}
-
-.portfolio-img-wrap {
-  max-height: 500px !important; /* Ограничиваем высоту фото на ПК */
-}
-
-@media (max-width: 1024px) {
-  .portfolio-img-wrap {
-    max-height: 400px !important; /* На планшетах чуть меньше */
-  }
-}
-
-/* 2. НАСТРОЙКИ ДЛЯ ТЕЛЕФОНОВ */
+/* ========================================================= */
+/* ИДЕАЛЬНЫЕ ФОТО НА ТЕЛЕФОНЕ (ПК НЕ ЗАТРАГИВАЕМ) */
+/* ========================================================= */
 @media (max-width: 768px) {
-  /* Возвращаем линию над бегущей строкой */
-  .marquee-wrapper {
-    border-top: 1px solid var(--line) !important; 
-  }
-
-  /* Уменьшаем фото на телефоне */
-  .portfolio-img-wrap {
-    aspect-ratio: 4/5 !important; /* Пропорции как в Инстаграме */
-    max-height: 380px !important; /* Высота фото на телефоне (было 450, стало 380) */
-  }
   
-  .portfolio-img-wrap img {
-    object-fit: cover !important; /* Заполняет рамку, чтобы не было пустых полос */
-    width: 100% !important;
-    height: 100% !important;
-  }
-}
-/* ===== ИДЕАЛЬНЫЙ РАЗМЕР БЕЗ ОБРЕЗКИ ===== */
-
-/* Настройки для ПК и планшетов */
-.portfolio-img-wrap {
-  aspect-ratio: 3/4 !important; /* Форма карточки (вертикальная) */
-  max-height: 550px !important; /* Максимальная высота */
-  background-color: transparent !important; 
-}
-
-.portfolio-img-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important; /* ФОТО ЦЕЛИКОМ, БЕЗ ОБРЕЗКИ */
-}
-
-/* Настройки для телефонов */
-@media (max-width: 768px) {
+  /* 1. ФОТО В ЛЕНТЕ (ПОРТФОЛИО) - убираем пустоты по бокам */
   .portfolio-img-wrap {
-    aspect-ratio: 3/4 !important; 
-    max-height: 450px !important; /* Уменьшаем на телефоне */
-  }
-}
-/* ===== УБИРАЕМ ПУСТЫЕ ПОЛЯ ВОКРУГ ФОТО ===== */
-
-/* Настройки для ПК */
-.portfolio-img-wrap {
-  aspect-ratio: 4/5 !important; /* Делаем карточку чуть более вытянутой */
-  max-height: 550px !important;
-  background-color: var(--navy-light); /* Фон карточки, если фото не дотянется */
-}
-
-.portfolio-img-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* ФОТО ЗАПОЛНЯЕТ ВСЮ КАРТОЧКУ БЕЗ ПОЛЕЙ */
-  object-position: top center !important; /* Прижимаем к верху, чтобы не обрезать лицо */
-}
-
-/* Настройки для телефонов */
-@media (max-width: 768px) {
-  .portfolio-img-wrap {
-    aspect-ratio: 4/5 !important; 
-    max-height: 450px !important; 
-  }
-}
-/* ===== ИСПРАВЛЕНИЕ МОДАЛЬНОГО ОКНА НА ПК ===== */
-@media (min-width: 769px) {
-  .modal-layout {
-    /* Делаем колонку с фото чуть уже, а с текстом — шире */
-    grid-template-columns: 0.8fr 1.2fr !important; 
-    gap: 20px !important; 
-  }
-
-  .modal-img {
-    object-fit: cover !important; /* Фото заполняет всё без пустых полос */
-    object-position: top center !important; /* Прижимаем к верху, чтобы лицо не обрезалось */
-    height: 500px !important; /* Задаем высоту фото */
-    width: 100% !important;
-  }
-}
-/* ===== ФИКС ФОТО В ПОРТФОЛИО НА ТЕЛЕФОНЕ ===== */
-@media (max-width: 768px) {
-  .portfolio-img-wrap {
-    aspect-ratio: auto !important; /* Убираем жесткую рамку */
-    height: auto !important; 
-    max-height: 480px !important; /* Ограничиваем максимальную высоту */
-    background-color: transparent !important;
-  }
-
-  .portfolio-img-wrap img {
-    object-fit: contain !important; /* Показываем фото целиком, не обрезая туфли */
-    width: 100% !important;
+    padding: 0 !important; 
+    background: transparent !important;
+    display: block !important; /* Фото прилипает к краям рамки */
     height: auto !important;
-  }
-}
-/* ===== КРАСИВЫЕ ФОТО ПО ЦЕНТРУ НА ТЕЛЕФОНЕ ===== */
-@media (max-width: 768px) {
-  /* 1. Убираем жесткую высоту, чтобы фото не обрезались */
-  .portfolio-img-wrap {
-    aspect-ratio: auto !important; 
-    height: auto !important;
-    max-height: none !important; 
-    padding: 15px !important; /* Добавляем отступы, чтобы фото не прилипало к краям */
-    background-color: transparent !important; 
-    display: flex !important;
-    justify-content: center !important; /* Ставим по центру */
-    align-items: center !important;
+    aspect-ratio: auto !important;
+    max-height: none !important;
   }
 
-  /* 2. Делаем фото аккуратнее и вписываем целиком */
   .portfolio-img-wrap img {
-    object-fit: contain !important; /* Фото не обрезается */
-    width: 100% !important;
-    max-height: 380px !important; /* Уменьшаем максимальную высоту (было больше) */
-    margin: 0 auto !important; /* Центрируем */
+    width: 100% !important; /* Фото заполняет всю ширину */
+    height: auto !important; /* Высота подстраивается, ничего не обрезается */
     display: block !important;
-  }
-}
-/* ========================================================= */
-/* УБИРАЕМ ПУСТОТУ И УМЕНЬШАЕМ ФОТО (ПК + ТЕЛЕФОН) */
-/* ========================================================= */
-
-/* 1. НАСТРОЙКИ ДЛЯ ПК И ПЛАНШЕТОВ */
-.portfolio-grid {
-  align-items: start !important; /* Выравниваем карточки по верхнему краю */
-}
-
-.portfolio-img-wrap {
-  aspect-ratio: auto !important; /* Убираем жесткие пропорции */
-  height: auto !important;        /* Рамка подстраивается под фото */
-  max-height: 600px !important;   /* Ограничиваем максимальную высоту */
-  padding: 0 !important;
-  background: transparent !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
-.portfolio-img-wrap img {
-  width: 100% !important;
-  height: auto !important;        /* Фото не растягивается и не обрезается */
-  max-height: 600px !important;   /* Уменьшаем фото на ПК (было больше) */
-  object-fit: contain !important; /* Фото видно целиком */
-  margin: 0 auto !important;
-}
-
-/* 2. НАСТРОЙКИ ДЛЯ ТЕЛЕФОНОВ */
-@media (max-width: 768px) {
-  .portfolio-img-wrap {
-    max-height: 400px !important; /* Ограничиваем высоту на телефоне */
-  }
-
-  .portfolio-img-wrap img {
-    max-height: 400px !important; /* Уменьшаем фото на телефоне */
-  }
-}
-/* ===== УМЕНЬШАЕМ ФОТО В МОДАЛЬНОМ ОКНЕ НА ТЕЛЕФОНЕ ===== */
-@media (max-width: 768px) {
-  .modal-img {
-    max-height: 50vh !important; /* Фото займет не больше половины экрана по высоте */
-    object-fit: contain !important; /* Фото показывается целиком, без обрезки */
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 4px !important;
-  }
-  
-  /* Уменьшаем немного отступы в самом окне, чтобы текста было больше видно */
-  .modal-content {
-    padding: 15px !important; 
-  }
-}
-@media (max-width: 768px) {
-  /* Убираем боковые пустоты в ленте */
-  .portfolio-img-wrap {
-    padding: 0 !important; /* Убираем любые отступы внутри рамки */
-    background: transparent !important; /* Убираем фон самой рамки */
-  }
-
-  /* Растягиваем фото на всю ширину */
-  .portfolio-img-wrap img {
-    width: 100% !important; /* Фото занимает 100% ширины */
-    height: auto !important; /* Высота подстраивается пропорционально */
     object-fit: contain !important; 
-    display: block !important;
   }
 
-  /* Убираем боковые пустоты в модальном окне (когда нажимаете) */
+  /* 2. ФОТО В ОКНЕ (КОГДА НАЖИМАЕТЕ) - делаем меньше и без пустот */
   .modal-img {
-    background: transparent !important; /* Убираем темный фон */
+    max-height: 50vh !important; /* Фото занимает половину экрана по высоте */
     width: 100% !important;
-    max-height: 60vh !important;
-    object-fit: contain !important;
-  }
-}
-/* ===== УМЕНЬШАЕМ ФОТО В ОКНЕ И УБИРАЕМ ПУСТОТЫ (ТОЛЬКО ТЕЛЕФОН) ===== */
-@media (max-width: 768px) {
-  .modal-img {
-    max-height: 45vh !important; /* Фото станет меньше (45% от высоты экрана) */
-    width: 100% !important;
-    object-fit: cover !important; /* Фото заполняет всё пространство, убирая пустоты по бокам */
+    object-fit: cover !important; /* Заполняет всю ширину без боковых пустот */
     object-position: top center !important; /* Прижимаем к верху, чтобы лицо не обрезалось */
     background-color: transparent !important; /* Убираем темный фон */
-    border: none !important; /* Убираем лишнюю рамку */
-  }
-  
-  /* Делаем отступы внутри окна поменьше, чтобы всё выглядело компактно */
-  .modal-content {
-    padding: 20px 15px !important; 
+    border: none !important;
   }
 }
