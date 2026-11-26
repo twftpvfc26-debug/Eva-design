@@ -830,3 +830,18 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     display: block !important;
   }
 }
+/* ===== УМЕНЬШАЕМ ФОТО В ОКНЕ И УБИРАЕМ ПУСТОТЫ (ТОЛЬКО ТЕЛЕФОН) ===== */
+@media (max-width: 768px) {
+  .modal-img {
+    height: 300px !important; /* Уменьшаем высоту фото (было 350, стало 300) */
+    width: 100% !important;
+    object-fit: cover !important; /* Заполняем ширину, чтобы не было пустот */
+    object-position: center 20% !important; /* Прижимаем к верху, чтобы лицо было видно */
+    transform: scale(1.02); /* Легкое увеличение, чтобы точно не было полос */
+    border-radius: 4px !important;
+    border: none !important;
+    background-color: transparent !important;
+    margin: 0 auto 15px auto !important; 
+    display: block !important;
+  }
+}
