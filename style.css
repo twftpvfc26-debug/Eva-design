@@ -845,3 +845,28 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     display: block !important;
   }
 }
+/* ========================================================= */
+/* ИДЕАЛЬНОЕ ФОТО В ОКНЕ - ЦЕЛИКОМ И БЕЗ ПУСТОТ (ТОЛЬКО ТЕЛЕФОН) */
+/* ========================================================= */
+@media (max-width: 768px) {
+  
+  /* Делаем так, чтобы контейнер окна подстраивался под фото */
+  .modal-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Центрируем всё */
+  }
+
+  .modal-img {
+    max-height: 60vh !important; /* Ограничиваем максимальную высоту, чтобы окно не было огромным */
+    width: auto !important; /* Ширина подстраивается под фото */
+    max-width: 90% !important; /* Но не шире экрана */
+    object-fit: contain !important; /* Показываем фото ЦЕЛИКОМ, ничего не обрезаем */
+    transform: none !important; /* Убираем то самое увеличение, из-за которого всё вылезало */
+    border-radius: 4px !important;
+    border: none !important;
+    background-color: transparent !important;
+    margin: 0 auto 20px auto !important; 
+    display: block !important;
+  }
+}
