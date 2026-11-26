@@ -764,3 +764,22 @@ h1, h2, h3 { font-family: var(--font-title); font-weight: 400; letter-spacing: 2
     border: none !important;
   }
 }
+/* ===== ОКНО ИДЕАЛЬНО ПО РАЗМЕРУ ФОТО (ТОЛЬКО ТЕЛЕФОН) ===== */
+@media (max-width: 768px) {
+  .modal-img {
+    width: auto !important; /* Ширина подстраивается под фото */
+    max-width: 100% !important; /* Но не шире экрана */
+    max-height: 60vh !important; /* Ограничиваем высоту, чтобы окно не было на весь экран */
+    object-fit: contain !important; /* Показываем фото целиком */
+    background-color: transparent !important;
+    border-radius: 4px !important; /* Скругляем углы самого фото */
+    margin: 0 auto 15px auto !important; /* Центрируем */
+    display: block !important;
+  }
+  
+  /* Делаем так, чтобы окно не растягивалось, а облегало фото */
+  .modal-content {
+    padding: 15px !important;
+    background: var(--navy-light) !important;
+  }
+}
